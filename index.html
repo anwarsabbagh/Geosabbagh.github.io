@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anwar Sabbagh | Geoprocessamento e SIG</title>
+  <meta name="description" content="Analista de Geoprocessamento e SIG com 15 anos de experiência em consultoria ambiental e análise territorial." />
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <style>
+    :root {
+      --azul: #1F3A5F;
+      --verde: #2E7D6B;
+      --cinza-texto: #2B2B2B;
+      --cinza-fundo: #F4F6F8;
+      --branco: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--cinza-texto);
+      background-color: var(--cinza-fundo);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--branco);
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--azul);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--verde);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--azul);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--azul);
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      max-width: 800px;
+    }
+
+    .hero {
+      background-color: var(--branco);
+    }
+
+    .hero span {
+      color: var(--verde);
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: var(--branco);
+      padding: 30px;
+      border-radius: 4px;
+      border: 1px solid #e0e0e0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Estilos para a seção de projetos */
+    .section-intro {
+      margin-bottom: 40px;
+      color: var(--cinza-texto);
+      opacity: 0.9;
+    }
+
+    .projects-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 8px 16px;
+      background: var(--branco);
+      border: 1px solid #e0e0e0;
+      border-radius: 20px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--azul);
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--verde);
+      color: white;
+      border-color: var(--verde);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+    }
+
+    .project-card {
+      background: var(--branco);
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .project-header h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--azul);
+    }
+
+    .client-tag {
+      background: var(--cinza-fundo);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      color: var(--verde);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .project-list {
+      list-style: none;
+      margin: 0 0 15px 0;
+      padding: 0;
+    }
+
+    .project-list li {
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--cinza-texto);
+    }
+
+    .project-list li:before {
+      content: "•";
+      color: var(--verde);
+      position: absolute;
+      left: 0;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--cinza-fundo);
+      color: var(--azul);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .projects-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .summary-card {
+      text-align: center;
+      padding: 25px;
+      background: var(--branco);
+      border-radius: 8px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .summary-card h4 {
+      font-size: 2rem;
+      color: var(--verde);
+      margin-bottom: 8px;
+    }
+
+    .summary-card p {
+      color: var(--cinza-texto);
+      opacity: 0.8;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--verde);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      margin-top: 20px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--azul);
+    }
+
+    footer {
+      background-color: var(--azul);
+      color: var(--branco);
+      padding: 40px 0;
+    }
+
+    footer a {
+      color: var(--branco);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .projects-filter {
+        justify-content: center;
+      }
+      
+      .summary-card h4 {
+        font-size: 1.6rem;
+      }
+
+      nav ul {
+        display: none; /* Para mobile, considere adicionar menu hamburguer */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <strong>Anwar Sabbagh</strong>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#atuacao">Atuação</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Geoprocessamento e SIG aplicados a soluções ambientais e territoriais</h1>
+      <p>
+        Analista de Geoprocessamento com <span>15 anos de experiência</span>, especialista em Geotecnologias e Desenvolvimento de SIG (PUC Minas).
+        Atuação focada em consultoria ambiental, análise espacial e produção de informações geográficas confiáveis.
+      </p>
+      <a href="#contato" class="btn">Entre em contato</a>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container">
+      <h2>Sobre</h2>
+      <p>
+        Atuo profissionalmente desde 2010 com Sistemas de Informação Geográfica como ferramenta estratégica para análise territorial,
+        estudos ambientais e apoio à tomada de decisão em projetos técnicos.
+      </p>
+      <p>
+        Minha trajetória integra tecnologia, meio ambiente e dados espaciais, com experiência prática em consultorias,
+        produção de mapas técnicos e análises aplicadas ao contexto real de empresas e órgãos públicos.
+      </p>
+    </div>
+  </section>
+
+  <section id="atuacao" class="hero">
+    <div class="container">
+      <h2>Áreas de Atuação</h2>
+      <div class="grid">
+        <div class="card">Geoprocessamento aplicado à consultoria ambiental</div>
+        <div class="card">Análises espaciais e territoriais</div>
+        <div class="card">Produção de mapas técnicos e temáticos</div>
+        <div class="card">Apoio a licenciamento ambiental</div>
+        <div class="card">Análise de áreas de intervenção e compensação</div>
+        <div class="card">Tratamento e padronização de dados geográficos</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="container">
+      <h2>Projetos e Experiência</h2>
+      <p class="section-intro">
+        Mais de 15 anos de experiência em projetos de geoprocessamento aplicados a consultoria ambiental,
+        licenciamento, gestão territorial e análises espaciais para diversas empresas e órgãos públicos.
+      </p>
+
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="ambiental">Ambiental</button>
+        <button class="filter-btn" data-filter="licenciamento">Licenciamento</button>
+        <button class="filter-btn" data-filter="mineracao">Mineração</button>
+        <button class="filter-btn" data-filter="cadastro">Cadastro</button>
+        <button class="filter-btn" data-filter="publico">Setor Público</button>
+        <button class="filter-btn" data-filter="pericia">Perícia</button>
+        <button class="filter-btn" data-filter="energia">Energia</button>
+      </div>
+
+      <div class="projects-grid">
+        <!-- RENATO FRANCO -->
+        <div class="project-card" data-categories="cadastro,mineracao">
+          <div class="project-header">
+            <h3>RENATO FRANCO</h3>
+            <span class="client-tag">Nassau Cimentos</span>
+          </div>
+          <ul class="project-list">
+            <li>Readequação de projeto em pontos</li>
+            <li>Readequação de projeto de layout</li>
+            <li>Adequação de projeto para nova fase</li>
+            <li>Elaboração de novo CAR</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Cadastro Ambiental Rural (CAR)</span>
+            <span class="tag">Projeto de mineração</span>
+            <span class="tag">Readequação de projeto</span>
+          </div>
+        </div>
+
+        <!-- PARAOIL -->
+        <div class="project-card" data-categories="ambiental">
+          <div class="project-header">
+            <h3>PARAOIL</h3>
+            <span class="client-tag">Logística</span>
+          </div>
+          <ul class="project-list">
+            <li>Tratamento de dados de logística reversa</li>
+            <li>Mapeamento de distribuição de produtos</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Logística reversa</span>
+            <span class="tag">Mapeamento de distribuição</span>
+            <span class="tag">Análise espacial</span>
+          </div>
+        </div>
+
+        <!-- EKOSEG -->
+        <div class="project-card" data-categories="cadastro,ambiental">
+          <div class="project-header">
+            <h3>EKOSEG</h3>
+            <span class="client-tag">Consultoria</span>
+          </div>
+          <ul class="project-list">
+            <li>Elaboração de CAR (15 cadastros)</li>
+            <li>Mapas de áreas prioritárias – Catálogo Mapas de Alto Risco</li>
+            <li>Caracterização física do empreendimento</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Cadastro Ambiental Rural (CAR)</span>
+            <span class="tag">Áreas de alto risco ambiental</span>
+            <span class="tag">Caracterização de empreendimentos</span>
+          </div>
+        </div>
+
+        <!-- MUTABLE -->
+        <div class="project-card" data-categories="mineracao,cadastro,ambiental">
+          <div class="project-header">
+            <h3>MUTABLE</h3>
+            <span class="client-tag">Diversos Projetos</span>
+          </div>
+          <ul class="project-list">
+            <li>Projeto de mineração – Gentio do Ouro</li>
+            <li>Mapas de contaminantes no porto – ISG ARATU</li>
+            <li>Elaboração de CAR – Rinha</li>
+            <li>Mapas de vegetação – Imbassaí / Jorge / Fernando</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Projeto de mineração</span>
+            <span class="tag">Áreas contaminadas</span>
+            <span class="tag">Mapeamento de vegetação</span>
+            <span class="tag">Cadastro Ambiental Rural (CAR)</span>
+          </div>
+        </div>
+
+        <!-- PNUD -->
+        <div class="project-card" data-categories="publico">
+          <div class="project-header">
+            <h3>PNUD</h3>
+            <span class="client-tag">Programa das Nações Unidas</span>
+          </div>
+          <ul class="project-list">
+            <li>Protocolo de monitoramento e fiscalização de serviços</li>
+            <li>Parametrização alinhada às diretrizes do PNUD</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Monitoramento ambiental</span>
+            <span class="tag">Protocolos técnicos</span>
+            <span class="tag">Gestão pública</span>
+          </div>
+        </div>
+
+        <!-- DEIVID GASPAR – PERITO JUDICIAL -->
+        <div class="project-card" data-categories="ambiental,pericia">
+          <div class="project-header">
+            <h3>DEIVID GASPAR</h3>
+            <span class="client-tag">Perícia Judicial</span>
+          </div>
+          <ul class="project-list">
+            <li>Perícia  –  Tocantins fazenda </li>
+            <li>Perícia  – Ferras de vasconcelos</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Perícia ambiental</span>
+            <span class="tag">Áreas contaminadas</span>
+            <span class="tag">Perícia judicial</span>
+          </div>
+        </div>
+
+        <!-- UFPE -->
+        <div class="project-card" data-categories="publico">
+          <div class="project-header">
+            <h3>UFPE</h3>
+            <span class="client-tag">Universidade Federal</span>
+          </div>
+          <ul class="project-list">
+            <li>Atlas Digital dos Meios de Hospedagem</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Atlas digital</span>
+            <span class="tag">Turismo sustentável</span>
+            <span class="tag">Geoprocessamento aplicado</span>
+          </div>
+        </div>
+
+        <!-- POLÍCIA MILITAR SP -->
+        <div class="project-card" data-categories="publico">
+          <div class="project-header">
+            <h3>Polícia Militar SP</h3>
+            <span class="client-tag">Segurança Pública</span>
+          </div>
+          <ul class="project-list">
+            <li>Delimitação de área de abrangência</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Delimitação territorial</span>
+            <span class="tag">Segurança pública</span>
+            <span class="tag">Análise espacial</span>
+          </div>
+        </div>
+
+        <!-- EGIS -->
+        <div class="project-card" data-categories="licenciamento,mineracao">
+          <div class="project-header">
+            <h3>EGIS</h3>
+            <span class="client-tag">Engenharia e Consultoria</span>
+          </div>
+          <ul class="project-list">
+            <li>Tratamento de dados LiDAR – Projeto Petrobras (SP)</li>
+            <li>Projetos de EIA/RIMA – Dutos FZA e SBU</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Processamento LiDAR</span>
+            <span class="tag">EIA/RIMA</span>
+            <span class="tag">Infraestrutura de petróleo e gás</span>
+          </div>
+        </div>
+
+        <!-- ADRIA AMBIENTE -->
+        <div class="project-card" data-categories="ambiental,licenciamento">
+          <div class="project-header">
+            <h3>ADRIA AMBIENTE</h3>
+            <span class="client-tag">Gestão de Riscos</span>
+          </div>
+          <ul class="project-list">
+            <li>Análise e Gerenciamento de Riscos Ambientais (AGRA) – Petrobras</li>
+            <li>Plano de Emergência Individual (PEI) – Petrobras</li>
+            <li>EAR – Estudo de Análise de Riscos da Malha Sul-Oeste – Rumo</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Gestão de riscos ambientais</span>
+            <span class="tag">Plano de emergência ambiental</span>
+            <span class="tag">Infraestrutura ferroviária</span>
+          </div>
+        </div>
+
+        <!-- SANEATEC -->
+        <div class="project-card" data-categories="publico">
+          <div class="project-header">
+            <h3>SANEATEC</h3>
+            <span class="client-tag">Saneamento</span>
+          </div>
+          <ul class="project-list">
+            <li>Construção de banco de dados em SIG</li>
+            <li>Cadastramento de unidades de ligação de água – Corupá/SC</li>
+            <li>Elaboração de rotas para cobrança</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Banco de dados geoespaciais</span>
+            <span class="tag">Saneamento básico</span>
+            <span class="tag">Cadastramento técnico</span>
+          </div>
+        </div>
+
+        <!-- ALLBER ENGENHARIA -->
+        <div class="project-card" data-categories="ambiental,pericia">
+          <div class="project-header">
+            <h3>ALLBER ENGENHARIA</h3>
+            <span class="client-tag">Grupo Casas Bahia</span>
+          </div>
+          <ul class="project-list">
+            <li>Área embargada – Represa da Lagoa</li>
+            <li>Defesa de autos de infração ambiental</li>
+            <li>Investigação de áreas contaminadas – Posto Casa Bahia</li>
+            <li>Delimitação de limites de propriedade</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Áreas contaminadas</span>
+            <span class="tag">Perícia ambiental</span>
+            <span class="tag">Georreferenciamento de imóveis</span>
+          </div>
+        </div>
+
+        <!-- COBRAE -->
+        <div class="project-card" data-categories="ambiental,publico">
+          <div class="project-header">
+            <h3>COBRAE</h3>
+            <span class="client-tag">Recursos Hídricos</span>
+          </div>
+          <ul class="project-list">
+            <li>Plano de Desenvolvimento e Proteção Ambiental dos Mananciais (PDPA)</li>
+            <li>Estudos de viabilidade técnica, econômica e ambiental</li>
+            <li>Modelagem quantitativa e qualitativa de bacias hidrográficas</li>
+            <li>Consolidação e análise crítica de dados – ANA, CH2M Hill, Basan e Sabesp</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Recursos hídricos</span>
+            <span class="tag">Modelagem de bacias hidrográficas</span>
+            <span class="tag">Zoneamento de mananciais</span>
+          </div>
+        </div>
+
+        <!-- ORBEA ENGENHARIA -->
+        <div class="project-card" data-categories="licenciamento,ambiental">
+          <div class="project-header">
+            <h3>ORBEA ENGENHARIA</h3>
+            <span class="client-tag">Licenciamento Ambiental</span>
+          </div>
+          <ul class="project-list">
+            <li>Licenciamento Ambiental Simplificado (LAS)</li>
+            <li>Licenciamento ambiental – Reservatório da Região do Paraíba (Sabesp)</li>
+            <li>Obra de duplicação da Rodovia BR-445 – Londrina/PR</li>
+            <li>Investigação de áreas contaminadas – Tatuapé/SP</li>
+            <li>Avaliação preliminar, confirmatória e detalhada</li>
+            <li>Licenciamento ambiental – BRT Radial Leste (22 pontos de ônibus)</li>
+            <li>Tratamento de dados de coletores de esgoto – Sabesp</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Licenciamento ambiental</span>
+            <span class="tag">BRT</span>
+            <span class="tag">Áreas contaminadas</span>
+            <span class="tag">Infraestrutura viária</span>
+          </div>
+        </div>
+
+        <!-- SUSTAINABLE CARBON -->
+        <div class="project-card" data-categories="ambiental,energia">
+          <div class="project-header">
+            <h3>SUSTAINABLE CARBON</h3>
+            <span class="client-tag">Energia e Carbono</span>
+          </div>
+          <ul class="project-list">
+            <li>Projeto REDD+ (Redução de Emissões por Desmatamento)</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">REDD+</span>
+            <span class="tag">Mercado de carbono</span>
+          </div>
+        </div>
+
+        <!-- CEMA -->
+        <div class="project-card" data-categories="licenciamento,energia,ambiental">
+          <div class="project-header">
+            <h3>CEMA CONSULTORIA</h3>
+            <span class="client-tag">Estudos Ambientais</span>
+          </div>
+          <ul class="project-list">
+            <li>RAP – Usina Termelétrica</li>
+            <li>Estudo de locação – PCH Alto Tapajós</li>
+            <li>AHE – Usina Hidrelétrica de São Luís do Tapajós</li>
+            <li>Caracterização de APPs em 6 municípios – Litoral Norte/SP</li>
+            <li>EIA – Aterro Sanitário de Osasco</li>
+            <li>EIA – Reserva Santa Bárbara</li>
+            <li>Estudos de alternativas locacionais</li>
+            <li>Elaboração de mapas temáticos</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Usina Hidrelétrica (UHE)</span>
+            <span class="tag">Usina Termelétrica (UTE)</span>
+            <span class="tag">EIA/RIMA</span>
+            <span class="tag">Áreas de Preservação Permanente (APP)</span>
+          </div>
+        </div>
+
+        <!-- AEGPLAN -->
+        <div class="project-card" data-categories="ambiental,publico">
+          <div class="project-header">
+            <h3>GRUPO AEGPLAN</h3>
+            <span class="client-tag">Recuperação Ambiental</span>
+          </div>
+          <ul class="project-list">
+            <li>Plano de Recuperação Ambiental – Balneário Camboriú</li>
+            <li>Levantamento de campo para projeto</li>
+            <li>Elaboração de mapa base</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Recuperação de áreas degradadas</span>
+            <span class="tag">Levantamento de campo</span>
+            <span class="tag">Cartografia básica</span>
+          </div>
+        </div>
+
+        <!-- PROJETO LONTRA -->
+        <div class="project-card" data-categories="ambiental">
+          <div class="project-header">
+            <h3>PROJETO LONTRA</h3>
+            <span class="client-tag">Instituto EKKO Brasil</span>
+          </div>
+          <ul class="project-list">
+            <li>Caracterização ambiental da Enseada de Bombinhas</li>
+            <li>Diagnóstico ambiental e plano estratégico de recuperação</li>
+            <li>Monitoramento de fauna – Lagoas do Sul (Ilha de Florianópolis)</li>
+            <li>Monitoramento de fauna – Lontra aquidauana</li>
+            <li>Monitoramento de fauna – PCH Caconde</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Monitoramento de fauna</span>
+            <span class="tag">Conservação da biodiversidade</span>
+            <span class="tag">Diagnóstico ambiental</span>
+          </div>
+        </div>
+
+        <!-- CONAM -->
+        <div class="project-card" data-categories="ambiental,licenciamento">
+          <div class="project-header">
+            <h3>CONAM</h3>
+            <span class="client-tag">Gestão Ambiental</span>
+          </div>
+          <ul class="project-list">
+            <li>Avaliação preliminar de áreas contaminadas</li>
+            <li>Investigação confirmatória e detalhada</li>
+            <li>Delimitação da pluma de contaminação</li>
+            <li>Pontos de monitoramento</li>
+            <li>EIA/RIMA – Aeroporto Executivo Catarina</li>
+            <li>Estudo de risco à saúde humana</li>
+            <li>Integração com sistemas de aplicação ambiental</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Áreas contaminadas</span>
+            <span class="tag">Gestão de riscos ambientais</span>
+            <span class="tag">Infraestrutura aeroportuária</span>
+          </div>
+        </div>
+
+        <!-- TERRA SANEAMENTO -->
+        <div class="project-card" data-categories="ambiental,licenciamento">
+          <div class="project-header">
+            <h3>TERRA SANEAMENTO</h3>
+            <span class="client-tag">Resíduos Sólidos</span>
+          </div>
+          <ul class="project-list">
+            <li>RAP – Obras de ampliação do Aterro Sanitário de Indaiatuba</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Aterro sanitário</span>
+            <span class="tag">RAP</span>
+            <span class="tag">Gestão de resíduos sólidos</span>
+          </div>
+        </div>
+
+        <!-- REDE SUSTENTABILIDADE -->
+        <div class="project-card" data-categories="publico">
+          <div class="project-header">
+            <h3>REDE SUSTENTABILIDADE</h3>
+            <span class="client-tag">Política</span>
+          </div>
+          <ul class="project-list">
+            <li>Elaboração de mapas eleitorais políticos</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Cartografia eleitoral</span>
+            <span class="tag">Análise territorial política</span>
+            <span class="tag">Geoprocessamento aplicado</span>
+          </div>
+        </div>
+
+        <!-- JOÃO PAULO RIBEIRO -->
+        <div class="project-card" data-categories="publico">
+          <div class="project-header">
+            <h3>JOÃO PAULO RIBEIRO</h3>
+            <span class="client-tag">Câmara dos Deputados</span>
+          </div>
+          <ul class="project-list">
+            <li>Projeto de uso e ocupação do solo (série temporal de 4 anos)</li>
+            <li>Mapas de apresentação para a Câmara dos Deputados</li>
+            <li>Estudos e mapas de hidrografia, curvas de nível, APPs, uso do solo</li>
+            <li>Análise de sub-bacias e microbacias</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Uso e ocupação do solo</span>
+            <span class="tag">Hidrografia</span>
+            <span class="tag">Áreas de Preservação Permanente (APP)</span>
+          </div>
+        </div>
+
+        <!-- LACERTA -->
+        <div class="project-card" data-categories="cadastro,ambiental,licenciamento">
+          <div class="project-header">
+            <h3>LACERTA CONSULTORIA</h3>
+            <span class="client-tag">Projetos Ambientais</span>
+          </div>
+          <ul class="project-list">
+            <li>Elaboração de mapas temáticos diversos</li>
+            <li>Zoneamento ambiental</li>
+            <li>Cadastro Ambiental Rural (CAR)</li>
+            <li>Cadastro florestal de imóveis rurais</li>
+            <li>Mapas de vegetação e áreas afetadas</li>
+            <li>Mapas de localização</li>
+            <li>Diagnóstico ambiental</li>
+            <li>Terminal Portuário Ecopesa</li>
+            <li>Porto São Sebastião</li>
+            <li>Programa de Regularização Ambiental (PRA)</li>
+            <li>Planos de manejo e supressão vegetal</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Cadastro Ambiental Rural (CAR)</span>
+            <span class="tag">Zoneamento ecológico-econômico</span>
+            <span class="tag">Infraestrutura portuária</span>
+            <span class="tag">Programa de Regularização Ambiental (PRA)</span>
+          </div>
+        </div>
+
+        <!-- WORLEYPARSONS -->
+        <div class="project-card" data-categories="licenciamento,energia">
+          <div class="project-header">
+            <h3>WORLEYPARSONS</h3>
+            <span class="client-tag">Energia</span>
+          </div>
+          <ul class="project-list">
+            <li>RAP – Projeto GLP Embu</li>
+            <li>RAP – GLP Licenciamento Águas Crystal</li>
+            <li>RAP – Taboão da Serra</li>
+            <li>Estudo de Viabilidade Ambiental (EVA)</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">GLP</span>
+            <span class="tag">RAP</span>
+            <span class="tag">Estudo de viabilidade ambiental</span>
+          </div>
+        </div>
+
+        <!-- CH2M -->
+        <div class="project-card" data-categories="licenciamento">
+          <div class="project-header">
+            <h3>CH2M</h3>
+            <span class="client-tag">Logística</span>
+          </div>
+          <ul class="project-list">
+            <li>RAP – Condomínio Logístico Franco da Rocha</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Infraestrutura logística</span>
+            <span class="tag">RAP</span>
+            <span class="tag">Condomínio industrial</span>
+          </div>
+        </div>
+
+        <!-- JACOBS -->
+        <div class="project-card" data-categories="licenciamento,energia">
+          <div class="project-header">
+            <h3>JACOBS</h3>
+            <span class="client-tag">Energia</span>
+          </div>
+          <ul class="project-list">
+            <li>RAP – GLP Bandeirantes</li>
+            <li>RAP – Empreendimento GLP Guarulhos II</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">GLP</span>
+            <span class="tag">RAP</span>
+            <span class="tag">Infraestrutura energética</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-summary">
+        <div class="summary-card">
+          <h4>+30 Empresas</h4>
+          <p>Clientes atendidos</p>
+        </div>
+        <div class="summary-card">
+          <h4>15+ Anos</h4>
+          <p>Experiência acumulada</p>
+        </div>
+        <div class="summary-card">
+          <h4>50+ Projetos</h4>
+          <p>Concluídos com sucesso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacao" class="hero">
+    <div class="container">
+      <h2>Formação Acadêmica</h2>
+      <ul style="list-style-position: inside; margin-left: 20px;">
+        <li style="margin-bottom: 15px; padding-left: 10px;">Especialização em Geotecnologias e Desenvolvimento de SIG – PUC Minas (2025)</li>
+        <li style="margin-bottom: 15px; padding-left: 10px;">Graduação em Gestão Ambiental</li>
+        <li style="margin-bottom: 15px; padding-left: 10px;">Cursos complementares em SIG, QGIS, ArcGIS e Sensoriamento Remoto</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <div class="container">
+      <h3>Contato</h3>
+      <p>
+        LinkedIn: <a href="https://www.linkedin.com/in/anwar-sabbagh-6408b825/" target="_blank" rel="noopener">linkedin.com/in/anwar-sabbagh</a><br>
+        Brasil
+      </p>
+      <p>© 2026 – Anwar Sabbagh</p>
+    </div>
+  </footer>
+
+  <script>
+    // Filtro de projetos
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const projectCards = document.querySelectorAll('.project-card');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class de todos os botões
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Adiciona active ao botão clicado
+          this.classList.add('active');
+          
+          const filterValue = this.getAttribute('data-filter');
+          
+          // Filtra os projetos
+          projectCards.forEach(card => {
+            const categories = card.getAttribute('data-categories').split(',');
+            
+            if (filterValue === 'all' || categories.includes(filterValue)) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(20px)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+      
+      // Scroll suave para links internos
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
