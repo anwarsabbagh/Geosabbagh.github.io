@@ -1838,6 +1838,7 @@ análise de alcance geográfico do site.
 </div>
 </div>
 <div class="contact-form fade-in delay-1">
+<!-- URL CORRIGIDA - sem espaços extras -->
 <form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST">
 <div class="form-group">
 <label for="name">Nome Completo *</label>
@@ -1995,54 +1996,36 @@ card.style.display = 'none';
 // ===== VALIDAÇÃO DE FORMULÁRIO =====
 const contactForm = document.getElementById('contactForm');
 const emailInput = document.getElementById('email');
-
 if (emailInput) {
-  emailInput.addEventListener('blur', function() {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(this.value)) {
-      this.style.borderColor = '#e74c3c';
-    } else {
-      this.style.borderColor = '';
-    }
-  });
+emailInput.addEventListener('blur', function() {
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(this.value)) {
+this.style.borderColor = '#e74c3c';
+} else {
+this.style.borderColor = '';
 }
-
+});
+}
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value;
-    
-    // Validação
-    if (!name || !email || !service || !message) {
-      e.preventDefault();
-      alert('Por favor, preencha todos os campos obrigatórios.');
-      return;
-    }
-    
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      e.preventDefault();
-      alert('Por favor, insira um e-mail válido.');
-      emailInput.focus();
-      return;
-    }
-    
-    // Se passar na validação, permite o envio para o Formspree
-    // O Formspree redirecionará automaticamente após o envio
-  });
+contactForm.addEventListener('submit', function(e) {
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const service = document.getElementById('service').value;
+const message = document.getElementById('message').value;
+if (!name || !email || !service || !message) {
+e.preventDefault();
+alert('Por favor, preencha todos os campos obrigatórios.');
+return;
 }
-const serviceNames = {
-'licenciamento': 'Licenciamento Ambiental',
-'geoprocessamento': 'Geoprocessamento Avançado',
-'analise': 'Análises Espaciais e Diagnósticos',
-'mapas': 'Produção Cartográfica Técnica',
-'consultoria': 'Consultoria Estratégica em SIG',
-'outro': 'Outra Necessidade'
-};
-alert(`Obrigado, ${name}! Sua solicitação para "${serviceNames[service] || service}" foi recebida com sucesso. Entrarei em contato em até 24 horas úteis para discutirmos os detalhes.`);
-contactForm.reset();
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailRegex.test(email)) {
+e.preventDefault();
+alert('Por favor, insira um e-mail válido.');
+emailInput.focus();
+return;
+}
+// Se passar na validação, permite o envio para o Formspree
+// O Formspree redirecionará automaticamente após o envio
 });
 }
 // ===== DADOS COMPLETOS DOS PROJETOS =====
@@ -2387,20 +2370,24 @@ map.fitBounds(bounds, { padding: [50, 50] });
 clientsContainer.appendChild(clientCard);
 });
 }
-// ===== MAPA DE VISITANTES =====
+// ===== MAPA DE VISITANTES - CORRIGIDO =====
 const STORAGE_KEY = "geo_visitas_geosabbagh";
 let visitantesMap;
 let visitantesMarkers = L.featureGroup();
+
 function carregarHistoricoVisitantes() {
 return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
+
 function salvarHistoricoVisitantes(data) {
 localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
+
 function atualizarContadorVisitantes() {
 const historico = carregarHistoricoVisitantes();
 document.getElementById('contadorVisitantes').textContent = historico.length;
 }
+
 function initMapaVisitantes() {
 visitantesMap = L.map("visitantesMap").setView([-15, -55], 4);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -2411,6 +2398,7 @@ const pontos = carregarHistoricoVisitantes();
 adicionarMarcadoresVisitantes(pontos);
 atualizarContadorVisitantes();
 }
+
 function adicionarMarcadoresVisitantes(pontos) {
 visitantesMarkers.clearLayers();
 pontos.forEach((p, index) => {
@@ -2441,36 +2429,58 @@ maxZoom: 6
 });
 }
 }
+
 async function registrarVisita() {
 try {
 const historico = carregarHistoricoVisitantes();
-const ultimaVisita = historico[historico.length - 1];
 const agora = new Date();
-const ultimaData = ultimaVisita ? new Date(ultimaVisita.date) : null;
-// Evitar registrar múltiplas visitas do mesmo IP na mesma sessão
-if (ultimaVisita && ultimaVisita.ip === window.location.hostname && agora - ultimaData < 3600000) {
+const ipAtual = window.location.hostname;
+// Verifica se já existe uma visita recente do mesmo IP
+const visitaRecente = historico.find(v => 
+v.ip === ipAtual && 
+(agora - new Date(v.date)) < 3600000 // 1 hora
+);
+
+if (visitaRecente) {
+// Já registrou visita recentemente, não duplica
 return;
 }
+
+// Obtém localização do visitante
 const res = await fetch("https://ipapi.co/json/");
 const geo = await res.json();
-if (!geo.latitude || !geo.longitude) return;
+
+if (!geo.latitude || !geo.longitude) {
+// Se não conseguir obter localização, não registra
+return;
+}
+
+// Cria novo ponto de visita
 const novoPonto = {
 lat: geo.latitude,
 lng: geo.longitude,
-city: geo.city,
-region: geo.region,
-country: geo.country_name,
+city: geo.city || "Cidade desconhecida",
+region: geo.region || "Região desconhecida",
+country: geo.country_name || "País desconhecido",
 date: agora.toISOString(),
-ip: window.location.hostname
+ip: ipAtual
 };
+
+// Adiciona ao histórico
 historico.push(novoPonto);
 salvarHistoricoVisitantes(historico);
+
+// Atualiza contador e mapa
 atualizarContadorVisitantes();
 adicionarMarcadoresVisitantes(historico);
+
+console.log('✅ Nova visita registrada:', novoPonto);
+
 } catch (e) {
-console.error("Erro ao obter localização", e);
+console.error("❌ Erro ao registrar visita:", e);
 }
 }
+
 // ===== INICIALIZAR TUDO =====
 document.addEventListener('DOMContentLoaded', () => {
 atualizarEstatisticasGerais();
@@ -2496,6 +2506,3 @@ observer.observe(el);
 </script>
 </body>
 </html>
-
-
-
