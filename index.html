@@ -1838,7 +1838,7 @@ análise de alcance geográfico do site.
 </div>
 </div>
 <div class="contact-form fade-in delay-1">
-<form id="contactForm" action="https://formspree.io/f/mvzayqaj " method="POST">
+<form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST">
 <div class="form-group">
 <label for="name">Nome Completo *</label>
 <input type="text" id="name" class="form-control" required placeholder="Seu nome">
@@ -1995,33 +1995,43 @@ card.style.display = 'none';
 // ===== VALIDAÇÃO DE FORMULÁRIO =====
 const contactForm = document.getElementById('contactForm');
 const emailInput = document.getElementById('email');
+
 if (emailInput) {
-emailInput.addEventListener('blur', function() {
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-if (!emailRegex.test(this.value)) {
-this.style.borderColor = '#e74c3c';
-} else {
-this.style.borderColor = '';
+  emailInput.addEventListener('blur', function() {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(this.value)) {
+      this.style.borderColor = '#e74c3c';
+    } else {
+      this.style.borderColor = '';
+    }
+  });
 }
-});
-}
+
 if (contactForm) {
-contactForm.addEventListener('submit', function(e) {
-e.preventDefault();
-const name = document.getElementById('name').value;
-const email = document.getElementById('email').value;
-const company = document.getElementById('company').value;
-const service = document.getElementById('service').value;
-const message = document.getElementById('message').value;
-if (!name || !email || !service || !message) {
-alert('Por favor, preencha todos os campos obrigatórios.');
-return;
-}
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-if (!emailRegex.test(email)) {
-alert('Por favor, insira um e-mail válido.');
-emailInput.focus();
-return;
+  contactForm.addEventListener('submit', function(e) {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+    
+    // Validação
+    if (!name || !email || !service || !message) {
+      e.preventDefault();
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      e.preventDefault();
+      alert('Por favor, insira um e-mail válido.');
+      emailInput.focus();
+      return;
+    }
+    
+    // Se passar na validação, permite o envio para o Formspree
+    // O Formspree redirecionará automaticamente após o envio
+  });
 }
 const serviceNames = {
 'licenciamento': 'Licenciamento Ambiental',
@@ -2486,5 +2496,6 @@ observer.observe(el);
 </script>
 </body>
 </html>
+
 
 
