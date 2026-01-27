@@ -1838,8 +1838,7 @@ análise de alcance geográfico do site.
 </div>
 </div>
 <div class="contact-form fade-in delay-1">
-<!-- URL CORRIGIDA - sem espaços extras -->
-<form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST">
+<form id="contactForm">
 <div class="form-group">
 <label for="name">Nome Completo *</label>
 <input type="text" id="name" class="form-control" required placeholder="Seu nome">
@@ -1993,9 +1992,10 @@ card.style.display = 'none';
 });
 });
 });
-// ===== VALIDAÇÃO DE FORMULÁRIO =====
+// ===== VALIDAÇÃO E ENVIO DE FORMULÁRIO VIA FORMSPREE (JSON) =====
 const contactForm = document.getElementById('contactForm');
 const emailInput = document.getElementById('email');
+
 if (emailInput) {
 emailInput.addEventListener('blur', function() {
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -2006,26 +2006,77 @@ this.style.borderColor = '';
 }
 });
 }
+
 if (contactForm) {
-contactForm.addEventListener('submit', function(e) {
-const name = document.getElementById('name').value;
-const email = document.getElementById('email').value;
-const service = document.getElementById('service').value;
-const message = document.getElementById('message').value;
-if (!name || !email || !service || !message) {
+contactForm.addEventListener('submit', async function(e) {
 e.preventDefault();
+const name = document.getElementById('name').value.trim();
+const email = document.getElementById('email').value.trim();
+const company = document.getElementById('company').value.trim();
+const service = document.getElementById('service').value;
+const message = document.getElementById('message').value.trim();
+
+// Validação
+if (!name || !email || !service || !message) {
 alert('Por favor, preencha todos os campos obrigatórios.');
 return;
 }
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 if (!emailRegex.test(email)) {
-e.preventDefault();
 alert('Por favor, insira um e-mail válido.');
 emailInput.focus();
 return;
 }
-// Se passar na validação, permite o envio para o Formspree
-// O Formspree redirecionará automaticamente após o envio
+
+// Mapeamento do serviço para texto legível
+const serviceNames = {
+'licenciamento': 'Licenciamento Ambiental',
+'geoprocessamento': 'Geoprocessamento Avançado',
+'analise': 'Análises Espaciais e Diagnósticos',
+'mapas': 'Produção Cartográfica Técnica',
+'consultoria': 'Consultoria Estratégica em SIG',
+'outro': 'Outra Necessidade'
+};
+
+// Dados no formato JSON exigido pelo Formspree
+const formData = {
+name: name,
+email: email,
+company: company || 'Não informado',
+service: serviceNames[service] || service,
+message: message
+};
+
+try {
+// Envia para Formspree como JSON
+const response = await fetch('https://formspree.io/f/mvzayqaj', {
+method: 'POST',
+headers: {
+'Content-Type': 'application/json',
+'Accept': 'application/json'
+},
+body: JSON.stringify(formData)
+});
+
+const result = await response.json();
+
+if (response.ok) {
+// Sucesso - mostra mensagem e limpa formulário
+alert(`✅ Mensagem enviada com sucesso!\n\nObrigado, ${name}! Entrarei em contato em até 24 horas úteis para discutirmos seu projeto de "${serviceNames[service] || service}".`);
+contactForm.reset();
+// Opcional: rolar para topo após envio
+window.scrollTo({ top: 0, behavior: 'smooth' });
+} else {
+// Erro da API
+alert(`❌ Erro ao enviar mensagem:\n${result.error || 'Tente novamente mais tarde.'}`);
+console.error('Erro Formspree:', result);
+}
+} catch (error) {
+// Erro de rede/conexão
+alert('❌ Erro de conexão. Verifique sua internet e tente novamente.');
+console.error('Erro de envio:', error);
+}
 });
 }
 // ===== DADOS COMPLETOS DOS PROJETOS =====
@@ -2435,6 +2486,7 @@ try {
 const historico = carregarHistoricoVisitantes();
 const agora = new Date();
 const ipAtual = window.location.hostname;
+
 // Verifica se já existe uma visita recente do mesmo IP
 const visitaRecente = historico.find(v => 
 v.ip === ipAtual && 
@@ -2443,6 +2495,7 @@ v.ip === ipAtual &&
 
 if (visitaRecente) {
 // Já registrou visita recentemente, não duplica
+console.log('⚠️ Visita recente já registrada, ignorando...');
 return;
 }
 
@@ -2451,7 +2504,7 @@ const res = await fetch("https://ipapi.co/json/");
 const geo = await res.json();
 
 if (!geo.latitude || !geo.longitude) {
-// Se não conseguir obter localização, não registra
+console.log('⚠️ Não foi possível obter localização do visitante');
 return;
 }
 
