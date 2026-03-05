@@ -1,27 +1,16 @@
-document.addEventListener('DOMContentLoaded', function () {
+// Scroll suave
 
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', function () {
+anchor.addEventListener("click", function(e){
 
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
+e.preventDefault()
 
-      const filterValue = this.getAttribute('data-filter');
+document.querySelector(this.getAttribute("href"))
+.scrollIntoView({
+behavior:"smooth"
+})
 
-      projectCards.forEach(card => {
-        const categories = card.getAttribute('data-categories').split(',');
+})
 
-        if (filterValue === 'all' || categories.includes(filterValue)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-    });
-  });
-
-});
+})
