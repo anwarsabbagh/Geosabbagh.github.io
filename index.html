@@ -26,7 +26,14 @@
     <header>
         <div class="container header-inner">
             <div class="logo">GeoSabbagh</div>
-            <nav>
+            
+            <!-- Menu Hamburguer para mobile -->
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav id="mainNav">
+                <a href="#home">Início</a>
                 <a href="#sobre">Sobre</a>
                 <a href="#servicos">Serviços</a>
                 <a href="#contato">Contato</a>
@@ -34,23 +41,25 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
-            <h1>Geoprocessamento aplicado à consultoria ambiental</h1>
-            <p>Especialista em análise espacial, SIG e produção de mapas técnicos para licenciamento ambiental, estudos territoriais e suporte a consultorias ambientais em todo o Brasil.</p>
-            <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
-            <a href="#servicos" class="btn btn-outline">Conhecer serviços</a>
+            <h1 class="fade-in">Geoprocessamento aplicado à consultoria ambiental</h1>
+            <p class="fade-in">Especialista em análise espacial, SIG e produção de mapas técnicos para licenciamento ambiental, estudos territoriais e suporte a consultorias ambientais em todo o Brasil.</p>
+            <div class="fade-in">
+                <a href="#contato" class="btn btn-primary">Solicitar orçamento</a>
+                <a href="#servicos" class="btn btn-outline">Conhecer serviços</a>
+            </div>
         </div>
     </section>
 
     <section class="sobre" id="sobre">
         <div class="container sobre-grid">
-            <div>
+            <div class="fade-in">
                 <h2>Sobre a GeoSabbagh</h2>
                 <p>A GeoSabbagh é uma consultoria especializada em geoprocessamento aplicado à área ambiental, oferecendo suporte técnico para empresas de consultoria, estudos ambientais e projetos territoriais.</p>
                 <p>Com mais de uma década de experiência na área, o trabalho envolve análise espacial, produção de mapas técnicos, tratamento de dados geográficos e apoio em processos de licenciamento ambiental.</p>
             </div>
-            <div>
+            <div class="fade-in">
                 <h3>Diferenciais</h3>
                 <div class="diferenciais-grid">
                     <div class="diff">Experiência em projetos ambientais</div>
@@ -64,50 +73,50 @@
 
     <section class="servicos" id="servicos">
         <div class="container">
-            <h2>Serviços</h2>
+            <h2 class="fade-in">Serviços</h2>
             <br>
             <div class="servicos-grid">
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-map"></i>
                     <h3>Produção de mapas técnicos</h3>
                     <p>Mapas para estudos ambientais, relatórios técnicos e documentação de licenciamento.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-layer-group"></i>
                     <h3>Análise espacial</h3>
                     <p>Processamento e interpretação de dados geográficos para suporte à tomada de decisão.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-earth-americas"></i>
                     <h3>Geoprocessamento ambiental</h3>
                     <p>Integração de dados ambientais, territoriais e geográficos em ambiente SIG.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-database"></i>
                     <h3>Tratamento de dados geográficos</h3>
                     <p>Organização, conversão e padronização de bases cartográficas e dados espaciais.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-water"></i>
                     <h3>Delimitação de bacias hidrográficas</h3>
                     <p>Identificação de bacias, sub-bacias e rede de drenagem utilizando modelos digitais de terreno.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-droplet"></i>
                     <h3>Modelagem hidrológica</h3>
                     <p>Análise hidrológica e espacial aplicada a estudos ambientais e drenagem.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-mountain"></i>
                     <h3>Análise de relevo e declividade</h3>
                     <p>Modelagem de relevo, hipsometria e declividade para diagnósticos do meio físico.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-tree"></i>
                     <h3>Mapeamento de uso e cobertura da terra</h3>
                     <p>Classificação de uso do solo e cobertura vegetal a partir de imagens de satélite.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fa-solid fa-leaf"></i>
                     <h3>Análise de fragmentação florestal</h3>
                     <p>Avaliação da estrutura da paisagem e fragmentação de habitats naturais.</p>
@@ -118,15 +127,15 @@
 
     <section class="cta">
         <div class="container">
-            <h2>Precisa de suporte em geoprocessamento?</h2>
-            <p>Entre em contato para discutir seu projeto ambiental ou demanda técnica.</p>
-            <a href="#contato" class="btn btn-primary">Falar sobre um projeto</a>
+            <h2 class="fade-in">Precisa de suporte em geoprocessamento?</h2>
+            <p class="fade-in">Entre em contato para discutir seu projeto ambiental ou demanda técnica.</p>
+            <a href="#contato" class="btn btn-primary fade-in">Falar sobre um projeto</a>
         </div>
     </section>
 
     <section class="contato" id="contato">
         <div class="container contato-grid">
-            <div>
+            <div class="fade-in">
                 <h2>Contato</h2>
                 <p>Entre em contato para solicitar orçamento ou discutir um projeto.</p>
                 <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:contato.geosabbagh@gmail.com">contato.geosabbagh@gmail.com</a></p>
@@ -134,20 +143,31 @@
                 <p><i class="fa-brands fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/geosabbagh" target="_blank">github.com/geosabbagh</a></p>
                 <p><i class="fa-solid fa-location-dot"></i> <strong>Localização:</strong> São Paulo – Brasil</p>
             </div>
-            <div class="form">
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="Email">
-                <textarea rows="5" placeholder="Mensagem"></textarea>
-                <button>Enviar mensagem</button>
+            <div class="form fade-in">
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Nome" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <textarea id="message" rows="5" placeholder="Mensagem" required></textarea>
+                    <button type="submit" id="submitBtn">Enviar mensagem</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
             </div>
         </div>
     </section>
 
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="back-to-top" title="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <footer>
         <div class="container">
-            © 2026 GeoSabbagh – Consultoria em Geoprocessamento
+            <p>© 2026 GeoSabbagh – Consultoria em Geoprocessamento</p>
+            <p class="footer-dev">Desenvolvido com <i class="fas fa-heart"></i> para o meio ambiente</p>
         </div>
     </footer>
 
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
