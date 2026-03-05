@@ -272,24 +272,6 @@
             box-shadow: 0 0 0 3px rgba(26,55,40,0.1);
         }
 
-        .form-group input[type="file"] {
-            padding: 8px;
-            border: 2px dashed #ddd;
-            background: #f9f9f9;
-            cursor: pointer;
-        }
-
-        .form-group input[type="file"]:hover {
-            border-color: var(--verde);
-        }
-
-        .form-group small {
-            display: block;
-            margin-top: 5px;
-            color: #666;
-            font-size: 0.8rem;
-        }
-
         .btn-submit {
             background: var(--verde);
             color: white;
@@ -315,12 +297,26 @@
             transform: none;
         }
 
+        /* Mensagens de feedback */
         .form-message {
             margin-top: 20px;
-            padding: 12px;
+            padding: 15px;
             border-radius: var(--radius);
             display: none;
             font-weight: 500;
+            text-align: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .form-message.success {
@@ -337,10 +333,90 @@
             border: 1px solid #f5c6cb;
         }
 
+        .form-message.info {
+            display: block;
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
         .required-field::after {
             content: "*";
             color: #ff4444;
             margin-left: 4px;
+        }
+
+        /* Modal de sucesso (opcional - mais elegante) */
+        .success-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .success-modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            animation: scaleIn 0.3s ease;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-modal-content i {
+            font-size: 60px;
+            color: var(--verde);
+            margin-bottom: 20px;
+        }
+
+        .success-modal-content h3 {
+            margin-bottom: 10px;
+            color: var(--verde);
+        }
+
+        .success-modal-content p {
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        .success-modal-content button {
+            background: var(--verde);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .success-modal-content button:hover {
+            background: var(--verde2);
+            transform: translateY(-2px);
         }
 
         /* LINKS CONTATO */
@@ -464,6 +540,11 @@
             
             .formspree-form {
                 padding: 20px;
+            }
+            
+            .success-modal-content {
+                margin: 20px;
+                padding: 30px;
             }
         }
 
@@ -601,8 +682,9 @@
                 <p><i class="fa-solid fa-location-dot"></i> <strong>Localização:</strong> São Paulo – Brasil</p>
             </div>
             <div class="fade-in">
-                <!-- Formulário Formspree integrado -->
-                <form class="formspree-form" action="https://formspree.io/f/mvzayqaj" method="POST" enctype="multipart/form-data" id="contactForm">
+                <!-- Formulário Formspree sem upload de arquivo (compatível com plano gratuito) -->
+                <form class="formspree-form" action="https://formspree.io/f/mvzayqaj" method="POST" id="contactForm">
+                    <!-- Campos obrigatórios -->
                     <div class="form-group">
                         <label for="name" class="required-field">Nome completo</label>
                         <input type="text" id="name" name="name" placeholder="Seu nome" required>
@@ -634,27 +716,32 @@
                         <textarea id="message" name="message" rows="5" placeholder="Descreva sua necessidade ou projeto..." required></textarea>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="upload">Anexar arquivo (opcional)</label>
-                        <input type="file" id="upload" name="upload" accept=".pdf,.doc,.docx,.jpg,.png,.zip,.gpkg,.shp">
-                        <small>Arquivos permitidos: PDF, DOC, JPG, PNG, ZIP, SHP (até 10MB)</small>
-                    </div>
-                    
-                    <!-- Campo honeypot anti-spam -->
+                    <!-- Campo honeypot anti-spam (escondido) -->
                     <input type="text" name="_gotcha" style="display:none">
                     
-                    <!-- Redirecionamento após envio (opcional) -->
-                    <input type="hidden" name="_next" value="https://geosabbagh.github.io/obrigado">
+                    <!-- Impede redirecionamento - isso é o mais importante! -->
+                    <input type="hidden" name="_next" value="">
                     
                     <button type="submit" class="btn-submit" id="submitBtn">
                         <i class="fa-solid fa-paper-plane"></i> Enviar mensagem
                     </button>
                     
+                    <!-- Container para mensagens de feedback -->
                     <div id="formMessage" class="form-message"></div>
                 </form>
             </div>
         </div>
     </section>
+
+    <!-- Modal de sucesso (não sai do site) -->
+    <div id="successModal" class="success-modal">
+        <div class="success-modal-content">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Mensagem enviada!</h3>
+            <p>Obrigado pelo contato. Responderei em até 24 horas úteis.</p>
+            <button onclick="fecharModal()">Continuar no site</button>
+        </div>
+    </div>
 
     <!-- Botão Voltar ao Topo -->
     <button id="backToTop" class="back-to-top" title="Voltar ao topo">
@@ -679,7 +766,6 @@
             if (menuToggle) {
                 menuToggle.addEventListener('click', function() {
                     mainNav.classList.toggle('active');
-                    // Alterna ícone do menu
                     const icon = this.querySelector('i');
                     if (icon.classList.contains('fa-bars')) {
                         icon.classList.remove('fa-bars');
@@ -770,69 +856,94 @@
                 });
             }
             
-            // Verifica elementos na carga inicial
             checkFade();
-            
-            // Verifica durante o scroll
             window.addEventListener('scroll', checkFade);
             
-            // ==================== VALIDAÇÃO DO FORMULÁRIO ====================
+            // ==================== FORMULÁRIO COM AJAX (NÃO SAI DO SITE) ====================
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const formMessage = document.getElementById('formMessage');
+            const successModal = document.getElementById('successModal');
             
             if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    // Validação básica antes do envio
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault(); // SEMPRE prevenir o envio padrão
+                    
+                    // Validação dos campos
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const subject = document.getElementById('subject').value;
                     const message = document.getElementById('message').value.trim();
                     
                     if (!name || !email || !subject || !message) {
-                        e.preventDefault(); // Impede o envio
-                        showFormMessage('Por favor, preencha todos os campos obrigatórios.', 'error');
+                        mostrarMensagem('Por favor, preencha todos os campos obrigatórios.', 'error');
                         return;
                     }
                     
-                    if (!isValidEmail(email)) {
-                        e.preventDefault();
-                        showFormMessage('Por favor, insira um email válido.', 'error');
+                    if (!validarEmail(email)) {
+                        mostrarMensagem('Por favor, insira um email válido.', 'error');
                         return;
                     }
                     
-                    // Validação do arquivo (opcional)
-                    const fileInput = document.getElementById('upload');
-                    if (fileInput.files.length > 0) {
-                        const fileSize = fileInput.files[0].size / 1024 / 1024; // em MB
-                        if (fileSize > 10) {
-                            e.preventDefault();
-                            showFormMessage('O arquivo não pode ser maior que 10MB.', 'error');
-                            return;
-                        }
-                    }
+                    // Preparar dados do formulário
+                    const formData = new FormData(contactForm);
                     
-                    // Se passou na validação, desabilita o botão
+                    // Desabilitar botão e mostrar loading
                     submitBtn.disabled = true;
                     submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
+                    
+                    try {
+                        // Enviar para o Formspree via AJAX (fetch)
+                        const response = await fetch('https://formspree.io/f/mvzayqaj', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+                        
+                        if (response.ok) {
+                            // Sucesso! Mostrar modal sem sair da página
+                            successModal.style.display = 'flex';
+                            contactForm.reset(); // Limpar formulário
+                            
+                            // Esconder mensagem se existir
+                            if (formMessage) {
+                                formMessage.style.display = 'none';
+                            }
+                        } else {
+                            // Erro na resposta
+                            const data = await response.json();
+                            throw new Error(data.error || 'Erro ao enviar mensagem');
+                        }
+                    } catch (error) {
+                        console.error('Erro:', error);
+                        mostrarMensagem('Ocorreu um erro ao enviar. Tente novamente ou envie um email direto.', 'error');
+                    } finally {
+                        // Reabilitar botão
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+                    }
                 });
             }
             
-            function isValidEmail(email) {
+            // Função para validar email
+            function validarEmail(email) {
                 const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return re.test(email);
             }
             
-            function showFormMessage(text, type) {
+            // Função para mostrar mensagens no formulário
+            function mostrarMensagem(texto, tipo) {
                 if (!formMessage) return;
                 
-                formMessage.textContent = text;
-                formMessage.className = `form-message ${type}`;
+                formMessage.textContent = texto;
+                formMessage.className = `form-message ${tipo}`;
                 
                 // Scroll suave até a mensagem
                 formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 
-                // Remove a mensagem após 5 segundos
+                // Esconder após 5 segundos
                 setTimeout(() => {
                     formMessage.style.display = 'none';
                 }, 5000);
@@ -860,10 +971,23 @@
                 });
             });
             
-            // ==================== ESTATÍSTICAS DE CARREGAMENTO ====================
             console.log('✅ GeoSabbagh site carregado com sucesso!');
-            console.log(`📱 Largura da tela: ${window.innerWidth}px`);
-            console.log(`🕒 Horário de carregamento: ${new Date().toLocaleString('pt-BR')}`);
+        });
+        
+        // Função global para fechar o modal
+        function fecharModal() {
+            const modal = document.getElementById('successModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // Fechar modal clicando fora dele
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('successModal');
+            if (event.target === modal) {
+                fecharModal();
+            }
         });
     </script>
 </body>
