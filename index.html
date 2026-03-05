@@ -395,7 +395,7 @@
             text-decoration: underline;
         }
 
-        /* FORMULÁRIO CORRIGIDO */
+        /* FORMULÁRIO */
         .form-contato {
             background: white;
             padding: 35px;
@@ -671,13 +671,13 @@
 </head>
 <body>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <!-- Google Analytics com seu ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=386715882"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', '386715882');
     </script>
 
     <header>
@@ -802,7 +802,7 @@
             </div>
             
             <div class="form-contato fade-in">
-                <!-- FORMULÁRIO CORRIGIDO E TESTADO -->
+                <!-- FORMULÁRIO FUNCIONAL -->
                 <form id="contactForm">
                     <div class="form-group">
                         <label class="required-field">Nome completo</label>
@@ -842,7 +842,6 @@
                     <div id="formMessage" class="form-message"></div>
                 </form>
                 
-                <!-- ALTERNATIVA: Formulário direto (caso o JavaScript falhe) -->
                 <div style="margin-top: 20px; text-align: center;">
                     <p style="color: #666; font-size: 0.9rem;">Ou envie um email direto para <strong>contato.geosabbagh@gmail.com</strong></p>
                 </div>
@@ -868,7 +867,7 @@
         <div class="container">
             <p>© 2026 GeoSabbagh – Consultoria em Geoprocessamento</p>
             <p>📍 Atendimento em todo Brasil</p>
-            <p class="footer-dev">Desenvolvido por Anwar Sabbagh</p>
+            <p class="footer-dev">Desenvolvido com <i class="fas fa-heart"></i> para o meio ambiente</p>
         </div>
     </footer>
 
@@ -1015,6 +1014,14 @@
                             
                             if (formMessage) {
                                 formMessage.style.display = 'none';
+                            }
+                            
+                            // Evento de conversão para Google Analytics
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'form_submit', {
+                                    'event_category': 'contato',
+                                    'event_label': 'formulario'
+                                });
                             }
                         } else {
                             throw new Error('Erro ao enviar');
