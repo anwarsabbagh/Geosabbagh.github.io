@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>GeoSabbagh | Geoprocessamento e SIG para Consultoria Ambiental</title>
-
     <meta name="description" content="Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental, estudos técnicos e projetos ambientais em todo o Brasil.">
 
     <!-- Fonts -->
@@ -17,10 +14,409 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <style>
+        :root {
+            --verde: #1A3728;
+            --verde2: #2C5F46;
+            --dourado: #B8843A;
+            --creme: #F4F0E8;
+            --texto: #2A2F28;
+            --radius: 10px;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--texto);
+            background: #FBF9F5;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 25px;
+        }
+
+        section {
+            padding: 90px 0;
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            border-bottom: 1px solid #eee;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--verde);
+        }
+
+        /* Menu Hamburguer */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--verde);
+        }
+
+        nav a {
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: .9rem;
+            color: #444;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--verde);
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--verde);
+            color: white;
+            padding-top: 140px;
+            padding-bottom: 120px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 520px;
+            opacity: .8;
+            margin-bottom: 30px;
+        }
+
+        /* BOTÕES */
+        .btn {
+            padding: 14px 26px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: var(--dourado);
+            color: white;
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+            margin-left: 10px;
+        }
+
+        /* SOBRE */
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .sobre p {
+            margin-bottom: 15px;
+        }
+
+        /* SERVIÇOS */
+        .servicos {
+            background: var(--creme);
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-color: var(--dourado);
+        }
+
+        .card i {
+            font-size: 22px;
+            color: var(--verde);
+            margin-bottom: 15px;
+        }
+
+        /* DIFERENCIAIS */
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .diff {
+            padding: 25px;
+            border-radius: var(--radius);
+            border: 1px solid #eee;
+            transition: all 0.3s;
+        }
+
+        .diff:hover {
+            background: var(--creme);
+            border-color: var(--dourado);
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--verde);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            opacity: .8;
+            margin-bottom: 30px;
+        }
+
+        /* CONTATO */
+        .contato-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            transition: border-color 0.3s;
+        }
+
+        .form input:focus,
+        .form textarea:focus {
+            outline: none;
+            border-color: var(--verde);
+        }
+
+        .form button {
+            background: var(--verde);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            width: 100%;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .form button:hover {
+            background: var(--verde2);
+            transform: translateY(-2px);
+        }
+
+        .form-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: var(--radius);
+            display: none;
+        }
+
+        .form-message.success {
+            display: block;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            display: block;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* LINKS CONTATO */
+        .contato a {
+            color: var(--verde2);
+            text-decoration: none;
+        }
+
+        .contato a:hover {
+            text-decoration: underline;
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--dourado);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            z-index: 998;
+        }
+
+        .back-to-top:hover {
+            background: var(--verde);
+            transform: translateY(-5px);
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        /* ANIMAÇÕES */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 40px 0;
+            font-size: .9rem;
+            text-align: center;
+        }
+
+        .footer-dev {
+            margin-top: 10px;
+            font-size: 0.8rem;
+        }
+
+        .footer-dev i {
+            color: #ff6b6b;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav a {
+                display: block;
+                margin: 15px 0;
+                text-align: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .sobre-grid,
+            .contato-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 10px;
+                display: inline-block;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
 <body>
 
     <header>
@@ -167,7 +563,205 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        // Aguarda o DOM carregar completamente
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // ==================== MENU MOBILE ====================
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    // Alterna ícone do menu
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('fa-bars')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Fecha o menu ao clicar em um link
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        mainNav.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
+            
+            // ==================== HEADER SCROLL EFFECT ====================
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // ==================== BACK TO TOP BUTTON ====================
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // ==================== ACTIVE MENU LINK ====================
+            function updateActiveLink() {
+                const sections = document.querySelectorAll('section');
+                const scrollPosition = window.scrollY + 100;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveLink);
+            
+            // ==================== SCROLL REVEAL ANIMATION ====================
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+                    
+                    if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Verifica elementos na carga inicial
+            checkFade();
+            
+            // Verifica durante o scroll
+            window.addEventListener('scroll', checkFade);
+            
+            // ==================== FORMULÁRIO DE CONTATO ====================
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validação simples
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const message = document.getElementById('message').value.trim();
+                    
+                    if (!name || !email || !message) {
+                        showFormMessage('Por favor, preencha todos os campos.', 'error');
+                        return;
+                    }
+                    
+                    if (!isValidEmail(email)) {
+                        showFormMessage('Por favor, insira um email válido.', 'error');
+                        return;
+                    }
+                    
+                    // Simula envio (aqui você pode integrar com um backend real)
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Enviando...';
+                    
+                    setTimeout(() => {
+                        showFormMessage('Mensagem enviada com sucesso! Em breve entraremos em contato.', 'success');
+                        contactForm.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Enviar mensagem';
+                    }, 1500);
+                });
+            }
+            
+            function isValidEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+            
+            function showFormMessage(text, type) {
+                if (!formMessage) {
+                    // Cria elemento se não existir
+                    const newFormMessage = document.createElement('div');
+                    newFormMessage.id = 'formMessage';
+                    newFormMessage.className = `form-message ${type}`;
+                    newFormMessage.textContent = text;
+                    contactForm.appendChild(newFormMessage);
+                } else {
+                    formMessage.textContent = text;
+                    formMessage.className = `form-message ${type}`;
+                }
+                
+                // Remove a mensagem após 5 segundos
+                setTimeout(() => {
+                    const msg = document.getElementById('formMessage');
+                    if (msg) {
+                        msg.style.display = 'none';
+                    }
+                }, 5000);
+            }
+            
+            // ==================== ANO ATUAL NO FOOTER ====================
+            const footerYear = document.querySelector('footer p:first-child');
+            if (footerYear) {
+                const currentYear = new Date().getFullYear();
+                footerYear.innerHTML = `© ${currentYear} GeoSabbagh – Consultoria em Geoprocessamento`;
+            }
+            
+            // ==================== SCROLL SUAVE PARA LINKS ====================
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // ==================== ESTATÍSTICAS DE CARREGAMENTO ====================
+            console.log('✅ GeoSabbagh site carregado com sucesso!');
+            console.log(`📱 Largura da tela: ${window.innerWidth}px`);
+            console.log(`🕒 Horário de carregamento: ${new Date().toLocaleString('pt-BR')}`);
+        });
+    </script>
 </body>
 </html>
