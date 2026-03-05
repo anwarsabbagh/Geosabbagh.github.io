@@ -232,44 +232,95 @@
             gap: 60px;
         }
 
-        .form input,
-        .form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
+        /* Estilos para o formulário Formspree */
+        .formspree-form {
+            background: white;
+            padding: 30px;
             border-radius: var(--radius);
-            transition: border-color 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
-        .form input:focus,
-        .form textarea:focus {
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--verde);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
+            border-color: var(--verde);
+            box-shadow: 0 0 0 3px rgba(26,55,40,0.1);
+        }
+
+        .form-group input[type="file"] {
+            padding: 8px;
+            border: 2px dashed #ddd;
+            background: #f9f9f9;
+            cursor: pointer;
+        }
+
+        .form-group input[type="file"]:hover {
             border-color: var(--verde);
         }
 
-        .form button {
+        .form-group small {
+            display: block;
+            margin-top: 5px;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .btn-submit {
             background: var(--verde);
             color: white;
             border: none;
-            padding: 14px;
+            padding: 14px 28px;
             border-radius: var(--radius);
             cursor: pointer;
             width: 100%;
             font-weight: 600;
-            transition: background 0.3s, transform 0.3s;
+            font-size: 1rem;
+            transition: all 0.3s;
         }
 
-        .form button:hover {
+        .btn-submit:hover {
             background: var(--verde2);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .form-message {
-            margin-top: 15px;
-            padding: 10px;
+            margin-top: 20px;
+            padding: 12px;
             border-radius: var(--radius);
             display: none;
+            font-weight: 500;
         }
 
         .form-message.success {
@@ -284,6 +335,12 @@
             background: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
+        }
+
+        .required-field::after {
+            content: "*";
+            color: #ff4444;
+            margin-left: 4px;
         }
 
         /* LINKS CONTATO */
@@ -403,6 +460,10 @@
                 right: 20px;
                 width: 40px;
                 height: 40px;
+            }
+            
+            .formspree-form {
+                padding: 20px;
             }
         }
 
@@ -539,14 +600,58 @@
                 <p><i class="fa-brands fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/geosabbagh" target="_blank">github.com/geosabbagh</a></p>
                 <p><i class="fa-solid fa-location-dot"></i> <strong>Localização:</strong> São Paulo – Brasil</p>
             </div>
-            <div class="form fade-in">
-                <form id="contactForm">
-                    <input type="text" id="name" placeholder="Nome" required>
-                    <input type="email" id="email" placeholder="Email" required>
-                    <textarea id="message" rows="5" placeholder="Mensagem" required></textarea>
-                    <button type="submit" id="submitBtn">Enviar mensagem</button>
+            <div class="fade-in">
+                <!-- Formulário Formspree integrado -->
+                <form class="formspree-form" action="https://formspree.io/f/mvzayqaj" method="POST" enctype="multipart/form-data" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="required-field">Nome completo</label>
+                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required-field">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefone (opcional)</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="required-field">Assunto</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Selecione...</option>
+                            <option value="orcamento">Solicitar orçamento</option>
+                            <option value="projeto">Discutir projeto</option>
+                            <option value="duvida">Tirar dúvida</option>
+                            <option value="outro">Outro assunto</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="required-field">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Descreva sua necessidade ou projeto..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="upload">Anexar arquivo (opcional)</label>
+                        <input type="file" id="upload" name="upload" accept=".pdf,.doc,.docx,.jpg,.png,.zip,.gpkg,.shp">
+                        <small>Arquivos permitidos: PDF, DOC, JPG, PNG, ZIP, SHP (até 10MB)</small>
+                    </div>
+                    
+                    <!-- Campo honeypot anti-spam -->
+                    <input type="text" name="_gotcha" style="display:none">
+                    
+                    <!-- Redirecionamento após envio (opcional) -->
+                    <input type="hidden" name="_next" value="https://geosabbagh.github.io/obrigado">
+                    
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <i class="fa-solid fa-paper-plane"></i> Enviar mensagem
+                    </button>
+                    
+                    <div id="formMessage" class="form-message"></div>
                 </form>
-                <div id="formMessage" class="form-message"></div>
             </div>
         </div>
     </section>
@@ -671,40 +776,45 @@
             // Verifica durante o scroll
             window.addEventListener('scroll', checkFade);
             
-            // ==================== FORMULÁRIO DE CONTATO ====================
+            // ==================== VALIDAÇÃO DO FORMULÁRIO ====================
             const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
             const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
             
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Validação simples
+                    // Validação básica antes do envio
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value;
                     const message = document.getElementById('message').value.trim();
                     
-                    if (!name || !email || !message) {
-                        showFormMessage('Por favor, preencha todos os campos.', 'error');
+                    if (!name || !email || !subject || !message) {
+                        e.preventDefault(); // Impede o envio
+                        showFormMessage('Por favor, preencha todos os campos obrigatórios.', 'error');
                         return;
                     }
                     
                     if (!isValidEmail(email)) {
+                        e.preventDefault();
                         showFormMessage('Por favor, insira um email válido.', 'error');
                         return;
                     }
                     
-                    // Simula envio (aqui você pode integrar com um backend real)
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Enviando...';
+                    // Validação do arquivo (opcional)
+                    const fileInput = document.getElementById('upload');
+                    if (fileInput.files.length > 0) {
+                        const fileSize = fileInput.files[0].size / 1024 / 1024; // em MB
+                        if (fileSize > 10) {
+                            e.preventDefault();
+                            showFormMessage('O arquivo não pode ser maior que 10MB.', 'error');
+                            return;
+                        }
+                    }
                     
-                    setTimeout(() => {
-                        showFormMessage('Mensagem enviada com sucesso! Em breve entraremos em contato.', 'success');
-                        contactForm.reset();
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Enviar mensagem';
-                    }, 1500);
+                    // Se passou na validação, desabilita o botão
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
                 });
             }
             
@@ -714,24 +824,17 @@
             }
             
             function showFormMessage(text, type) {
-                if (!formMessage) {
-                    // Cria elemento se não existir
-                    const newFormMessage = document.createElement('div');
-                    newFormMessage.id = 'formMessage';
-                    newFormMessage.className = `form-message ${type}`;
-                    newFormMessage.textContent = text;
-                    contactForm.appendChild(newFormMessage);
-                } else {
-                    formMessage.textContent = text;
-                    formMessage.className = `form-message ${type}`;
-                }
+                if (!formMessage) return;
+                
+                formMessage.textContent = text;
+                formMessage.className = `form-message ${type}`;
+                
+                // Scroll suave até a mensagem
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 
                 // Remove a mensagem após 5 segundos
                 setTimeout(() => {
-                    const msg = document.getElementById('formMessage');
-                    if (msg) {
-                        msg.style.display = 'none';
-                    }
+                    formMessage.style.display = 'none';
                 }, 5000);
             }
             
