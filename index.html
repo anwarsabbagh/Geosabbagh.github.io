@@ -1,18 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- META TAGS BÁSICAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeoSabbagh | Geoprocessamento e SIG para Consultoria Ambiental</title>
-    <meta name="description" content="Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental, estudos técnicos e projetos ambientais em todo o Brasil.">
-
-    <!-- Fonts -->
+    
+    <!-- TÍTULO OTIMIZADO (60 caracteres) -->
+    <title>GeoSabbagh | Geoprocessamento e Consultoria Ambiental em SIG</title>
+    
+    <!-- META DESCRIPTION OTIMIZADA (160 caracteres) -->
+    <meta name="description" content="Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental. Atendemos todo Brasil com mapas técnicos, estudos ambientais e suporte a consultorias.">
+    
+    <!-- PALAVRAS-CHAVE ESTRATÉGICAS -->
+    <meta name="keywords" content="geoprocessamento, consultoria ambiental, SIG, mapas técnicos, licenciamento ambiental, análise espacial, sensoriamento remoto, cartografia, delimitação de bacias, fragmentação florestal, São Paulo, Brasil">
+    
+    <!-- AUTHOR -->
+    <meta name="author" content="GeoSabbagh">
+    
+    <!-- ROBOTS (permite indexação) -->
+    <meta name="robots" content="index, follow">
+    
+    <!-- GOOGLE SITE VERIFICATION (substitua quando tiver o código) -->
+    <meta name="google-site-verification" content="SEU_CODIGO_DO_GOOGLE_SEARCH_CONSOLE">
+    
+    <!-- OPEN GRAPH (redes sociais) -->
+    <meta property="og:title" content="GeoSabbagh - Geoprocessamento para Consultoria Ambiental">
+    <meta property="og:description" content="Especialistas em SIG e análise territorial para licenciamento ambiental e estudos técnicos em todo Brasil.">
+    <meta property="og:image" content="https://geosabbagh.github.io/imagens/compartilhamento.jpg">
+    <meta property="og:url" content="https://geosabbagh.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="GeoSabbagh">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GeoSabbagh - Geoprocessamento Ambiental">
+    <meta name="twitter:description" content="Consultoria em geoprocessamento para estudos ambientais e licenciamento.">
+    
+    <!-- CANONICAL URL (evita conteúdo duplicado) -->
+    <link rel="canonical" href="https://geosabbagh.github.io">
+    
+    <!-- FAVICON (gerar em: https://favicon.io) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://geosabbagh.github.io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://geosabbagh.github.io/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="https://geosabbagh.github.io/apple-touch-icon.png">
+    
+    <!-- GEO TAGS (para SEO local) -->
+    <meta name="geo.region" content="BR-SP">
+    <meta name="geo.placename" content="São Paulo">
+    <meta name="geo.position" content="-23.5505;-46.6333">
+    <meta name="ICBM" content="-23.5505, -46.6333">
+    
+    <!-- Otimização de carregamento de fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Schema.org para negócio local (estruturado para Google) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "GeoSabbagh",
+        "image": "https://geosabbagh.github.io/logo.png",
+        "url": "https://geosabbagh.github.io",
+        "email": "contato.geosabbagh@gmail.com",
+        "description": "Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental e estudos técnicos.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "São Paulo",
+            "addressRegion": "SP",
+            "addressCountry": "Brasil"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.5505,
+            "longitude": -46.6333
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "sameAs": [
+            "https://www.linkedin.com/company/geosabbagh",
+            "https://github.com/geosabbagh"
+        ],
+        "priceRange": "$$",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Brasil"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços de Geoprocessamento",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Produção de mapas técnicos"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Análise espacial para licenciamento ambiental"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Delimitação de bacias hidrográficas"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
 
     <style>
         :root {
@@ -39,7 +145,7 @@
             position: relative;
         }
 
-        /* ===== CURVAS DE NÍVEL NO FUNDO ===== */
+        /* CURVAS DE NÍVEL NO FUNDO */
         body::before {
             content: "";
             position: fixed;
@@ -47,9 +153,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Não interfere com cliques */
+            pointer-events: none;
             z-index: 0;
-            opacity: 0.15; /* Bem sutil */
+            opacity: 0.15;
             background-image: 
                 radial-gradient(circle at 30% 40%, var(--verde) 1px, transparent 1px),
                 radial-gradient(circle at 70% 60%, var(--verde) 1px, transparent 1px),
@@ -59,7 +165,6 @@
                 radial-gradient(circle at 55% 35%, var(--verde) 1px, transparent 1px),
                 radial-gradient(circle at 90% 90%, var(--verde) 1px, transparent 1px),
                 radial-gradient(circle at 10% 20%, var(--verde) 1px, transparent 1px),
-                /* Linhas de contorno mais definidas */
                 repeating-linear-gradient(45deg, 
                     transparent 0px, 
                     transparent 15px, 
@@ -140,7 +245,7 @@
             height: 70px;
         }
 
-        /* ===== LOGO COM ROSA DOS VENTOS ===== */
+        /* LOGO COM ROSA DOS VENTOS */
         .logo {
             display: flex;
             align-items: center;
@@ -168,11 +273,11 @@
             color: var(--verde);
         }
 
-        .logo-icon i:nth-child(1) { /* Rosa dos ventos principal */
+        .logo-icon i:nth-child(1) {
             opacity: 1;
         }
 
-        .logo-icon i:nth-child(2) { /* Norte destacado */
+        .logo-icon i:nth-child(2) {
             font-size: 14px;
             top: -5px;
             left: 9px;
@@ -185,7 +290,7 @@
             50% { opacity: 0.5; transform: scale(1.1); }
         }
 
-        .logo-icon i:nth-child(3) { /* Sombra suave */
+        .logo-icon i:nth-child(3) {
             font-size: 32px;
             opacity: 0.3;
             filter: blur(1px);
@@ -228,7 +333,6 @@
             overflow: hidden;
         }
 
-        /* Adicionar curvas de nível mais definidas no hero */
         .hero::after {
             content: "";
             position: absolute;
@@ -431,7 +535,7 @@
             gap: 60px;
         }
 
-        /* Estilos para o formulário Formspree */
+        /* Estilos para o formulário */
         .formspree-form {
             background: white;
             padding: 30px;
@@ -530,13 +634,6 @@
             background: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
-        }
-
-        .form-message.info {
-            display: block;
-            background: #d1ecf1;
-            color: #0c5460;
-            border: 1px solid #bee5eb;
         }
 
         .required-field::after {
@@ -809,20 +906,29 @@
     </style>
 </head>
 <body>
+    <!-- Google Analytics (substitua G-XXXXXX pelo seu ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXX');
+    </script>
 
     <header>
         <div class="container header-inner">
-            <!-- Logo com Rosa dos Ventos -->
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fa-regular fa-compass"></i> <!-- Rosa dos ventos base -->
-                    <i class="fa-solid fa-arrow-up"></i> <!-- Norte destacado -->
-                    <i class="fa-regular fa-compass" style="opacity: 0.3;"></i> <!-- Sombra -->
+            <!-- Logo com Rosa dos Ventos (link para home) -->
+            <a href="#home" style="text-decoration: none;">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fa-regular fa-compass"></i>
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <i class="fa-regular fa-compass" style="opacity: 0.3;"></i>
+                    </div>
+                    <span class="logo-text">GeoSabbagh</span>
                 </div>
-                <span class="logo-text">GeoSabbagh</span>
-            </div>
+            </a>
             
-            <!-- Menu Hamburguer para mobile -->
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -851,16 +957,17 @@
         <div class="container sobre-grid">
             <div class="fade-in">
                 <h2>Sobre a GeoSabbagh</h2>
-                <p>A GeoSabbagh é uma consultoria especializada em geoprocessamento aplicado à área ambiental, oferecendo suporte técnico para empresas de consultoria, estudos ambientais e projetos territoriais.</p>
-                <p>Com mais de uma década de experiência na área, o trabalho envolve análise espacial, produção de mapas técnicos, tratamento de dados geográficos e apoio em processos de licenciamento ambiental.</p>
+                <p>A GeoSabbagh é uma consultoria especializada em <strong>geoprocessamento aplicado à área ambiental</strong>, oferecendo suporte técnico para empresas de consultoria, estudos ambientais e projetos territoriais.</p>
+                <p>Com mais de uma década de experiência na área, o trabalho envolve <strong>análise espacial, produção de mapas técnicos, tratamento de dados geográficos</strong> e apoio em processos de licenciamento ambiental.</p>
+                <p>Atendemos <strong>consultorias ambientais, escritórios de advocacia especializados em direito ambiental, empresas de engenharia e órgãos públicos</strong> em todo território nacional.</p>
             </div>
             <div class="fade-in">
                 <h3>Diferenciais</h3>
                 <div class="diferenciais-grid">
-                    <div class="diff">Experiência em projetos ambientais</div>
-                    <div class="diff">Especialização em SIG e geoprocessamento</div>
-                    <div class="diff">Mapas técnicos profissionais</div>
-                    <div class="diff">Atendimento remoto em todo o Brasil</div>
+                    <div class="diff"><strong>+10 anos</strong> em projetos ambientais</div>
+                    <div class="diff"><strong>Especialização</strong> em SIG e geoprocessamento</div>
+                    <div class="diff"><strong>Mapas técnicos</strong> profissionais</div>
+                    <div class="diff"><strong>Atendimento remoto</strong> em todo o Brasil</div>
                 </div>
             </div>
         </div>
@@ -868,7 +975,7 @@
 
     <section class="servicos" id="servicos">
         <div class="container">
-            <h2 class="fade-in">Serviços</h2>
+            <h2 class="fade-in">Serviços de Geoprocessamento</h2>
             <br>
             <div class="servicos-grid">
                 <div class="card fade-in">
@@ -933,15 +1040,40 @@
             <div class="fade-in">
                 <h2>Contato</h2>
                 <p>Entre em contato para solicitar orçamento ou discutir um projeto.</p>
-                <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:contato.geosabbagh@gmail.com">contato.geosabbagh@gmail.com</a></p>
-                <p><i class="fa-brands fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/geosabbagh/" target="_blank">linkedin.com/company/geosabbagh</a></p>
-                <p><i class="fa-brands fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/geosabbagh" target="_blank">github.com/geosabbagh</a></p>
-                <p><i class="fa-solid fa-location-dot"></i> <strong>Localização:</strong> São Paulo – Brasil</p>
+                
+                <!-- Informações de contato com schema implícito -->
+                <div itemscope itemtype="https://schema.org/LocalBusiness">
+                    <meta itemprop="name" content="GeoSabbagh">
+                    <meta itemprop="description" content="Consultoria em geoprocessamento para estudos ambientais">
+                    
+                    <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> 
+                        <a href="mailto:contato.geosabbagh@gmail.com" itemprop="email">contato.geosabbagh@gmail.com</a>
+                    </p>
+                    
+                    <p><i class="fa-brands fa-linkedin"></i> <strong>LinkedIn:</strong> 
+                        <a href="https://www.linkedin.com/company/geosabbagh/" target="_blank" itemprop="sameAs">linkedin.com/company/geosabbagh</a>
+                    </p>
+                    
+                    <p><i class="fa-brands fa-github"></i> <strong>GitHub:</strong> 
+                        <a href="https://github.com/geosabbagh" target="_blank" itemprop="sameAs">github.com/geosabbagh</a>
+                    </p>
+                    
+                    <p><i class="fa-solid fa-location-dot"></i> <strong>Localização:</strong> 
+                        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <span itemprop="addressLocality">São Paulo</span>, 
+                            <span itemprop="addressRegion">SP</span> - 
+                            <span itemprop="addressCountry">Brasil</span>
+                        </span>
+                    </p>
+                    
+                    <p><i class="fa-regular fa-clock"></i> <strong>Atendimento:</strong> 
+                        <span itemprop="openingHours">Segunda a Sexta, 9h às 18h</span>
+                    </p>
+                </div>
             </div>
+            
             <div class="fade-in">
-                <!-- Formulário Formspree sem upload de arquivo (compatível com plano gratuito) -->
                 <form class="formspree-form" action="https://formspree.io/f/mvzayqaj" method="POST" id="contactForm">
-                    <!-- Campos obrigatórios -->
                     <div class="form-group">
                         <label for="name" class="required-field">Nome completo</label>
                         <input type="text" id="name" name="name" placeholder="Seu nome" required>
@@ -973,24 +1105,20 @@
                         <textarea id="message" name="message" rows="5" placeholder="Descreva sua necessidade ou projeto..." required></textarea>
                     </div>
                     
-                    <!-- Campo honeypot anti-spam (escondido) -->
                     <input type="text" name="_gotcha" style="display:none">
-                    
-                    <!-- Impede redirecionamento - isso é o mais importante! -->
                     <input type="hidden" name="_next" value="">
                     
                     <button type="submit" class="btn-submit" id="submitBtn">
                         <i class="fa-solid fa-paper-plane"></i> Enviar mensagem
                     </button>
                     
-                    <!-- Container para mensagens de feedback -->
                     <div id="formMessage" class="form-message"></div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Modal de sucesso (não sai do site) -->
+    <!-- Modal de sucesso -->
     <div id="successModal" class="success-modal">
         <div class="success-modal-content">
             <i class="fa-regular fa-compass fa-spin"></i>
@@ -1000,7 +1128,6 @@
         </div>
     </div>
 
-    <!-- Botão Voltar ao Topo -->
     <button id="backToTop" class="back-to-top" title="Voltar ao topo">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -1008,15 +1135,14 @@
     <footer>
         <div class="container">
             <p>© 2026 GeoSabbagh – Consultoria em Geoprocessamento</p>
+            <p>📍 Atendimento em todo Brasil | São Paulo - SP</p>
             <p class="footer-dev">Desenvolvido por Anwar Sabbagh</p>
         </div>
     </footer>
 
     <script>
-        // Aguarda o DOM carregar completamente
         document.addEventListener('DOMContentLoaded', function() {
-            
-            // ==================== MENU MOBILE ====================
+            // Menu mobile
             const menuToggle = document.getElementById('menuToggle');
             const mainNav = document.getElementById('mainNav');
             
@@ -1034,7 +1160,6 @@
                 });
             }
             
-            // Fecha o menu ao clicar em um link
             const navLinks = document.querySelectorAll('nav a');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -1047,7 +1172,7 @@
                 });
             });
             
-            // ==================== HEADER SCROLL EFFECT ====================
+            // Header scroll
             const header = document.querySelector('header');
             
             window.addEventListener('scroll', function() {
@@ -1058,7 +1183,7 @@
                 }
             });
             
-            // ==================== BACK TO TOP BUTTON ====================
+            // Back to top
             const backToTop = document.getElementById('backToTop');
             
             window.addEventListener('scroll', function() {
@@ -1076,7 +1201,7 @@
                 });
             });
             
-            // ==================== ACTIVE MENU LINK ====================
+            // Active menu link
             function updateActiveLink() {
                 const sections = document.querySelectorAll('section');
                 const scrollPosition = window.scrollY + 100;
@@ -1099,7 +1224,7 @@
             
             window.addEventListener('scroll', updateActiveLink);
             
-            // ==================== SCROLL REVEAL ANIMATION ====================
+            // Scroll reveal
             const fadeElements = document.querySelectorAll('.fade-in');
             
             function checkFade() {
@@ -1116,7 +1241,7 @@
             checkFade();
             window.addEventListener('scroll', checkFade);
             
-            // ==================== FORMULÁRIO COM AJAX (NÃO SAI DO SITE) ====================
+            // Formulário
             const contactForm = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const formMessage = document.getElementById('formMessage');
@@ -1124,9 +1249,8 @@
             
             if (contactForm) {
                 contactForm.addEventListener('submit', async function(e) {
-                    e.preventDefault(); // SEMPRE prevenir o envio padrão
+                    e.preventDefault();
                     
-                    // Validação dos campos
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const subject = document.getElementById('subject').value;
@@ -1142,15 +1266,12 @@
                         return;
                     }
                     
-                    // Preparar dados do formulário
                     const formData = new FormData(contactForm);
                     
-                    // Desabilitar botão e mostrar loading
                     submitBtn.disabled = true;
                     submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Enviando...';
                     
                     try {
-                        // Enviar para o Formspree via AJAX (fetch)
                         const response = await fetch('https://formspree.io/f/mvzayqaj', {
                             method: 'POST',
                             body: formData,
@@ -1160,16 +1281,22 @@
                         });
                         
                         if (response.ok) {
-                            // Sucesso! Mostrar modal sem sair da página
                             successModal.style.display = 'flex';
-                            contactForm.reset(); // Limpar formulário
+                            contactForm.reset();
                             
-                            // Esconder mensagem se existir
                             if (formMessage) {
                                 formMessage.style.display = 'none';
                             }
+                            
+                            // Evento de conversão para Google Analytics
+                            if (typeof gtag !== 'undefined') {
+                                gtag('event', 'conversion', {
+                                    'send_to': 'G-XXXXXX',
+                                    'event_category': 'form',
+                                    'event_label': 'contato'
+                                });
+                            }
                         } else {
-                            // Erro na resposta
                             const data = await response.json();
                             throw new Error(data.error || 'Erro ao enviar mensagem');
                         }
@@ -1177,43 +1304,37 @@
                         console.error('Erro:', error);
                         mostrarMensagem('Ocorreu um erro ao enviar. Tente novamente ou envie um email direto.', 'error');
                     } finally {
-                        // Reabilitar botão
                         submitBtn.disabled = false;
                         submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
                     }
                 });
             }
             
-            // Função para validar email
             function validarEmail(email) {
                 const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return re.test(email);
             }
             
-            // Função para mostrar mensagens no formulário
             function mostrarMensagem(texto, tipo) {
                 if (!formMessage) return;
                 
                 formMessage.textContent = texto;
                 formMessage.className = `form-message ${tipo}`;
-                
-                // Scroll suave até a mensagem
                 formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 
-                // Esconder após 5 segundos
                 setTimeout(() => {
                     formMessage.style.display = 'none';
                 }, 5000);
             }
             
-            // ==================== ANO ATUAL NO FOOTER ====================
+            // Ano no footer
             const footerYear = document.querySelector('footer p:first-child');
             if (footerYear) {
                 const currentYear = new Date().getFullYear();
                 footerYear.innerHTML = `© ${currentYear} GeoSabbagh – Consultoria em Geoprocessamento`;
             }
             
-            // ==================== SCROLL SUAVE PARA LINKS ====================
+            // Scroll suave
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
@@ -1231,7 +1352,6 @@
             console.log('✅ GeoSabbagh site carregado com sucesso!');
         });
         
-        // Função global para fechar o modal
         function fecharModal() {
             const modal = document.getElementById('successModal');
             if (modal) {
@@ -1239,7 +1359,6 @@
             }
         }
         
-        // Fechar modal clicando fora dele
         window.addEventListener('click', function(event) {
             const modal = document.getElementById('successModal');
             if (event.target === modal) {
@@ -1249,4 +1368,3 @@
     </script>
 </body>
 </html>
-
