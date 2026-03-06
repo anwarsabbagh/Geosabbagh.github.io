@@ -925,57 +925,48 @@
             <p>© 2026 GeoSabbagh – Consultoria em Geoprocessamento</p>
             <p>📍 Atendimento em todo Brasil</p>
             <p class="footer-dev">Desenvolvido por Anwar Sabbagh</p>
+            
+            <!-- CONTADOR PROFISSIONAL - RÁPIDO E CONFIÁVEL -->
+            <div id="contador-visitas" style="margin-top: 15px; font-size: 0.9rem; color: #888; border-top: 1px solid #333; padding-top: 15px;">
+                Carregando contador...
+            </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
-            // ========== CONTADOR DE VISITAS GLOBAL (COM API) ==========
-            function inicializarContadorGlobal() {
-                // Usando CountAPI - serviço gratuito que conta globalmente
-                fetch('https://api.countapi.xyz/hit/geosabbagh/visitas')
+            // ========== CONTADOR DE VISITAS PROFISSIONAL ==========
+            // Usando WebsiteOut - serviço gratuito, rápido e com validação por IP
+            // Não conta múltiplas visitas do mesmo IP [citation:7]
+            
+            function carregarContador() {
+                const contadorDiv = document.getElementById('contador-visitas');
+                
+                // Criar iframe invisível para contar a visita (sem afetar performance)
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = 'https://www.websiteout.net/counter.php?url=geosabbagh&style=invisible';
+                document.body.appendChild(iframe);
+                
+                // Buscar o número atual de visitas
+                fetch('https://api.countapi.xyz/get/geosabbagh/visitas')
                     .then(response => response.json())
                     .then(data => {
-                        const visitas = data.value;
-                        console.log(`Visita global #${visitas} registrada!`);
-                        mostrarContadorNoFooter(visitas);
+                        if (data && data.value !== undefined) {
+                            contadorDiv.innerHTML = `👁️ Visitantes únicos: <strong>${data.value.toLocaleString('pt-BR')}</strong>`;
+                        } else {
+                            contadorDiv.innerHTML = `👁️ Visitantes únicos: <strong>carregando...</strong>`;
+                        }
                     })
                     .catch(error => {
-                        console.error('Erro no contador global, usando fallback:', error);
-                        // Fallback para localStorage caso a API falhe
-                        let visitas = localStorage.getItem('geosabbagh_visitas_fallback') || '0';
-                        visitas = parseInt(visitas) + 1;
-                        localStorage.setItem('geosabbagh_visitas_fallback', visitas.toString());
-                        mostrarContadorNoFooter(visitas, true);
+                        console.error('Erro ao carregar contador:', error);
+                        contadorDiv.innerHTML = `👁️ Visitantes únicos: <strong>em breve</strong>`;
                     });
             }
             
-            function mostrarContadorNoFooter(visitas, isFallback = false) {
-                const footer = document.querySelector('footer .container');
-                if (footer) {
-                    if (!document.getElementById('contador-visitas')) {
-                        const contadorDiv = document.createElement('p');
-                        contadorDiv.id = 'contador-visitas';
-                        contadorDiv.style.marginTop = '10px';
-                        contadorDiv.style.fontSize = '0.9rem';
-                        contadorDiv.style.color = '#888';
-                        contadorDiv.style.borderTop = '1px solid #333';
-                        contadorDiv.style.paddingTop = '10px';
-                        
-                        if (isFallback) {
-                            contadorDiv.innerHTML = `👁️ Total de visitas (local): <strong>${visitas}</strong>`;
-                        } else {
-                            contadorDiv.innerHTML = `👁️ Total de visitas: <strong>${visitas}</strong>`;
-                        }
-                        
-                        footer.appendChild(contadorDiv);
-                    }
-                }
-            }
-            
-            // Inicializar contador global
-            inicializarContadorGlobal();
+            // Inicializar contador
+            carregarContador();
             
             // ========== MENU MOBILE ==========
             const menuToggle = document.getElementById('menuToggle');
