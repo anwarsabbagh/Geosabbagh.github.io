@@ -931,38 +931,29 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
-            // ========== CONTADOR DE VISITAS MELHORADO ==========
-            // Função para gerenciar o contador de visitas
-            function inicializarContador() {
-                // Chave para armazenar no localStorage
-                const CHAVE_VISITAS = 'geosabbagh_visitas';
-                
-                // Obter contador atual do localStorage
-                let visitas = localStorage.getItem(CHAVE_VISITAS);
-                
-                if (visitas) {
-                    // Incrementar contador existente (cada carregamento conta)
-                    visitas = parseInt(visitas) + 1;
-                } else {
-                    // Primeira visita
-                    visitas = 1;
-                }
-                
-                // Salvar novo valor
-                localStorage.setItem(CHAVE_VISITAS, visitas.toString());
-                
-                // Mostrar no console para debug
-                console.log(`Visita #${visitas} registrada! (cada carregamento conta)`);
-                
-                return visitas;
+            // ========== CONTADOR DE VISITAS GLOBAL (COM API) ==========
+            function inicializarContadorGlobal() {
+                // Usando CountAPI - serviço gratuito que conta globalmente
+                fetch('https://api.countapi.xyz/hit/geosabbagh/visitas')
+                    .then(response => response.json())
+                    .then(data => {
+                        const visitas = data.value;
+                        console.log(`Visita global #${visitas} registrada!`);
+                        mostrarContadorNoFooter(visitas);
+                    })
+                    .catch(error => {
+                        console.error('Erro no contador global, usando fallback:', error);
+                        // Fallback para localStorage caso a API falhe
+                        let visitas = localStorage.getItem('geosabbagh_visitas_fallback') || '0';
+                        visitas = parseInt(visitas) + 1;
+                        localStorage.setItem('geosabbagh_visitas_fallback', visitas.toString());
+                        mostrarContadorNoFooter(visitas, true);
+                    });
             }
             
-            // Função para mostrar o contador no rodapé
-            function mostrarContadorNoFooter(visitas) {
-                // Criar elemento para mostrar o contador
+            function mostrarContadorNoFooter(visitas, isFallback = false) {
                 const footer = document.querySelector('footer .container');
                 if (footer) {
-                    // Verificar se já existe um contador para não duplicar
                     if (!document.getElementById('contador-visitas')) {
                         const contadorDiv = document.createElement('p');
                         contadorDiv.id = 'contador-visitas';
@@ -971,21 +962,20 @@
                         contadorDiv.style.color = '#888';
                         contadorDiv.style.borderTop = '1px solid #333';
                         contadorDiv.style.paddingTop = '10px';
-                        contadorDiv.innerHTML = `👁️ Total de visitas: <strong>${visitas}</strong> (cada acesso conta)`;
+                        
+                        if (isFallback) {
+                            contadorDiv.innerHTML = `👁️ Total de visitas (local): <strong>${visitas}</strong>`;
+                        } else {
+                            contadorDiv.innerHTML = `👁️ Total de visitas: <strong>${visitas}</strong>`;
+                        }
+                        
                         footer.appendChild(contadorDiv);
-                    } else {
-                        // Atualizar se já existir
-                        const contadorExistente = document.getElementById('contador-visitas');
-                        contadorExistente.innerHTML = `👁️ Total de visitas: <strong>${visitas}</strong> (cada acesso conta)`;
                     }
                 }
             }
             
-            // Inicializar contador (incrementa a cada carregamento)
-            const totalVisitas = inicializarContador();
-            
-            // Mostrar contador no footer
-            mostrarContadorNoFooter(totalVisitas);
+            // Inicializar contador global
+            inicializarContadorGlobal();
             
             // ========== MENU MOBILE ==========
             const menuToggle = document.getElementById('menuToggle');
@@ -1215,4 +1205,3 @@
     </script>
 </body>
 </html>
-
