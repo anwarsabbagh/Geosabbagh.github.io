@@ -23,7 +23,7 @@
     <!-- OPEN GRAPH -->
     <meta property="og:title" content="GeoSabbagh - Geoprocessamento para Consultoria Ambiental">
     <meta property="og:description" content="Especialistas em SIG e análise territorial para licenciamento ambiental e estudos técnicos em todo Brasil.">
-    <meta property="og:url" content="https://geosabbagh.github.io">
+    <meta property="og:url" content="https://anwarsabbagh.github.io/Geosabbagh.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     
@@ -33,12 +33,15 @@
     <meta name="twitter:description" content="Consultoria em geoprocessamento para estudos ambientais e licenciamento.">
     
     <!-- CANONICAL URL -->
-    <link rel="canonical" href="https://geosabbagh.github.io">
+    <link rel="canonical" href="https://anwarsabbagh.github.io/Geosabbagh.github.io/">
     
     <!-- GEO TAGS -->
     <meta name="geo.region" content="BR-SP">
     <meta name="geo.placename" content="São Paulo">
     <meta name="geo.position" content="-23.5505;-46.6333">
+    
+    <!-- GOOGLE SITE VERIFICATION -->
+    <meta name="google-site-verification" content="googlec84ee69bd8b38a35">
     
     <!-- FONTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,7 +57,7 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "GeoSabbagh",
-        "url": "https://geosabbagh.github.io",
+        "url": "https://anwarsabbagh.github.io/Geosabbagh.github.io/",
         "email": "contato.geosabbagh@gmail.com",
         "description": "Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental.",
         "address": {
@@ -247,7 +250,7 @@
         }
 
         .hero p {
-            max-width: 520px;
+            max-width: 620px;
             opacity: .9;
             margin-bottom: 30px;
             font-size: 1.1rem;
@@ -314,14 +317,14 @@
             color: white;
         }
 
-        /* SERVIÇOS */
+        /* SERVIÇOS - AGORA COM 9 CARDS E DESCRIÇÕES MELHORADAS */
         .servicos {
             background: var(--creme);
         }
 
         .servicos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 40px;
         }
@@ -332,16 +335,17 @@
             border-radius: var(--radius);
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
             transition: all 0.3s;
+            border-left: 4px solid var(--verde);
         }
 
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-color: var(--dourado);
+            border-left-color: var(--dourado);
         }
 
         .card i {
-            font-size: 28px;
+            font-size: 32px;
             color: var(--verde);
             margin-bottom: 15px;
         }
@@ -349,6 +353,12 @@
         .card h3 {
             margin-bottom: 10px;
             color: var(--verde);
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #555;
+            line-height: 1.5;
         }
 
         /* CTA */
@@ -648,6 +658,10 @@
             .diferenciais-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .servicos-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
@@ -665,6 +679,10 @@
             
             .form-contato {
                 padding: 25px;
+            }
+            
+            .card {
+                padding: 25px 20px;
             }
         }
     </style>
@@ -720,6 +738,7 @@
                 <h2>Sobre a GeoSabbagh</h2>
                 <p>A GeoSabbagh é uma consultoria especializada em <strong>geoprocessamento aplicado à área ambiental</strong>, oferecendo suporte técnico para empresas de consultoria, estudos ambientais e projetos territoriais.</p>
                 <p>Com mais de uma década de experiência, atuamos com <strong>análise espacial, produção de mapas técnicos, tratamento de dados geográficos</strong> e apoio em processos de licenciamento ambiental em todo território nacional.</p>
+                <p>Nossa abordagem combina <strong>conhecimento técnico em SIG</strong> com <strong>experiência prática em campo</strong>, garantindo resultados precisos e adequados às exigências dos órgãos ambientais.</p>
             </div>
             <div class="fade-in">
                 <h3>Diferenciais</h3>
@@ -737,35 +756,67 @@
         <div class="container">
             <h2 class="fade-in">Serviços de Geoprocessamento</h2>
             <div class="servicos-grid">
+                <!-- 1. Produção de mapas técnicos -->
                 <div class="card fade-in">
                     <i class="fa-solid fa-map"></i>
-                    <h3>Mapas técnicos</h3>
-                    <p>Para estudos ambientais, relatórios e licenciamento.</p>
+                    <h3>Produção de mapas técnicos</h3>
+                    <p>Elaboração de mapas temáticos para EIA/RIMA, RAS, PCA e documentação de licenciamento ambiental, com padrões cartográficos e legenda adequada.</p>
                 </div>
+                
+                <!-- 2. Análise espacial -->
                 <div class="card fade-in">
                     <i class="fa-solid fa-layer-group"></i>
                     <h3>Análise espacial</h3>
-                    <p>Processamento e interpretação de dados geográficos.</p>
+                    <p>Processamento e interpretação de dados geográficos para diagnósticos ambientais, zoneamento, áreas de influência e modelos de adequabilidade.</p>
                 </div>
+                
+                <!-- 3. Delimitação de bacias hidrográficas -->
                 <div class="card fade-in">
                     <i class="fa-solid fa-water"></i>
-                    <h3>Bacias hidrográficas</h3>
-                    <p>Delimitação e análise de bacias e drenagem.</p>
+                    <h3>Delimitação de bacias hidrográficas</h3>
+                    <p>Identificação e caracterização de bacias, sub-bacias e rede de drenagem a partir de modelos digitais de elevação (MDE) para estudos de recursos hídricos.</p>
                 </div>
+                
+                <!-- 4. Análise de relevo e declividade -->
                 <div class="card fade-in">
                     <i class="fa-solid fa-mountain"></i>
-                    <h3>Análise de relevo</h3>
-                    <p>Hipsometria, declividade e modelos de terreno.</p>
+                    <h3>Análise de relevo e declividade</h3>
+                    <p>Modelagem hipsométrica, classes de declividade, perfis topográficos e análise de fragilidade do relevo para diagnósticos do meio físico.</p>
                 </div>
+                
+                <!-- 5. Mapeamento de uso e cobertura da terra -->
                 <div class="card fade-in">
                     <i class="fa-solid fa-tree"></i>
-                    <h3>Uso da terra</h3>
-                    <p>Mapeamento de cobertura vegetal e uso do solo.</p>
+                    <h3>Uso e cobertura da terra</h3>
+                    <p>Classificação de imagens de satélite (Landsat, Sentinel, Planet) para mapeamento de vegetação, áreas antropizadas e monitoramento temporal.</p>
                 </div>
+                
+                <!-- 6. Análise de fragmentação florestal -->
                 <div class="card fade-in">
                     <i class="fa-solid fa-leaf"></i>
                     <h3>Fragmentação florestal</h3>
-                    <p>Análise da estrutura da paisagem.</p>
+                    <p>Métricas de paisagem (tamanho de fragmentos, conectividade, efeito de borda) para avaliação de remanescentes e corredores ecológicos.</p>
+                </div>
+                
+                <!-- 7. Modelagem hidrológica -->
+                <div class="card fade-in">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>Modelagem hidrológica</h3>
+                    <p>Estudos de escoamento superficial, tempo de concentração, áreas susceptíveis a inundações e apoio a projetos de drenagem e outorga.</p>
+                </div>
+                
+                <!-- 8. Geoprocessamento para licenciamento -->
+                <div class="card fade-in">
+                    <i class="fa-solid fa-file-signature"></i>
+                    <h3>Geoprocessamento para licenciamento</h3>
+                    <p>Elaboração de mapas de restrições legais (APP, reserva legal, unidades de conservação) e análise de alternativas locacionais.</p>
+                </div>
+                
+                <!-- 9. Tratamento de dados geográficos -->
+                <div class="card fade-in">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Tratamento de dados geográficos</h3>
+                    <p>Organização, padronização, georreferenciamento e conversão de bases cartográficas, dados vetoriais e raster para integração em SIG.</p>
                 </div>
             </div>
         </div>
@@ -867,7 +918,7 @@
         <div class="container">
             <p>© 2026 GeoSabbagh – Consultoria em Geoprocessamento</p>
             <p>📍 Atendimento em todo Brasil</p>
-            <p class="footer-dev">Desenvolvido por Anwar Sabbagh</p>
+            <p class="footer-dev">Desenvolvido com <i class="fas fa-heart"></i> para o meio ambiente</p>
         </div>
     </footer>
 
@@ -1102,4 +1153,3 @@
     </script>
 </body>
 </html>
-
