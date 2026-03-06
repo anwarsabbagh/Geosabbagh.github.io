@@ -931,6 +931,73 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             
+            // ========== CONTADOR DE VISITAS ==========
+            // Função para gerenciar o contador de visitas
+            function inicializarContador() {
+                // Chave para armazenar no localStorage
+                const CHAVE_VISITAS = 'geosabbagh_visitas';
+                const CHAVE_VISITANTE = 'geosabbagh_visitante';
+                
+                // Verificar se é uma nova visita (não é refresh da mesma sessão)
+                const sessionVisitante = sessionStorage.getItem(CHAVE_VISITANTE);
+                
+                if (!sessionVisitante) {
+                    // Marcar que este usuário já foi contado nesta sessão
+                    sessionStorage.setItem(CHAVE_VISITANTE, 'true');
+                    
+                    // Obter contador atual do localStorage
+                    let visitas = localStorage.getItem(CHAVE_VISITAS);
+                    
+                    if (visitas) {
+                        // Incrementar contador existente
+                        visitas = parseInt(visitas) + 1;
+                    } else {
+                        // Primeira visita
+                        visitas = 1;
+                    }
+                    
+                    // Salvar novo valor
+                    localStorage.setItem(CHAVE_VISITAS, visitas.toString());
+                    
+                    // Opcional: Mostrar contador no console para debug
+                    console.log(`Visita #${visitas} registrada!`);
+                } else {
+                    // É um refresh, não contar novamente
+                    console.log('Refresh da página - não contabilizado');
+                }
+            }
+            
+            // Função para mostrar o contador no rodapé
+            function mostrarContadorNoFooter() {
+                const CHAVE_VISITAS = 'geosabbagh_visitas';
+                let visitas = localStorage.getItem(CHAVE_VISITAS) || '0';
+                
+                // Criar elemento para mostrar o contador
+                const footer = document.querySelector('footer .container');
+                if (footer) {
+                    // Verificar se já existe um contador para não duplicar
+                    if (!document.getElementById('contador-visitas')) {
+                        const contadorDiv = document.createElement('p');
+                        contadorDiv.id = 'contador-visitas';
+                        contadorDiv.style.marginTop = '10px';
+                        contadorDiv.style.fontSize = '0.9rem';
+                        contadorDiv.style.color = '#888';
+                        contadorDiv.innerHTML = `👁️ Total de visitas: <strong>${visitas}</strong>`;
+                        footer.appendChild(contadorDiv);
+                    } else {
+                        // Atualizar se já existir
+                        const contadorExistente = document.getElementById('contador-visitas');
+                        contadorExistente.innerHTML = `👁️ Total de visitas: <strong>${visitas}</strong>`;
+                    }
+                }
+            }
+            
+            // Inicializar contador
+            inicializarContador();
+            
+            // Mostrar contador no footer
+            mostrarContadorNoFooter();
+            
             // ========== MENU MOBILE ==========
             const menuToggle = document.getElementById('menuToggle');
             const mainNav = document.getElementById('mainNav');
