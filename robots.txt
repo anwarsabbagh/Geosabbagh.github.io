@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://anwarsabbagh.github.io/Geosabbagh/sitemap.xml
