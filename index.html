@@ -941,62 +941,21 @@
             <p>📍 Atendimento em todo Brasil</p>
             <p class="footer-dev">Desenvolvido por Anwar Sabbagh</p>
             
-            <!-- CONTADOR PROFISSIONAL - MULTIPLOS BACKENDS -->
-            <div id="contador-visitas" style="margin-top: 15px; font-size: 0.9rem; color: #888; border-top: 1px solid #333; padding-top: 15px;">
-                Carregando contador...
+            <!-- FLAG COUNTER - CONTADOR GLOBAL PROFISSIONAL -->
+            <div style="margin-top: 20px; text-align: center; border-top: 1px solid #333; padding-top: 20px;">
+                <a href="https://info.flagcounter.com/nO4V">
+                    <img src="https://s11.flagcounter.com/count2/nO4V/bg_111111/txt_AAAAAA/border_CCCCCC/columns_3/maxflags_30/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Flag Counter" border="0" style="max-width: 100%;">
+                </a>
+                <p style="color: #888; font-size: 0.9rem; margin-top: 10px;">
+                    👁️ <strong>Visitantes únicos desde 2024</strong><br>
+                    <small>(cada IP é contado apenas 1 vez por dia)</small>
+                </p>
             </div>
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            
-            // ========== CONTADOR DE VISITAS PROFISSIONAL ==========
-            async function carregarContador() {
-                const contadorDiv = document.getElementById('contador-visitas');
-                
-                // Lista de backends para redundância
-                const backends = [
-                    {
-                        url: 'https://api.countapi.xyz/hit/geosabbagh/visitas',
-                        parse: (data) => data.value
-                    },
-                    {
-                        url: 'https://api.visitorbadge.io/api/visitors?path=geosabbagh&countColor=%23263759',
-                        parse: (data) => data.visitors
-                    }
-                ];
-                
-                // Tentar cada backend em sequência
-                for (const backend of backends) {
-                    try {
-                        const response = await fetch(backend.url);
-                        const data = await response.json();
-                        const visitas = backend.parse(data);
-                        
-                        if (visitas !== undefined) {
-                            contadorDiv.innerHTML = `👁️ Visitantes: <strong>${visitas.toLocaleString('pt-BR')}</strong>`;
-                            return;
-                        }
-                    } catch (error) {
-                        console.log(`Backend falhou: ${backend.url}`);
-                        continue;
-                    }
-                }
-                
-                // Fallback: localStorage
-                try {
-                    let visitas = localStorage.getItem('geosabbagh_visitas');
-                    visitas = visitas ? parseInt(visitas) + 1 : 1;
-                    localStorage.setItem('geosabbagh_visitas', visitas);
-                    contadorDiv.innerHTML = `👁️ Visitantes (local): <strong>${visitas}</strong>`;
-                } catch (e) {
-                    contadorDiv.innerHTML = `👁️ Visitantes: <strong>carregando...</strong>`;
-                }
-            }
-            
-            // Inicializar contador
-            carregarContador();
             
             // ========== MENU MOBILE ==========
             const menuToggle = document.getElementById('menuToggle');
