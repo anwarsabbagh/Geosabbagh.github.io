@@ -323,7 +323,7 @@ p { color: var(--texto2); }
 }
 
 /* ============================================
-   ESPECIALIZAÇÃO (SUBSTITUI AS ESTATÍSTICAS)
+   ESPECIALIZAÇÃO
 ============================================ */
 .especializacao-bar {
   background: var(--creme2);
@@ -858,7 +858,7 @@ footer {
 .footer-dev span { color: var(--dourado2); }
 
 /* ============================================
-   BACK TO TOP (AGORA ABAIXO DO CHATBOT)
+   BACK TO TOP
 ============================================ */
 .back-to-top {
   position: fixed;
@@ -874,154 +874,13 @@ footer {
   justify-content: center;
   cursor: pointer;
   border: none;
-  z-index: 97;
+  z-index: 99;
   box-shadow: 0 4px 14px rgba(26,55,40,0.3);
   transition: var(--transition);
 }
 .back-to-top i { font-size: 18px; color: white; }
 .back-to-top.show { display: flex; }
 .back-to-top:hover { background: var(--verde2); transform: translateY(-3px); }
-
-/* ============================================
-   CHATBOT (SEM WHATSAPP - AGORA USA EMAIL)
-============================================ */
-#chatbot {
-  position: fixed;
-  bottom: 90px;
-  right: 28px;
-  width: 340px;
-  font-family: 'Outfit', sans-serif;
-  z-index: 999;
-}
-
-#chatbot-button {
-  background: var(--verde);
-  color: white;
-  border-radius: 50px;
-  padding: 14px 20px;
-  cursor: pointer;
-  box-shadow: 0 5px 20px rgba(26,55,40,0.35);
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: var(--transition);
-  border: none;
-  width: 100%;
-}
-#chatbot-button:hover { background: var(--verde2); transform: scale(1.03); }
-#chatbot-button i { font-size: 22px; color: white; }
-
-#chat-window {
-  display: none;
-  background: white;
-  border-radius: var(--radius);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-  overflow: hidden;
-  margin-bottom: 10px;
-  border: 1px solid rgba(26,55,40,0.1);
-}
-
-#chat-header {
-  background: var(--verde);
-  color: white;
-  padding: 16px 18px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-}
-
-.chat-online-dot {
-  width: 8px;
-  height: 8px;
-  background: #4ade80;
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-.chat-close {
-  margin-left: auto;
-  cursor: pointer;
-  opacity: 0.75;
-  font-size: 1.2rem;
-  line-height: 1;
-  padding: 4px 6px;
-  background: none;
-  border: none;
-  color: white;
-  border-radius: 4px;
-  transition: opacity 0.2s, background 0.2s;
-}
-.chat-close:hover { opacity: 1; background: rgba(255,255,255,0.15); }
-
-#chat-body {
-  padding: 20px;
-  max-height: 380px;
-  overflow-y: auto;
-}
-
-#chat-question {
-  font-weight: 600;
-  color: var(--verde);
-  margin-bottom: 16px;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.chat-option {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: var(--creme);
-  padding: 11px 14px;
-  border-radius: var(--radius-sm);
-  margin: 8px 0;
-  cursor: pointer;
-  transition: var(--transition);
-  color: var(--texto);
-  font-size: 0.9rem;
-  border: 1.5px solid transparent;
-  font-family: 'Outfit', sans-serif;
-}
-.chat-option:hover {
-  background: rgba(184,132,58,0.12);
-  border-color: var(--dourado);
-  color: var(--verde);
-  transform: translateX(4px);
-}
-
-#chat-input {
-  width: 100%;
-  padding: 11px 14px;
-  margin-top: 12px;
-  border: 1.5px solid #e0ddd6;
-  border-radius: var(--radius-sm);
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.9rem;
-  color: var(--texto);
-  background: #fdfcf9;
-}
-#chat-input:focus { outline: none; border-color: var(--dourado); }
-
-#chat-next {
-  margin-top: 10px;
-  background: var(--dourado);
-  color: white;
-  border: none;
-  padding: 12px;
-  width: 100%;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-weight: 600;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.9rem;
-  transition: var(--transition);
-}
-#chat-next:hover { background: var(--dourado2); }
 
 /* ============================================
    RESPONSIVIDADE
@@ -1063,9 +922,6 @@ footer {
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; text-align: center; }
-  
-  #chatbot { width: calc(100vw - 30px); right: 15px; bottom: 90px; }
-  .back-to-top { bottom: 28px; right: 15px; }
   
   .especializacao-grid { grid-template-columns: 1fr; }
   .processo-steps { grid-template-columns: 1fr; }
@@ -1136,7 +992,7 @@ footer {
     </div>
   </section>
 
-  <!-- ESPECIALIZAÇÃO - NOVA SEÇÃO -->
+  <!-- ESPECIALIZAÇÃO -->
   <div class="especializacao-bar" aria-label="Áreas de Especialização">
     <div class="container">
       <div class="especializacao-grid">
@@ -1500,27 +1356,6 @@ footer {
   <i class="fa-solid fa-chevron-up"></i>
 </button>
 
-<!-- CHATBOT - AGORA ENVIA E-MAIL EM VEZ DE WHATSAPP -->
-<div id="chatbot" role="complementary" aria-label="Assistente virtual GeoSabbagh">
-  <button id="chatbot-button" aria-expanded="false" aria-controls="chat-window">
-    <i class="fa-solid fa-comment-dots"></i>
-    Precisa de ajuda?
-  </button>
-  <div id="chat-window" role="dialog" aria-modal="false" aria-label="Chat assistente">
-    <div id="chat-header">
-      <div class="chat-online-dot" aria-hidden="true"></div>
-      GeoSabbagh Assistente
-      <button class="chat-close" onclick="fecharChat()" aria-label="Fechar chat">✕</button>
-    </div>
-    <div id="chat-body">
-      <div id="chat-question"></div>
-      <div id="chat-options"></div>
-      <input type="text" id="chat-input" placeholder="Digite sua resposta..." style="display:none;">
-      <button id="chat-next" style="display:none;">Continuar →</button>
-    </div>
-  </div>
-</div>
-
 <!-- JAVASCRIPT -->
 <script>
 (function() {
@@ -1627,110 +1462,6 @@ footer {
 
   var fy = document.getElementById('footer-year');
   if (fy) fy.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Geotecnologias e Desenvolvimento SIG';
-}());
-
-/* CHATBOT - AGORA ENVIA E-MAIL */
-(function() {
-  var EMAIL = 'contato.geosabbagh@gmail.com';
-
-  var step = 0, respostas = {};
-
-  var perguntas = [
-    { pergunta: 'Olá! 👋 Sou o assistente da GeoSabbagh. Qual tipo de projeto você precisa?', opcoes: ['Licenciamento ambiental','Mapas técnicos','Análise espacial','Uso do solo','Drone / LiDAR','Desenvolvimento SIG','Outro'] },
-    { pergunta: 'Qual o estado/município do projeto?', input: true, campo: 'local', placeholder: 'Ex: São Paulo - SP' },
-    { pergunta: 'Qual é o prazo estimado?', opcoes: ['Urgente (até 1 semana)','2 a 4 semanas','1 a 2 meses','Flexível'] },
-    { pergunta: 'Qual seu nome?', input: true, campo: 'nome', placeholder: 'Seu nome completo' },
-    { pergunta: 'Qual seu e-mail para contato?', input: true, campo: 'contato', placeholder: 'seu@email.com' }
-  ];
-
-  var chatBtn  = document.getElementById('chatbot-button');
-  var chatWin  = document.getElementById('chat-window');
-  var qEl      = document.getElementById('chat-question');
-  var opEl     = document.getElementById('chat-options');
-  var inEl     = document.getElementById('chat-input');
-  var nextEl   = document.getElementById('chat-next');
-
-  window.fecharChat = function() {
-    chatWin.style.display = 'none';
-    chatBtn.setAttribute('aria-expanded', 'false');
-    step = 0; respostas = {};
-  };
-
-  chatBtn.addEventListener('click', function() {
-    if (chatWin.style.display === 'block') { fecharChat(); return; }
-    chatWin.style.display = 'block';
-    chatBtn.setAttribute('aria-expanded', 'true');
-    mostrar();
-  });
-
-  function mostrar() {
-    if (step >= perguntas.length) { finalizar(); return; }
-    var p = perguntas[step];
-    qEl.textContent = p.pergunta;
-    opEl.innerHTML = '';
-    inEl.style.display = 'none';
-    nextEl.style.display = 'none';
-
-    if (p.opcoes) {
-      p.opcoes.forEach(function(op) {
-        var b = document.createElement('button');
-        b.className = 'chat-option'; b.textContent = op; b.type = 'button';
-        b.addEventListener('click', function() {
-          if (step === 0) respostas.tipo = op;
-          if (step === 2) respostas.prazo = op;
-          step++; mostrar();
-        });
-        opEl.appendChild(b);
-      });
-    }
-    if (p.input) {
-      inEl.style.display = 'block';
-      inEl.placeholder = p.placeholder || '';
-      inEl.value = '';
-      nextEl.style.display = 'block';
-      inEl.focus();
-
-      nextEl.onclick = function() {
-        var v = inEl.value.trim();
-        if (!v) { inEl.style.borderColor = 'var(--dourado)'; inEl.focus(); return; }
-        inEl.style.borderColor = '';
-        respostas[p.campo] = v;
-        step++;
-        mostrar();
-      };
-
-      inEl.onkeydown = function(e) { if (e.key === 'Enter') { e.preventDefault(); nextEl.click(); } };
-    }
-  }
-
-  function finalizar() {
-    var assunto = encodeURIComponent('Orçamento via Chatbot - GeoSabbagh');
-    var corpo = encodeURIComponent(
-      'Olá, vim pelo site e gostaria de um orçamento.\n\n' +
-      '📌 Tipo de projeto: ' + (respostas.tipo    || '-') + '\n' +
-      '📍 Local: '          + (respostas.local   || '-') + '\n' +
-      '⏱ Prazo: '          + (respostas.prazo   || '-') + '\n' +
-      '👤 Nome: '           + (respostas.nome    || '-') + '\n' +
-      '📬 Contato: '        + (respostas.contato || '-')
-    );
-
-    if (typeof gtag !== 'undefined') gtag('event', 'chat_conversao', { event_category: 'chatbot', event_label: 'email' });
-
-    qEl.innerHTML = '✅ <strong>Perfeito!</strong> Abrindo seu e-mail...';
-    opEl.innerHTML = '';
-    inEl.style.display = 'none';
-    nextEl.style.display = 'none';
-
-    setTimeout(function() {
-      window.location.href = 'mailto:' + EMAIL + '?subject=' + assunto + '&body=' + corpo;
-      setTimeout(fecharChat, 2000);
-    }, 800);
-  }
-
-  document.addEventListener('click', function(e) {
-    var c = document.getElementById('chatbot');
-    if (c && !c.contains(e.target) && chatWin.style.display === 'block') fecharChat();
-  });
 }());
 </script>
 
