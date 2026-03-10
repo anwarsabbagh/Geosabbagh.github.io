@@ -708,7 +708,7 @@ p { color: var(--texto2); }
 .info-value a { color: var(--verde2); text-decoration: none; }
 .info-value a:hover { color: var(--dourado); }
 
-/* Formulário */
+/* Formulário - CORRIGIDO com o ID do Formspree */
 .form-card {
   background: white;
   border-radius: var(--radius);
@@ -1237,7 +1237,7 @@ footer {
     </div>
   </section>
 
-  <!-- CONTATO -->
+  <!-- CONTATO - FORMULÁRIO CORRIGIDO COM ID DO FORMSPREE -->
   <section class="contato" id="contato" aria-labelledby="contato-heading">
     <div class="container">
       <div class="contato-grid">
@@ -1263,8 +1263,8 @@ footer {
 
         <div class="form-contato fade-in">
           <div class="form-card">
-            <!-- Substitua YOUR_FORM_ID pelo seu ID do Formspree -->
-            <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <!-- FORMULÁRIO CORRIGIDO com o ID do Formspree: mvzayqaj -->
+            <form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST" novalidate>
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Nome completo <span style="color:var(--dourado)">*</span></label>
@@ -1425,33 +1425,22 @@ footer {
       submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
 
       var action = form.getAttribute('action') || '';
-      var configured = action && !action.includes('YOUR_FORM_ID');
-
-      if (configured) {
-        try {
-          var resp = await fetch(action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-          if (resp.ok) {
-            formMsg.innerHTML = '<div class="msg-success">✅ Mensagem enviada! Retornaremos em breve.</div>';
-            form.reset();
-            if (typeof gtag !== 'undefined') gtag('event', 'form_submit', { event_category: 'contato', event_label: 'formulario_principal' });
-          } else { throw new Error(); }
-        } catch(_) {
-          formMsg.innerHTML = '<div class="msg-error">❌ Erro ao enviar. Tente via e-mail: contato.geosabbagh@gmail.com</div>';
+      
+      try {
+        var resp = await fetch(action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (resp.ok) {
+          formMsg.innerHTML = '<div class="msg-success">✅ Mensagem enviada! Retornaremos em breve.</div>';
+          form.reset();
+          if (typeof gtag !== 'undefined') gtag('event', 'form_submit', { event_category: 'contato', event_label: 'formulario_principal' });
+        } else { 
+          throw new Error(); 
         }
-      } else {
-        var n   = document.getElementById('name').value;
-        var em  = document.getElementById('email').value;
-        var sv  = document.getElementById('service').value;
-        var msg = document.getElementById('message').value;
-        var subj = encodeURIComponent('Orçamento GeoSabbagh – ' + (sv || 'Geotecnologias'));
-        var body = encodeURIComponent('Nome: ' + n + '\nE-mail: ' + em + '\nServiço: ' + sv + '\n\n' + msg);
-        window.location.href = 'mailto:contato.geosabbagh@gmail.com?subject=' + subj + '&body=' + body;
-        formMsg.innerHTML = '<div class="msg-success">📧 Abrindo seu e-mail...</div>';
-        form.reset();
+      } catch(_) {
+        formMsg.innerHTML = '<div class="msg-error">❌ Erro ao enviar. Tente via e-mail: contato.geosabbagh@gmail.com</div>';
       }
 
       submitBtn.disabled = false;
