@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- CORREÇÕES DE SEO - IDENTIFICAÇÃO DO SITE -->
-<title>GeoSabbagh | Geotecnologias e Desenvolvimento de SIG</title>
-<meta name="description" content="Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental, estudos espaciais e suporte a consultorias ambientais em todo o Brasil.">
+<title>GeoSabbagh | Consultoria em Geotecnologias e Desenvolvimento SIG</title>
+<meta name="description" content="GeoSabbagh: Consultoria em Geotecnologias e SIG. Especialistas em mapas para licenciamento ambiental, análise espacial, sensoriamento remoto e levantamentos com drone/LiDAR. Atendimento em todo Brasil.">
 <meta name="application-name" content="GeoSabbagh">
 <link rel="canonical" href="https://anwarsabbagh.github.io/Geosabbagh.github.io/">
 
 <!-- Meta tags originais mantidas -->
-<meta name="keywords" content="geotecnologias, SIG, Sistema de Informação Geográfica, geoprocessamento, licenciamento ambiental, mapas técnicos, análise espacial, drone, LiDAR">
+<meta name="keywords" content="geotecnologias, SIG, Sistema de Informação Geográfica, geoprocessamento, licenciamento ambiental, mapas técnicos, análise espacial, drone, LiDAR, LULC, VANT">
 <meta name="author" content="Anwar Sabbagh">
 <meta name="robots" content="index, follow">
 
@@ -36,10 +36,15 @@ gtag('js', new Date());
 gtag('config', 'G-7EMHP39XQF');
 </script>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Preconnect para CDNs -->
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- Favicon inline -->
@@ -61,7 +66,7 @@ gtag('config', 'G-7EMHP39XQF');
 }
 </script>
 
-<!-- Schema.org ProfessionalService (mantido e atualizado com URL correta) -->
+<!-- Schema.org ProfessionalService (atualizado com URL do favicon) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,7 +74,6 @@ gtag('config', 'G-7EMHP39XQF');
   "@id": "https://anwarsabbagh.github.io/Geosabbagh.github.io/",
   "name": "GeoSabbagh",
   "url": "https://anwarsabbagh.github.io/Geosabbagh.github.io/",
-  "logo": "https://anwarsabbagh.github.io/Geosabbagh.github.io/img/logo-principal.png",
   "description": "Consultoria especializada em Geotecnologias e Desenvolvimento de Sistemas de Informação Geográfica para o setor ambiental.",
   "email": "contato.geosabbagh@gmail.com",
   "areaServed": { "@type": "Country", "name": "Brasil" },
@@ -86,7 +90,7 @@ gtag('config', 'G-7EMHP39XQF');
       { "@type": "Service", "name": "Mapas para Licenciamento Ambiental" },
       { "@type": "Service", "name": "Análise Espacial Ambiental" },
       { "@type": "Service", "name": "Desenvolvimento SIG" },
-      { "@type": "Service", "name": "Classificação de Uso do Solo" },
+      { "@type": "Service", "name": "Classificação de Uso do Solo (LULC)" },
       { "@type": "Service", "name": "Levantamento com Drone e LiDAR" },
       { "@type": "Service", "name": "Modelagem Hidrológica" }
     ]
@@ -128,6 +132,23 @@ body {
   line-height: 1.7;
   padding-top: 80px;
   overflow-x: hidden;
+}
+
+/* ============================================
+   LOGO PERSONALIZADA - GEO VERDE / SABBAGH DOURADO
+============================================ */
+.logo-text .geo-verde {
+    color: var(--verde); /* #1A3728 */
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+}
+.logo-text .sabbagh-dourado {
+    color: var(--dourado); /* #B8843A */
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+}
+.footer-brand .logo-text .sabbagh-dourado {
+    color: var(--dourado2); /* Versão mais clara para o footer escuro */
 }
 
 /* ============================================
@@ -192,8 +213,6 @@ header.scrolled { box-shadow: 0 2px 20px rgba(26,55,40,0.10); }
   color: var(--verde);
 }
 @keyframes rotacao { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-.logo-text { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.35rem; color: var(--verde); letter-spacing: -0.02em; }
 
 /* Navegação */
 nav { display: flex; gap: 8px; align-items: center; }
@@ -932,7 +951,7 @@ footer {
   justify-content: center;
   cursor: pointer;
   border: none;
-  z-index: 99;
+  z-index: 9999;
   box-shadow: 0 4px 14px rgba(26,55,40,0.3);
   transition: var(--transition);
 }
@@ -1002,7 +1021,7 @@ footer {
       <div class="logo-icon" aria-hidden="true">
         <i class="fa-solid fa-compass"></i>
       </div>
-      <span class="logo-text">GeoSabbagh</span>
+      <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
     </a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
@@ -1086,7 +1105,7 @@ footer {
         <div class="sobre-text fade-in">
           <span class="tag">Quem somos</span>
           <h2 id="sobre-heading">Sobre a <span>GeoSabbagh</span></h2>
-          <p>Com mais de uma década de experiência em geotecnologias, a GeoSabbagh nasceu da necessidade de oferecer análises espaciais de alta precisão para o setor ambiental. Nossa consultoria transforma dados brutos em informações geográficas valiosas, fornecendo a base técnica para projetos de licenciamento, conservação e planejamento territorial.</p>
+          <p>Desde 2015, a GeoSabbagh oferece análises espaciais de alta precisão para o setor ambiental. Nossa consultoria transforma dados brutos em informações geográficas valiosas, fornecendo a base técnica para projetos de licenciamento, conservação e planejamento territorial em todo o Brasil.</p>
           <p>Atendemos consultorias ambientais, empresas de engenharia, órgãos públicos e profissionais que necessitam de mapas técnicos, modelagem espacial e interpretação de sensoriamento remoto com rigor cartográfico e agilidade.</p>
           <a href="#contato" class="btn btn-verde"><i class="fa-solid fa-envelope"></i> Falar com um especialista</a>
         </div>
@@ -1134,7 +1153,7 @@ footer {
         </article>
         <article class="card fade-in">
           <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-satellite"></i></div>
-          <h3>Classificação de Uso e Cobertura do Solo</h3>
+          <h3>Classificação de Uso e Cobertura do Solo (LULC)</h3>
           <p>Mapeamento de vegetação, áreas antropizadas e monitoramento temporal com imagens de satélite Landsat e Sentinel.</p>
         </article>
         <article class="card fade-in">
@@ -1162,7 +1181,7 @@ footer {
         <div class="grid-3">
           <article class="drone-card fade-in">
             <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-helicopter"></i></div>
-            <h3>Levantamento Aéreo com Drones</h3>
+            <h3>Levantamento com Drone / VANT</h3>
             <p>Captação de imagens aéreas de altíssima resolução para mapeamento de APPs, fragmentos florestais e áreas de recuperação ambiental.</p>
           </article>
           <article class="drone-card fade-in">
@@ -1323,6 +1342,7 @@ footer {
           <div class="form-card">
             <!-- FORMULÁRIO CORRIGIDO com o ID do Formspree: mvzayqaj -->
             <form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST" novalidate>
+              <input type="hidden" name="_subject" value="Novo contato do site GeoSabbagh">
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Nome completo <span style="color:var(--dourado)">*</span></label>
@@ -1343,7 +1363,7 @@ footer {
                   <option value="">Selecione o serviço...</option>
                   <option>Mapas para Licenciamento Ambiental</option>
                   <option>Análise Espacial</option>
-                  <option>Classificação de Uso do Solo</option>
+                  <option>Classificação de Uso do Solo (LULC)</option>
                   <option>Análise de Relevo e Declividade</option>
                   <option>Modelagem Hidrológica</option>
                   <option>Levantamento com Drone / LiDAR</option>
@@ -1377,7 +1397,7 @@ footer {
           <div class="footer-logo-icon" aria-hidden="true">
             <i class="fa-solid fa-compass"></i>
           </div>
-          <span class="logo-text" style="color:white;">GeoSabbagh</span>
+          <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
         </a>
         <p>Consultoria especializada em Geotecnologias e Desenvolvimento de Sistemas de Informação Geográfica para o setor ambiental.</p>
         <p style="font-size: 0.85rem; color: #555;">_________________________________________________________________________________</p>
@@ -1387,7 +1407,7 @@ footer {
         <ul>
           <li><a href="#servicos">Mapas para Licenciamento</a></li>
           <li><a href="#servicos">Análise Espacial</a></li>
-          <li><a href="#servicos">Uso e Cobertura do Solo</a></li>
+          <li><a href="#servicos">Uso e Cobertura do Solo (LULC)</a></li>
           <li><a href="#servicos">Drone e LiDAR</a></li>
           <li><a href="#servicos">Desenvolvimento SIG</a></li>
         </ul>
@@ -1514,4 +1534,3 @@ footer {
 
 </body>
 </html>
-
