@@ -161,9 +161,6 @@ body {
     font-weight: 700;
     font-size: var(--fs-xl);
 }
-.footer-brand .logo-text .sabbagh-dourado {
-    color: var(--dourado2);
-}
 
 .logo-icon {
   width: 46px; 
@@ -194,7 +191,7 @@ body {
 .footer-logo-icon svg {
   width: 100%;
   height: 100%;
-  filter: brightness(0.85) drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
 /* ============================================
@@ -923,12 +920,13 @@ p { color: var(--texto2); font-size: var(--fs-base); line-height: 1.7; }
 }
 
 /* ============================================
-   FOOTER
+   FOOTER - ATUALIZADO COM CORES DO INÍCIO
 ============================================ */
 footer {
-  background: #111;
-  color: #aaa;
+  background: linear-gradient(135deg, var(--verde) 0%, var(--verde2) 100%);
+  color: rgba(255,255,255,0.9);
   padding: 60px 0 30px;
+  border-top: 3px solid var(--dourado);
 }
 
 .footer-grid {
@@ -936,7 +934,7 @@ footer {
   grid-template-columns: 2fr 1fr 1fr;
   gap: 50px;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   margin-bottom: 30px;
 }
 
@@ -945,9 +943,15 @@ footer {
 .footer-brand .logo-text .sabbagh-dourado {
   font-size: var(--fs-lg);
 }
+.footer-brand .logo-text .geo-verde {
+  color: white;
+}
+.footer-brand .logo-text .sabbagh-dourado {
+  color: var(--dourado2);
+}
 .footer-brand p {
   font-size: var(--fs-sm);
-  color: #888;
+  color: rgba(255,255,255,0.8);
   line-height: 1.7;
   margin-top: 14px;
   margin-bottom: 20px;
@@ -955,20 +959,26 @@ footer {
 
 .footer-col h4 {
   font-family: 'Fraunces', serif;
-  color: white;
+  color: var(--dourado2);
   font-size: var(--fs-base);
   margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 8px;
 }
 
 .footer-col ul { list-style: none; }
 .footer-col ul li { margin-bottom: 10px; }
 .footer-col ul li a {
-  color: #888;
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
   font-size: var(--fs-sm);
   transition: color 0.2s;
+  display: inline-block;
 }
-.footer-col ul li a:hover { color: var(--dourado2); }
+.footer-col ul li a:hover { 
+  color: var(--dourado2);
+  transform: translateX(3px);
+}
 
 .footer-bottom {
   display: flex;
@@ -978,9 +988,17 @@ footer {
   gap: 10px;
 }
 
-.footer-bottom p { font-size: var(--fs-xs); }
-.footer-dev { color: #666; }
-.footer-dev span { color: var(--dourado2); }
+.footer-bottom p { 
+  font-size: var(--fs-xs); 
+  color: rgba(255,255,255,0.6);
+}
+.footer-dev { 
+  color: rgba(255,255,255,0.6); 
+}
+.footer-dev span { 
+  color: var(--dourado2);
+  font-weight: 600;
+}
 
 /* ============================================
    BACK TO TOP
@@ -989,7 +1007,7 @@ footer {
   position: fixed;
   bottom: 28px;
   right: 28px;
-  background: var(--verde);
+  background: var(--dourado);
   color: white;
   width: 44px;
   height: 44px;
@@ -1000,12 +1018,16 @@ footer {
   cursor: pointer;
   border: none;
   z-index: 9999;
-  box-shadow: 0 4px 14px rgba(26,55,40,0.3);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
   transition: var(--transition);
 }
 .back-to-top i { font-size: var(--fs-md); color: white; }
 .back-to-top.show { display: flex; }
-.back-to-top:hover { background: var(--verde2); transform: translateY(-3px); }
+.back-to-top:hover { 
+  background: var(--dourado2); 
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
 
 /* ============================================
    RESPONSIVIDADE
@@ -1445,7 +1467,7 @@ footer {
   </section>
 </main>
 
-<!-- FOOTER - Logo com rotação -->
+<!-- FOOTER - Atualizado com as cores do início -->
 <footer role="contentinfo">
   <div class="container">
     <div class="footer-grid">
@@ -1467,7 +1489,6 @@ footer {
           <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
         </a>
         <p>Consultoria especializada em Geotecnologias e Desenvolvimento de Sistemas de Informação Geográfica para o setor ambiental.</p>
-        <p style="font-size: 0.85rem; color: #555;">_________________________________________________________________________________</p>
       </div>
       <div class="footer-col">
         <h4>Serviços</h4>
