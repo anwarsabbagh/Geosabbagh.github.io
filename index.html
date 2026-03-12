@@ -8,7 +8,7 @@
 <title>GeoSabbagh | Consultoria em Geotecnologias e Desenvolvimento SIG</title>
 <meta name="description" content="GeoSabbagh: Consultoria em Geotecnologias e SIG. Especialistas em mapas para licenciamento ambiental, análise espacial, sensoriamento remoto e levantamentos com drone/LiDAR. Atendimento em todo Brasil.">
 <meta name="application-name" content="GeoSabbagh">
-<link rel="canonical" href="https://anwarsabbagh.github.io/Geosabbagh.github.io/">
+<link rel="canonical" href="https://anwarsabbagh.github.io/GeoSabbagh.github.io/">
 
 <!-- Meta tags originais mantidas -->
 <meta name="keywords" content="geotecnologias, SIG, Sistema de Informação Geográfica, geoprocessamento, licenciamento ambiental, mapas técnicos, análise espacial, drone, LiDAR, LULC, VANT">
@@ -19,9 +19,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="GeoSabbagh | Geotecnologias e Desenvolvimento de SIG">
 <meta property="og:description" content="Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental.">
-<meta property="og:url" content="https://anwarsabbagh.github.io/Geosabbagh.github.io/">
+<meta property="og:url" content="https://anwarsabbagh.github.io/GeoSabbagh.github.io/">
 <meta property="og:site_name" content="GeoSabbagh">
-<meta property="og:image" content="https://anwarsabbagh.github.io/Geosabbagh.github.io/img/og-image.jpg">
+<meta property="og:image" content="https://anwarsabbagh.github.io/GeoSabbagh.github.io/img/og-image.jpg">
 <meta property="og:locale" content="pt_BR">
 
 <!-- Twitter -->
@@ -50,30 +50,30 @@ gtag('config', 'G-7EMHP39XQF');
 <!-- Favicon inline -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231A3728' stroke='%23B8843A' stroke-width='3'/%3E%3Cpath d='M50 15 L70 40 L60 70 L40 70 L30 40 L50 15Z' fill='%23F4F0E8'/%3E%3Ccircle cx='50' cy='47' r='8' fill='%23B8843A'/%3E%3C/svg%3E">
 
-<!-- Schema.org WebSite - para informar explicitamente o nome do site ao Google -->
+<!-- Schema.org WebSite -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "GeoSabbagh",
-  "url": "https://anwarsabbagh.github.io/Geosabbagh.github.io/",
+  "url": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/",
   "description": "Consultoria em geotecnologias, SIG e análise espacial aplicada ao licenciamento ambiental.",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://anwarsabbagh.github.io/Geosabbagh.github.io/search?q={search_term_string}",
+    "target": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 }
 </script>
 
-<!-- Schema.org ProfessionalService (atualizado com URL do favicon) -->
+<!-- Schema.org ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "@id": "https://anwarsabbagh.github.io/Geosabbagh.github.io/",
+  "@id": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/",
   "name": "GeoSabbagh",
-  "url": "https://anwarsabbagh.github.io/Geosabbagh.github.io/",
+  "url": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/",
   "description": "Consultoria especializada em Geotecnologias e Desenvolvimento de Sistemas de Informação Geográfica para o setor ambiental.",
   "email": "contato.geosabbagh@gmail.com",
   "areaServed": { "@type": "Country", "name": "Brasil" },
@@ -121,6 +121,17 @@ gtag('config', 'G-7EMHP39XQF');
   --shadow-lg:  0 12px 40px rgba(26,55,40,0.15);
   --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --max-w:      1200px;
+  
+  /* Tamanhos de fonte padronizados */
+  --fs-xs: 0.75rem;   /* 12px */
+  --fs-sm: 0.875rem;  /* 14px */
+  --fs-base: 1rem;    /* 16px */
+  --fs-md: 1.125rem;  /* 18px */
+  --fs-lg: 1.25rem;   /* 20px */
+  --fs-xl: 1.5rem;    /* 24px */
+  --fs-2xl: 1.875rem; /* 30px */
+  --fs-3xl: 2.25rem;  /* 36px */
+  --fs-4xl: 3rem;     /* 48px */
 }
 
 html { scroll-behavior: smooth; }
@@ -129,26 +140,61 @@ body {
   font-family: 'Outfit', sans-serif;
   color: var(--texto);
   background: var(--branco);
-  line-height: 1.7;
+  line-height: 1.6;
   padding-top: 80px;
   overflow-x: hidden;
+  font-size: var(--fs-base);
 }
 
 /* ============================================
-   LOGO PERSONALIZADA - GEO VERDE / SABBAGH DOURADO
+   LOGO PERSONALIZADA COM ROTAÇÃO
 ============================================ */
 .logo-text .geo-verde {
-    color: var(--verde); /* #1A3728 */
+    color: var(--verde);
     font-family: 'Fraunces', serif;
     font-weight: 700;
+    font-size: var(--fs-xl);
 }
 .logo-text .sabbagh-dourado {
-    color: var(--dourado); /* #B8843A */
+    color: var(--dourado);
     font-family: 'Fraunces', serif;
     font-weight: 700;
+    font-size: var(--fs-xl);
 }
 .footer-brand .logo-text .sabbagh-dourado {
-    color: var(--dourado2); /* Versão mais clara para o footer escuro */
+    color: var(--dourado2);
+}
+
+.logo-icon {
+  width: 46px; 
+  height: 46px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  animation: rotacao 35s linear infinite;
+}
+.logo-icon svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+}
+@keyframes rotacao { 
+  from { transform: rotate(0deg); } 
+  to { transform: rotate(360deg); } 
+}
+
+.footer-logo-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotacao 35s linear infinite;
+}
+.footer-logo-icon svg {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.85) drop-shadow(0 2px 4px rgba(0,0,0,0.4));
 }
 
 /* ============================================
@@ -165,6 +211,7 @@ body {
   z-index: 9999;
   border-radius: 0 0 var(--radius-sm) 0;
   text-decoration: none;
+  font-size: var(--fs-sm);
 }
 .skip-link:focus { top: 0; }
 
@@ -201,24 +248,18 @@ header.scrolled { box-shadow: 0 2px 20px rgba(26,55,40,0.10); }
 }
 
 /* Logo */
-.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.logo-icon {
-  width: 46px; height: 46px;
-  animation: rotacao 35s linear infinite;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
-  display: flex; align-items: center; justify-content: center;
+.logo { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  text-decoration: none; 
 }
-.logo-icon i {
-  font-size: 46px;
-  color: var(--verde);
-}
-@keyframes rotacao { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 /* Navegação */
 nav { display: flex; gap: 8px; align-items: center; }
 nav a {
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   color: var(--texto2);
   text-decoration: none;
   padding: 8px 14px;
@@ -246,7 +287,7 @@ nav a.active { color: var(--verde); font-weight: 600; }
 }
 .menu-toggle:hover { background: var(--creme); }
 .menu-toggle i {
-  font-size: 24px;
+  font-size: var(--fs-xl);
   color: var(--verde);
 }
 
@@ -255,22 +296,23 @@ nav a.active { color: var(--verde); font-weight: 600; }
 ============================================ */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 25px; }
 section { padding: 90px 0; }
-h1, h2, h3 { font-family: 'Fraunces', serif; color: var(--verde); line-height: 1.2; }
-h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
-h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 12px; }
+h1, h2, h3, h4 { font-family: 'Fraunces', serif; color: var(--verde); line-height: 1.2; }
+h1 { font-size: clamp(var(--fs-3xl), 5vw, var(--fs-4xl)); }
+h2 { font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl)); margin-bottom: 12px; }
 h2 span { color: var(--dourado); }
-h3 { font-size: 1.2rem; margin-bottom: 10px; }
-p { color: var(--texto2); }
+h3 { font-size: var(--fs-lg); margin-bottom: 10px; }
+h4 { font-size: var(--fs-md); }
+p { color: var(--texto2); font-size: var(--fs-base); line-height: 1.7; }
 
 .section-subtitle {
-  font-size: 1.1rem;
+  font-size: var(--fs-md);
   color: var(--texto2);
   max-width: 600px;
   margin-bottom: 50px;
 }
 .tag {
   display: inline-block;
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -301,7 +343,7 @@ p { color: var(--texto2); }
   border-radius: var(--radius);
   font-family: 'Outfit', sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   text-decoration: none;
   transition: var(--transition);
   cursor: pointer;
@@ -337,7 +379,7 @@ p { color: var(--texto2); }
 }
 
 /* ============================================
-   HERO (SEM IMAGEM)
+   HERO
 ============================================ */
 .hero {
   position: relative;
@@ -372,7 +414,7 @@ p { color: var(--texto2); }
 .hero h1 {
   color: white;
   margin-bottom: 25px;
-  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+  font-size: clamp(var(--fs-3xl), 5.5vw, var(--fs-4xl));
   line-height: 1.2;
 }
 
@@ -385,7 +427,7 @@ p { color: var(--texto2); }
 }
 
 .hero-desc {
-  font-size: 1.2rem;
+  font-size: var(--fs-md);
   color: rgba(255,255,255,0.9);
   max-width: 700px;
   margin: 0 auto 40px;
@@ -449,13 +491,13 @@ p { color: var(--texto2); }
 }
 
 .especializacao-item h3 {
-  font-size: 1.3rem;
+  font-size: var(--fs-lg);
   margin-bottom: 10px;
   color: var(--verde);
 }
 
 .especializacao-item p {
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   color: var(--texto2);
   line-height: 1.6;
 }
@@ -471,7 +513,11 @@ p { color: var(--texto2); }
 }
 
 .sobre-text h2 { margin-bottom: 20px; }
-.sobre-text p { margin-bottom: 18px; font-size: 1.05rem; line-height: 1.8; }
+.sobre-text h2 span { 
+  color: var(--dourado); 
+  font-family: 'Fraunces', serif;
+}
+.sobre-text p { margin-bottom: 18px; font-size: var(--fs-base); line-height: 1.8; }
 
 .diferenciais {
   display: grid;
@@ -486,14 +532,13 @@ p { color: var(--texto2); }
   padding: 18px 16px;
   border-radius: var(--radius);
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: var(--fs-sm);
   color: var(--verde);
-  text-align: center;
+  text-align: left;
   line-height: 1.4;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
+  gap: 12px;
   transition: var(--transition);
 }
 
@@ -505,7 +550,12 @@ p { color: var(--texto2); }
 }
 
 .diff-item:hover i { color: var(--dourado2); }
-.diff-item i { font-size: 20px; color: var(--dourado); }
+.diff-item i { 
+  font-size: var(--fs-lg);
+  color: var(--dourado);
+  width: 28px;
+  text-align: center;
+}
 
 /* ============================================
    SERVIÇOS
@@ -550,8 +600,8 @@ p { color: var(--texto2); }
 .card:hover .card-icon { background: var(--verde); }
 .card:hover .card-icon i { color: white; transform: scale(1.1); }
 
-.card h3 { font-size: 1.1rem; margin-bottom: 10px; }
-.card p { font-size: 0.95rem; line-height: 1.65; flex: 1; }
+.card h3 { font-size: var(--fs-md); margin-bottom: 10px; }
+.card p { font-size: var(--fs-sm); line-height: 1.65; flex: 1; }
 
 /* ============================================
    PROCESSO / METODOLOGIA
@@ -592,7 +642,7 @@ p { color: var(--texto2); }
   background: var(--dourado);
   color: white;
   font-family: 'Fraunces', serif;
-  font-size: 1.4rem;
+  font-size: var(--fs-xl);
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -601,8 +651,8 @@ p { color: var(--texto2); }
   box-shadow: 0 4px 20px rgba(184,132,58,0.4);
 }
 
-.step h3 { color: white; font-size: 1rem; margin-bottom: 10px; }
-.step p { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+.step h3 { color: white; font-size: var(--fs-base); margin-bottom: 10px; }
+.step p { color: rgba(255,255,255,0.65); font-size: var(--fs-sm); }
 
 /* ============================================
    DRONE & LiDAR
@@ -634,8 +684,11 @@ p { color: var(--texto2); }
 .drone-card:hover .card-icon { background: var(--verde); }
 .drone-card:hover .card-icon i { color: white; }
 
+.drone-card h3 { font-size: var(--fs-md); margin-bottom: 10px; }
+.drone-card p { font-size: var(--fs-sm); line-height: 1.65; }
+
 /* ============================================
-   FAQ - NOVO DESIGN
+   FAQ
 ============================================ */
 .faq-section { 
   background: linear-gradient(135deg, #f8f6f2 0%, var(--creme) 100%);
@@ -706,7 +759,7 @@ p { color: var(--texto2); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  font-size: var(--fs-lg);
   color: var(--dourado);
   transition: var(--transition);
 }
@@ -717,13 +770,13 @@ p { color: var(--texto2); }
 }
 
 .faq-card h3 {
-  font-size: 1.1rem;
+  font-size: var(--fs-md);
   margin: 0;
   color: var(--verde);
 }
 
 .faq-card p {
-  font-size: 0.95rem;
+  font-size: var(--fs-sm);
   color: var(--texto2);
   line-height: 1.7;
   margin: 0;
@@ -738,8 +791,8 @@ p { color: var(--texto2); }
   text-align: center;
   padding: 80px 0;
 }
-.cta-section h2 { color: white; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px; }
-.cta-section p { color: rgba(255,255,255,0.8); font-size: 1.15rem; margin-bottom: 36px; }
+.cta-section h2 { color: white; font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl)); margin-bottom: 16px; }
+.cta-section p { color: rgba(255,255,255,0.8); font-size: var(--fs-md); margin-bottom: 36px; }
 
 /* ============================================
    CONTATO
@@ -747,7 +800,7 @@ p { color: var(--texto2); }
 .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 
 .contato-info h2 { margin-bottom: 16px; }
-.contato-info > p { font-size: 1.05rem; margin-bottom: 36px; line-height: 1.75; }
+.contato-info > p { font-size: var(--fs-base); margin-bottom: 36px; line-height: 1.75; }
 
 .info-item {
   display: flex;
@@ -765,11 +818,11 @@ p { color: var(--texto2); }
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 1.1rem;
+  font-size: var(--fs-md);
 }
 
 .info-label {
-  font-size: 0.82rem;
+  font-size: var(--fs-xs);
   color: var(--texto2);
   margin-bottom: 2px;
   font-weight: 500;
@@ -780,12 +833,12 @@ p { color: var(--texto2); }
 .info-value {
   font-weight: 600;
   color: var(--verde);
-  font-size: 0.97rem;
+  font-size: var(--fs-sm);
 }
-.info-value a { color: var(--verde2); text-decoration: none; }
+.info-value a { color: var(--verde2); text-decoration: none; font-size: var(--fs-sm); }
 .info-value a:hover { color: var(--dourado); }
 
-/* Formulário - CORRIGIDO com o ID do Formspree */
+/* Formulário */
 .form-card {
   background: white;
   border-radius: var(--radius);
@@ -798,7 +851,7 @@ p { color: var(--texto2); }
   display: block;
   margin-bottom: 7px;
   font-weight: 600;
-  font-size: 0.88rem;
+  font-size: var(--fs-sm);
   color: var(--verde);
   letter-spacing: 0.02em;
 }
@@ -811,7 +864,7 @@ p { color: var(--texto2); }
   border: 1.5px solid #e0ddd6;
   border-radius: var(--radius-sm);
   font-family: 'Outfit', sans-serif;
-  font-size: 0.97rem;
+  font-size: var(--fs-sm);
   color: var(--texto);
   background: #fdfcf9;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -837,7 +890,7 @@ p { color: var(--texto2); }
   border-radius: var(--radius);
   font-family: 'Outfit', sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   cursor: pointer;
   transition: var(--transition);
   display: flex;
@@ -853,18 +906,20 @@ p { color: var(--texto2); }
 }
 .btn-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
 
-#formMessage { margin-top: 14px; font-size: 0.93rem; }
+#formMessage { margin-top: 14px; font-size: var(--fs-sm); }
 .msg-success {
   background: #d4f0e0;
   color: #1a5c35;
   padding: 12px 16px;
   border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
 }
 .msg-error {
   background: #fde8e8;
   color: #8b1a1a;
   padding: 12px 16px;
   border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
 }
 
 /* ============================================
@@ -885,30 +940,23 @@ footer {
   margin-bottom: 30px;
 }
 
-.footer-brand .logo-text { color: white; font-size: 1.3rem; }
+.footer-brand .logo-text { color: white; font-size: var(--fs-lg); }
+.footer-brand .logo-text .geo-verde,
+.footer-brand .logo-text .sabbagh-dourado {
+  font-size: var(--fs-lg);
+}
 .footer-brand p {
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   color: #888;
   line-height: 1.7;
   margin-top: 14px;
   margin-bottom: 20px;
 }
 
-.footer-logo-icon {
-  width: 40px;
-  height: 40px;
-  animation: none;
-  filter: brightness(0.85) drop-shadow(0 2px 4px rgba(0,0,0,0.4));
-}
-.footer-logo-icon i {
-  font-size: 40px;
-  color: var(--dourado2);
-}
-
 .footer-col h4 {
   font-family: 'Fraunces', serif;
   color: white;
-  font-size: 1rem;
+  font-size: var(--fs-base);
   margin-bottom: 16px;
 }
 
@@ -917,7 +965,7 @@ footer {
 .footer-col ul li a {
   color: #888;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   transition: color 0.2s;
 }
 .footer-col ul li a:hover { color: var(--dourado2); }
@@ -930,7 +978,7 @@ footer {
   gap: 10px;
 }
 
-.footer-bottom p { font-size: 0.85rem; }
+.footer-bottom p { font-size: var(--fs-xs); }
 .footer-dev { color: #666; }
 .footer-dev span { color: var(--dourado2); }
 
@@ -955,7 +1003,7 @@ footer {
   box-shadow: 0 4px 14px rgba(26,55,40,0.3);
   transition: var(--transition);
 }
-.back-to-top i { font-size: 18px; color: white; }
+.back-to-top i { font-size: var(--fs-md); color: white; }
 .back-to-top.show { display: flex; }
 .back-to-top:hover { background: var(--verde2); transform: translateY(-3px); }
 
@@ -1014,12 +1062,22 @@ footer {
 
 <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-<!-- HEADER -->
+<!-- HEADER - Logo com rotação -->
 <header id="site-header" role="banner">
   <div class="header-inner">
-    <a href="#home" class="logo" aria-label="GeoSabbagh – página inicial">
+    <a href="#home" class="logo" aria-label="GeoSabbagh - Página inicial">
       <div class="logo-icon" aria-hidden="true">
-        <i class="fa-solid fa-compass"></i>
+        <svg width="42" height="42" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
+          <line x1="256" y1="56" x2="256" y2="456" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+          <line x1="56" y1="256" x2="456" y2="256" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+          <polygon points="256,60 226,130 286,130" fill="#cc5500" stroke="#b35e00" stroke-width="4"/>
+          <rect x="246" y="130" width="20" height="100" fill="#cc5500" rx="4"/>
+          <text x="256" y="440" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">S</text>
+          <text x="440" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">L</text>
+          <text x="72" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">O</text>
+          <circle cx="256" cy="256" r="20" fill="#FFD700" stroke="#b8860b" stroke-width="3"/>
+        </svg>
       </div>
       <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
     </a>
@@ -1041,7 +1099,7 @@ footer {
 
 <main id="main-content">
 
-  <!-- HERO - SEM IMAGEM -->
+  <!-- HERO -->
   <section class="hero" id="home" aria-label="Apresentação">
     <div class="container">
       <div class="hero-content fade-in">
@@ -1110,14 +1168,14 @@ footer {
           <a href="#contato" class="btn btn-verde"><i class="fa-solid fa-envelope"></i> Falar com um especialista</a>
         </div>
         <div class="fade-in">
-          <h3 style="margin-bottom: 20px; font-size: 1.1rem; color: var(--texto2); font-family: 'Outfit', sans-serif; font-weight: 600;">Nossos Diferenciais</h3>
+          <h3>Nossos Diferenciais</h3>
           <div class="diferenciais">
             <div class="diff-item">
               <i class="fa-solid fa-bolt"></i>
               +10 anos em projetos ambientais
             </div>
             <div class="diff-item">
-              <i class="fa-solid fa-layers"></i>
+              <i class="fa-solid fa-layer-group"></i>
               Especialistas em SIG e Geotecnologias
             </div>
             <div class="diff-item">
@@ -1230,7 +1288,7 @@ footer {
     </div>
   </section>
 
-  <!-- FAQ - NOVO DESIGN EM CARDS -->
+  <!-- FAQ -->
   <section class="faq-section" id="faq" aria-labelledby="faq-heading">
     <div class="container">
       <span class="tag fade-in">Dúvidas comuns</span>
@@ -1314,7 +1372,7 @@ footer {
     </div>
   </section>
 
-  <!-- CONTATO - FORMULÁRIO CORRIGIDO COM ID DO FORMSPREE -->
+  <!-- CONTATO -->
   <section class="contato" id="contato" aria-labelledby="contato-heading">
     <div class="container">
       <div class="contato-grid">
@@ -1340,7 +1398,6 @@ footer {
 
         <div class="form-contato fade-in">
           <div class="form-card">
-            <!-- FORMULÁRIO CORRIGIDO com o ID do Formspree: mvzayqaj -->
             <form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST" novalidate>
               <input type="hidden" name="_subject" value="Novo contato do site GeoSabbagh">
               <div class="form-row">
@@ -1388,14 +1445,24 @@ footer {
   </section>
 </main>
 
-<!-- FOOTER -->
+<!-- FOOTER - Logo com rotação -->
 <footer role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#home" class="logo" aria-label="GeoSabbagh - Voltar ao início" style="text-decoration: none; display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
           <div class="footer-logo-icon" aria-hidden="true">
-            <i class="fa-solid fa-compass"></i>
+            <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
+              <line x1="256" y1="56" x2="256" y2="456" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+              <line x1="56" y1="256" x2="456" y2="256" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+              <polygon points="256,60 226,130 286,130" fill="#cc5500" stroke="#b35e00" stroke-width="4"/>
+              <rect x="246" y="130" width="20" height="100" fill="#cc5500" rx="4"/>
+              <text x="256" y="440" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">S</text>
+              <text x="440" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">L</text>
+              <text x="72" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">O</text>
+              <circle cx="256" cy="256" r="20" fill="#FFD700" stroke="#b8860b" stroke-width="3"/>
+            </svg>
           </div>
           <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
         </a>
