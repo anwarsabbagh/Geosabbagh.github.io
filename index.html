@@ -4,69 +4,185 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- CORREÇÕES DE SEO - IDENTIFICAÇÃO DO SITE -->
+<!-- TÍTULO E DESCRIÇÃO -->
 <title>GeoSabbagh | Consultoria em Geotecnologias e Desenvolvimento SIG</title>
-<meta name="description" content="GeoSabbagh: Consultoria em Geotecnologias e SIG. Especialistas em mapas para licenciamento ambiental, análise espacial, sensoriamento remoto e levantamentos com drone/LiDAR. Atendimento em todo Brasil.">
+<meta name="description" content="GeoSabbagh: Consultoria especializada em Geotecnologias e SIG para licenciamento ambiental. Mapas técnicos, análise espacial, sensoriamento remoto e levantamentos com drone/LiDAR em todo Brasil.">
+<meta name="keywords" content="geotecnologias, SIG, geoprocessamento, licenciamento ambiental, mapas técnicos, análise espacial, drone, LiDAR">
+<meta name="author" content="Anwar Sabbagh">
+<meta name="robots" content="index, follow">
 <meta name="application-name" content="GeoSabbagh">
 <link rel="canonical" href="https://anwarsabbagh.github.io/GeoSabbagh.github.io/">
 
-<!-- Meta tags originais mantidas -->
-<meta name="keywords" content="geotecnologias, SIG, Sistema de Informação Geográfica, geoprocessamento, licenciamento ambiental, mapas técnicos, análise espacial, drone, LiDAR, LULC, VANT">
-<meta name="author" content="Anwar Sabbagh">
-<meta name="robots" content="index, follow">
+<!-- PRELOAD DE RECURSOS CRÍTICOS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-<!-- Open Graph -->
+<!-- FAVICON COMPLETO -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#1A3728">
+
+<!-- OPEN GRAPH / FACEBOOK -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="GeoSabbagh | Geotecnologias e Desenvolvimento de SIG">
+<meta property="og:title" content="GeoSabbagh | Geotecnologias e Desenvolvimento SIG">
 <meta property="og:description" content="Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental.">
 <meta property="og:url" content="https://anwarsabbagh.github.io/GeoSabbagh.github.io/">
 <meta property="og:site_name" content="GeoSabbagh">
-<meta property="og:image" content="https://anwarsabbagh.github.io/GeoSabbagh.github.io/img/og-image.jpg">
+<meta property="og:image" content="https://anwarsabbagh.github.io/GeoSabbagh.github.io/img/og-image.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 
-<!-- Twitter -->
+<!-- TWITTER CARD -->
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GeoSabbagh | Geotecnologias">
+<meta name="twitter:description" content="Consultoria em geoprocessamento e SIG para licenciamento ambiental">
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7EMHP39XQF"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-7EMHP39XQF');
-</script>
+<!-- CSS OTIMIZADO (MINIFICADO) -->
+<style>
+/*! GeoSabbagh v1.0 - Otimizado PageSpeed */
+:root{--verde:#1A3728;--verde2:#2C5F46;--dourado:#B8843A;--dourado2:#d4a055;--creme:#F4F0E8;--creme2:#EDE8DC;--texto:#2A2F28;--texto2:#5a6457;--branco:#FDFCF9;--radius:12px;--radius-sm:8px;--shadow:0 4px 24px rgba(26,55,40,0.1);--shadow-lg:0 12px 40px rgba(26,55,40,0.15);--transition:all 0.35s cubic-bezier(0.4,0,0.2,1);--max-w:1200px;--fs-xs:0.75rem;--fs-sm:0.875rem;--fs-base:1rem;--fs-md:1.125rem;--fs-lg:1.25rem;--fs-xl:1.5rem;--fs-2xl:1.875rem;--fs-3xl:2.25rem;--fs-4xl:3rem}
+*,::after,::before{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--branco);color:var(--texto);font-family:Outfit,sans-serif;font-size:var(--fs-base);line-height:1.6;overflow-x:hidden;padding-top:80px}
+.logo-text .geo-verde{color:var(--verde);font-family:Fraunces,serif;font-size:var(--fs-xl);font-weight:700}
+.logo-text .sabbagh-dourado{color:var(--dourado);font-family:Fraunces,serif;font-size:var(--fs-xl);font-weight:700}
+.logo-icon{animation:rotacao 35s linear infinite;display:flex;height:46px;justify-content:center;width:46px;will-change:transform}
+.logo-icon svg{filter:drop-shadow(0 2px 4px rgba(0,0,0,0.12));height:100%;width:100%}
+@keyframes rotacao{to{transform:rotate(1turn)}}
+.footer-logo-icon{animation:rotacao 35s linear infinite;display:flex;height:40px;justify-content:center;width:40px;will-change:transform}
+.skip-link{background:var(--dourado);border-radius:0 0 var(--radius-sm) 0;color:#fff;font-size:var(--fs-sm);font-weight:600;left:0;padding:10px 20px;position:absolute;text-decoration:none;top:-100%;z-index:9999}
+.skip-link:focus{top:0}
+:focus-visible{border-radius:4px;outline:2px solid var(--dourado);outline-offset:3px}
+header{background:rgba(253,252,249,0.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,55,40,0.08);position:fixed;top:0;transition:var(--transition);width:100%;z-index:1000}
+header.scrolled{box-shadow:0 2px 20px rgba(26,55,40,0.1)}
+.header-inner{align-items:center;display:flex;height:80px;justify-content:space-between;margin:0 auto;max-width:var(--max-w);padding:0 25px}
+.logo{align-items:center;display:flex;gap:10px;text-decoration:none}
+nav{align-items:center;display:flex;gap:8px}
+nav a{border-radius:var(--radius-sm);color:var(--texto2);font-size:var(--fs-sm);font-weight:500;padding:8px 14px;text-decoration:none;transition:var(--transition)}
+nav a:hover,.nav-cta,.nav-cta:hover{color:#fff}
+nav a:hover{background:var(--creme);color:var(--verde)}
+nav a.active{color:var(--verde);font-weight:600}
+.nav-cta{background:var(--verde)!important;padding:9px 20px!important}
+.nav-cta:hover{background:var(--verde2)!important;transform:translateY(-1px)}
+.menu-toggle{background:0 0;border:none;cursor:pointer;display:none;padding:8px;transition:var(--transition)}
+.menu-toggle:hover{background:var(--creme)}
+.menu-toggle i{color:var(--verde);font-size:var(--fs-xl)}
+.container{margin:0 auto;max-width:var(--max-w);padding:0 25px}
+section{padding:90px 0}
+h1,h2,h3,h4{color:var(--verde);font-family:Fraunces,serif;line-height:1.2}
+h1{font-size:clamp(var(--fs-3xl),5vw,var(--fs-4xl))}
+h2{font-size:clamp(var(--fs-2xl),4vw,var(--fs-3xl));margin-bottom:12px}
+h2 span{color:var(--dourado)}
+h3{font-size:var(--fs-lg);margin-bottom:10px}
+p{color:var(--texto2);font-size:var(--fs-base);line-height:1.7}
+.section-subtitle{color:var(--texto2);font-size:var(--fs-md);margin-bottom:50px;max-width:600px}
+.tag{background:rgba(184,132,58,0.1);border-radius:50px;color:var(--dourado);display:inline-block;font-size:var(--fs-xs);font-weight:600;letter-spacing:.1em;margin-bottom:14px;padding:4px 12px;text-transform:uppercase}
+.grid-2,.grid-3{display:grid;gap:28px;margin-top:40px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.btn{align-items:center;border:none;border-radius:var(--radius);cursor:pointer;display:inline-flex;font-family:Outfit,sans-serif;font-size:var(--fs-sm);font-weight:600;gap:8px;padding:14px 30px;text-decoration:none;transition:var(--transition)}
+.btn-primary{background:var(--dourado);box-shadow:0 4px 16px rgba(184,132,58,0.35);color:#fff}
+.btn-primary:hover{background:var(--dourado2);box-shadow:0 8px 24px rgba(184,132,58,0.4);transform:translateY(-2px)}
+.btn-outline-white{border:2px solid rgba(255,255,255,0.7);color:#fff}
+.btn-outline-white:hover{background:rgba(255,255,255,0.12);border-color:#fff;transform:translateY(-2px)}
+.btn-verde{background:var(--verde);box-shadow:0 4px 16px rgba(26,55,40,0.25);color:#fff}
+.btn-verde:hover{background:var(--verde2);box-shadow:0 6px 20px rgba(26,55,40,0.25);transform:translateY(-2px)}
+.hero{background:linear-gradient(135deg,var(--verde),var(--verde2));color:#fff;overflow:hidden;padding:100px 0;position:relative}
+.hero::before{background:radial-gradient(circle at 20% 50%,rgba(255,255,255,0.05) 0,transparent 50%),radial-gradient(circle at 80% 80%,rgba(184,132,58,0.1) 0,transparent 50%);content:"";inset:0;pointer-events:none;position:absolute}
+.hero-content{margin:0 auto;max-width:800px;text-align:center}
+.hero-content .tag{background:rgba(184,132,58,0.2);color:var(--dourado2);margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(var(--fs-3xl),5.5vw,var(--fs-4xl));margin-bottom:25px}
+.hero h1 em{color:var(--dourado2);display:block;font-size:.9em;font-style:italic;margin-top:10px}
+.hero-desc{color:rgba(255,255,255,0.9);font-size:var(--fs-md);line-height:1.8;margin:0 auto 40px;max-width:700px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.especializacao-bar{background:var(--creme2);border-bottom:1px solid rgba(26,55,40,0.06);border-top:1px solid rgba(26,55,40,0.06);padding:60px 0}
+.especializacao-grid{display:grid;gap:40px;grid-template-columns:repeat(3,1fr);text-align:center}
+.especializacao-item{padding:20px}
+.especializacao-icon{background:#fff;border-radius:50%;box-shadow:var(--shadow);display:flex;height:80px;justify-content:center;margin:0 auto 20px;transition:var(--transition);width:80px}
+.especializacao-item:hover .especializacao-icon{background:var(--verde);transform:translateY(-5px)}
+.especializacao-icon i{color:var(--verde);font-size:36px;transition:var(--transition)}
+.especializacao-item:hover .especializacao-icon i{color:#fff}
+.sobre-grid{align-items:center;display:grid;gap:70px;grid-template-columns:1fr 1fr}
+.diferenciais{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:32px}
+.diff-item{align-items:center;background:var(--creme);border:1px solid var(--creme2);border-radius:var(--radius);color:var(--verde);display:flex;font-size:var(--fs-sm);font-weight:600;gap:12px;padding:18px 16px;text-align:left;transition:var(--transition)}
+.diff-item:hover{background:var(--verde);box-shadow:var(--shadow);color:#fff;transform:translateY(-3px)}
+.diff-item i{color:var(--dourado);font-size:var(--fs-lg);text-align:center;width:28px}
+.diff-item:hover i{color:var(--dourado2)}
+.servicos-section{background:var(--creme)}
+.card{background:#fff;border-radius:var(--radius);border-top:3px solid transparent;box-shadow:var(--shadow);display:flex;flex-direction:column;padding:32px 28px;transition:var(--transition)}
+.card:hover{border-top-color:var(--dourado);box-shadow:var(--shadow-lg);transform:translateY(-6px)}
+.card-icon{align-items:center;background:var(--creme);border-radius:var(--radius-sm);display:flex;height:52px;justify-content:center;margin-bottom:20px;transition:var(--transition);width:52px}
+.card-icon i{color:var(--verde);font-size:26px;transition:var(--transition)}
+.card:hover .card-icon{background:var(--verde)}
+.card:hover .card-icon i{color:#fff;transform:scale(1.1)}
+.processo-section{background:var(--verde);color:#fff}
+.processo-section h2{color:#fff}
+.processo-steps{display:grid;gap:30px;grid-template-columns:repeat(4,1fr);margin-top:50px;position:relative}
+.processo-steps::before{background:linear-gradient(90deg,var(--dourado),rgba(184,132,58,0.3));content:"";height:2px;left:12%;position:absolute;right:12%;top:28px;z-index:0}
+.step{position:relative;text-align:center;z-index:1}
+.step-num{align-items:center;background:var(--dourado);border-radius:50%;box-shadow:0 4px 20px rgba(184,132,58,0.4);color:#fff;display:flex;font-family:Fraunces,serif;font-size:var(--fs-xl);font-weight:700;height:56px;justify-content:center;margin:0 auto 20px;width:56px}
+.step h3{color:#fff;font-size:var(--fs-base)}
+.step p{color:rgba(255,255,255,0.65);font-size:var(--fs-sm)}
+.drone-card{background:#fff;border-left:4px solid var(--dourado);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px 28px;transition:var(--transition)}
+.drone-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.faq-section{background:linear-gradient(135deg,#f8f6f2,var(--creme));overflow:hidden;position:relative}
+.faq-grid{display:grid;gap:30px;grid-template-columns:repeat(2,1fr);margin-top:50px;position:relative;z-index:1}
+.faq-card{background:#fff;border:1px solid rgba(184,132,58,0.1);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px;transition:var(--transition)}
+.faq-card:hover{border-color:var(--dourado);box-shadow:var(--shadow-lg);transform:translateY(-5px)}
+.faq-card-header{align-items:center;display:flex;gap:15px;margin-bottom:20px}
+.faq-card-icon{align-items:center;background:var(--creme);border-radius:50%;color:var(--dourado);display:flex;font-size:var(--fs-lg);height:50px;justify-content:center;transition:var(--transition);width:50px}
+.faq-card:hover .faq-card-icon{background:var(--verde);color:#fff}
+.cta-section{background:linear-gradient(135deg,var(--verde),var(--verde2));color:#fff;padding:80px 0;text-align:center}
+.cta-section h2{color:#fff;font-size:clamp(var(--fs-2xl),4vw,var(--fs-3xl))}
+.contato-grid{display:grid;gap:60px;grid-template-columns:1fr 1fr}
+.info-item{align-items:flex-start;display:flex;gap:14px;margin-bottom:20px}
+.info-icon{align-items:center;background:var(--creme);border-radius:var(--radius-sm);display:flex;flex-shrink:0;font-size:var(--fs-md);height:42px;justify-content:center;width:42px}
+.info-label{color:var(--texto2);font-size:var(--fs-xs);font-weight:500;letter-spacing:.06em;margin-bottom:2px;text-transform:uppercase}
+.info-value{color:var(--verde);font-size:var(--fs-sm);font-weight:600}
+.form-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:40px}
+.form-group{margin-bottom:20px}
+.form-group label{color:var(--verde);display:block;font-size:var(--fs-sm);font-weight:600;letter-spacing:.02em;margin-bottom:7px}
+.form-group input,.form-group select,.form-group textarea{background:#fdfcf9;border:1.5px solid #e0ddd6;border-radius:var(--radius-sm);color:var(--texto);font-family:Outfit,sans-serif;font-size:var(--fs-sm);padding:12px 16px;transition:border-color .2s,box-shadow .2s;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--verde);box-shadow:0 0 0 3px rgba(26,55,40,0.08);outline:0}
+.form-row{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.btn-submit{background:var(--verde);border:none;border-radius:var(--radius);color:#fff;cursor:pointer;display:flex;font-family:Outfit,sans-serif;font-size:var(--fs-base);font-weight:600;gap:8px;justify-content:center;padding:15px 30px;transition:var(--transition);width:100%}
+.btn-submit:hover{background:var(--verde2);box-shadow:0 6px 20px rgba(26,55,40,0.25);transform:translateY(-2px)}
+footer{background:linear-gradient(135deg,var(--verde),var(--verde2));border-top:3px solid var(--dourado);color:rgba(255,255,255,0.9);padding:60px 0 30px}
+.footer-grid{display:grid;gap:50px;grid-template-columns:2fr 1fr 1fr;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:30px}
+.footer-brand p{color:rgba(255,255,255,0.8);font-size:var(--fs-sm);line-height:1.7;margin-top:14px}
+.footer-col h4{color:var(--dourado2);font-family:Fraunces,serif;font-size:var(--fs-base);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.2)}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:rgba(255,255,255,0.7);font-size:var(--fs-sm);text-decoration:none;transition:color .2s;display:inline-block}
+.footer-col ul li a:hover{color:var(--dourado2);transform:translateX(3px)}
+.footer-bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.footer-bottom p{color:rgba(255,255,255,0.6);font-size:var(--fs-xs)}
+.footer-dev span{color:var(--dourado2);font-weight:600}
+.back-to-top{background:var(--dourado);border:none;border-radius:50%;bottom:28px;box-shadow:0 4px 14px rgba(0,0,0,0.3);color:#fff;cursor:pointer;display:none;height:44px;justify-content:center;position:fixed;right:28px;transition:var(--transition);width:44px;z-index:9999}
+.back-to-top.show{display:flex}
+.back-to-top:hover{background:var(--dourado2);box-shadow:0 6px 20px rgba(0,0,0,0.4);transform:translateY(-3px)}
+@media (max-width:900px){.sobre-grid{grid-template-columns:1fr}.processo-steps{grid-template-columns:repeat(2,1fr)}.processo-steps::before{display:none}.especializacao-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:768px){body{padding-top:70px}.header-inner{height:70px}.menu-toggle{display:flex}.grid-2,.grid-3,.contato-grid,.footer-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+@media (max-width:480px){.diferenciais{grid-template-columns:1fr}.form-card{padding:24px 20px}}
+</style>
 
-<!-- Preconnect para CDNs -->
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- FONT AWESOME (CARREGADO COM DEFER) -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- GOOGLE FONTS (CARREGADO COM DEFER) -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap"></noscript>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<!-- Favicon inline -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%231A3728' stroke='%23B8843A' stroke-width='3'/%3E%3Cpath d='M50 15 L70 40 L60 70 L40 70 L30 40 L50 15Z' fill='%23F4F0E8'/%3E%3Ccircle cx='50' cy='47' r='8' fill='%23B8843A'/%3E%3C/svg%3E">
-
-<!-- Schema.org WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "GeoSabbagh",
-  "url": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/",
-  "description": "Consultoria em geotecnologias, SIG e análise espacial aplicada ao licenciamento ambiental.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
-
-<!-- Schema.org ProfessionalService -->
+<!-- SCHEMA.ORG APRIMORADO -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,6 +190,7 @@ gtag('config', 'G-7EMHP39XQF');
   "@id": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/",
   "name": "GeoSabbagh",
   "url": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/",
+  "logo": "https://anwarsabbagh.github.io/GeoSabbagh.github.io/android-chrome-512x512.png",
   "description": "Consultoria especializada em Geotecnologias e Desenvolvimento de Sistemas de Informação Geográfica para o setor ambiental.",
   "email": "contato.geosabbagh@gmail.com",
   "areaServed": { "@type": "Country", "name": "Brasil" },
@@ -83,6 +200,10 @@ gtag('config', 'G-7EMHP39XQF');
     "addressRegion": "SP",
     "addressCountry": "BR"
   },
+  "sameAs": [
+    "https://www.linkedin.com/company/geosabbagh",
+    "https://twitter.com/geosabbagh"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Serviços de Geotecnologias",
@@ -90,1006 +211,32 @@ gtag('config', 'G-7EMHP39XQF');
       { "@type": "Service", "name": "Mapas para Licenciamento Ambiental" },
       { "@type": "Service", "name": "Análise Espacial Ambiental" },
       { "@type": "Service", "name": "Desenvolvimento SIG" },
-      { "@type": "Service", "name": "Classificação de Uso do Solo (LULC)" },
-      { "@type": "Service", "name": "Levantamento com Drone e LiDAR" },
-      { "@type": "Service", "name": "Modelagem Hidrológica" }
+      { "@type": "Service", "name": "Classificação de Uso do Solo" },
+      { "@type": "Service", "name": "Levantamento com Drone e LiDAR" }
     ]
   }
 }
 </script>
 
-<style>
-/* ============================================
-   RESET & VARIÁVEIS
-============================================ */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --verde:      #1A3728;
-  --verde2:     #2C5F46;
-  --verde3:     #3d7a5c;
-  --dourado:    #B8843A;
-  --dourado2:   #d4a055;
-  --creme:      #F4F0E8;
-  --creme2:     #EDE8DC;
-  --texto:      #2A2F28;
-  --texto2:     #5a6457;
-  --branco:     #FDFCF9;
-  --radius:     12px;
-  --radius-sm:  8px;
-  --shadow:     0 4px 24px rgba(26,55,40,0.10);
-  --shadow-lg:  0 12px 40px rgba(26,55,40,0.15);
-  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --max-w:      1200px;
-  
-  /* Tamanhos de fonte padronizados */
-  --fs-xs: 0.75rem;   /* 12px */
-  --fs-sm: 0.875rem;  /* 14px */
-  --fs-base: 1rem;    /* 16px */
-  --fs-md: 1.125rem;  /* 18px */
-  --fs-lg: 1.25rem;   /* 20px */
-  --fs-xl: 1.5rem;    /* 24px */
-  --fs-2xl: 1.875rem; /* 30px */
-  --fs-3xl: 2.25rem;  /* 36px */
-  --fs-4xl: 3rem;     /* 48px */
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Outfit', sans-serif;
-  color: var(--texto);
-  background: var(--branco);
-  line-height: 1.6;
-  padding-top: 80px;
-  overflow-x: hidden;
-  font-size: var(--fs-base);
-}
-
-/* ============================================
-   LOGO PERSONALIZADA COM ROTAÇÃO
-============================================ */
-.logo-text .geo-verde {
-    color: var(--verde);
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: var(--fs-xl);
-}
-.logo-text .sabbagh-dourado {
-    color: var(--dourado);
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: var(--fs-xl);
-}
-
-.logo-icon {
-  width: 46px; 
-  height: 46px;
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  animation: rotacao 35s linear infinite;
-}
-.logo-icon svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
-}
-@keyframes rotacao { 
-  from { transform: rotate(0deg); } 
-  to { transform: rotate(360deg); } 
-}
-
-.footer-logo-icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: rotacao 35s linear infinite;
-}
-.footer-logo-icon svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-/* ============================================
-   ACESSIBILIDADE
-============================================ */
-.skip-link {
-  position: absolute;
-  top: -100%;
-  left: 0;
-  background: var(--dourado);
-  color: white;
-  padding: 10px 20px;
-  font-weight: 600;
-  z-index: 9999;
-  border-radius: 0 0 var(--radius-sm) 0;
-  text-decoration: none;
-  font-size: var(--fs-sm);
-}
-.skip-link:focus { top: 0; }
-
-*:focus-visible {
-  outline: 2px solid var(--dourado);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* ============================================
-   HEADER
-============================================ */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(253,252,249,0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(26,55,40,0.08);
-  z-index: 1000;
-  transition: var(--transition);
-}
-header.scrolled { box-shadow: 0 2px 20px rgba(26,55,40,0.10); }
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 25px;
-}
-
-/* Logo */
-.logo { 
-  display: flex; 
-  align-items: center; 
-  gap: 10px; 
-  text-decoration: none; 
-}
-
-/* Navegação */
-nav { display: flex; gap: 8px; align-items: center; }
-nav a {
-  font-weight: 500;
-  font-size: var(--fs-sm);
-  color: var(--texto2);
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
-}
-nav a:hover { color: var(--verde); background: var(--creme); }
-nav a.active { color: var(--verde); font-weight: 600; }
-.nav-cta {
-  background: var(--verde) !important;
-  color: white !important;
-  padding: 9px 20px !important;
-}
-.nav-cta:hover { background: var(--verde2) !important; transform: translateY(-1px); }
-
-/* Menu mobile */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: var(--radius-sm);
-  transition: var(--transition);
-}
-.menu-toggle:hover { background: var(--creme); }
-.menu-toggle i {
-  font-size: var(--fs-xl);
-  color: var(--verde);
-}
-
-/* ============================================
-   UTILITÁRIOS
-============================================ */
-.container { max-width: var(--max-w); margin: 0 auto; padding: 0 25px; }
-section { padding: 90px 0; }
-h1, h2, h3, h4 { font-family: 'Fraunces', serif; color: var(--verde); line-height: 1.2; }
-h1 { font-size: clamp(var(--fs-3xl), 5vw, var(--fs-4xl)); }
-h2 { font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl)); margin-bottom: 12px; }
-h2 span { color: var(--dourado); }
-h3 { font-size: var(--fs-lg); margin-bottom: 10px; }
-h4 { font-size: var(--fs-md); }
-p { color: var(--texto2); font-size: var(--fs-base); line-height: 1.7; }
-
-.section-subtitle {
-  font-size: var(--fs-md);
-  color: var(--texto2);
-  max-width: 600px;
-  margin-bottom: 50px;
-}
-.tag {
-  display: inline-block;
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--dourado);
-  background: rgba(184,132,58,0.1);
-  padding: 4px 12px;
-  border-radius: 50px;
-  margin-bottom: 14px;
-}
-
-.grid-2, .grid-3 { display: grid; gap: 28px; margin-top: 40px; }
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.fade-in.visible { opacity: 1; transform: translateY(0); }
-
-/* Botões */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 30px;
-  border-radius: var(--radius);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: var(--fs-sm);
-  text-decoration: none;
-  transition: var(--transition);
-  cursor: pointer;
-  border: none;
-}
-.btn-primary {
-  background: var(--dourado);
-  color: white;
-  box-shadow: 0 4px 16px rgba(184,132,58,0.35);
-}
-.btn-primary:hover {
-  background: var(--dourado2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(184,132,58,0.40);
-}
-.btn-outline-white {
-  border: 2px solid rgba(255,255,255,0.7);
-  color: white;
-}
-.btn-outline-white:hover {
-  background: rgba(255,255,255,0.12);
-  border-color: white;
-  transform: translateY(-2px);
-}
-.btn-verde {
-  background: var(--verde);
-  color: white;
-  box-shadow: 0 4px 16px rgba(26,55,40,0.25);
-}
-.btn-verde:hover {
-  background: var(--verde2);
-  transform: translateY(-2px);
-}
-
-/* ============================================
-   HERO
-============================================ */
-.hero {
-  position: relative;
-  background: linear-gradient(135deg, var(--verde) 0%, var(--verde2) 100%);
-  color: white;
-  padding: 100px 0;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(184,132,58,0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hero-content .tag {
-  background: rgba(184,132,58,0.2);
-  color: var(--dourado2);
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  color: white;
-  margin-bottom: 25px;
-  font-size: clamp(var(--fs-3xl), 5.5vw, var(--fs-4xl));
-  line-height: 1.2;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--dourado2);
-  display: block;
-  font-size: 0.9em;
-  margin-top: 10px;
-}
-
-.hero-desc {
-  font-size: var(--fs-md);
-  color: rgba(255,255,255,0.9);
-  max-width: 700px;
-  margin: 0 auto 40px;
-  line-height: 1.8;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ============================================
-   ESPECIALIZAÇÃO
-============================================ */
-.especializacao-bar {
-  background: var(--creme2);
-  padding: 60px 0;
-  border-top: 1px solid rgba(26,55,40,0.06);
-  border-bottom: 1px solid rgba(26,55,40,0.06);
-}
-
-.especializacao-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  text-align: center;
-}
-
-.especializacao-item {
-  padding: 20px;
-}
-
-.especializacao-icon {
-  width: 80px;
-  height: 80px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.especializacao-item:hover .especializacao-icon {
-  background: var(--verde);
-  transform: translateY(-5px);
-}
-
-.especializacao-item:hover .especializacao-icon i {
-  color: white;
-}
-
-.especializacao-icon i {
-  font-size: 36px;
-  color: var(--verde);
-  transition: var(--transition);
-}
-
-.especializacao-item h3 {
-  font-size: var(--fs-lg);
-  margin-bottom: 10px;
-  color: var(--verde);
-}
-
-.especializacao-item p {
-  font-size: var(--fs-sm);
-  color: var(--texto2);
-  line-height: 1.6;
-}
-
-/* ============================================
-   SOBRE
-============================================ */
-.sobre-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  align-items: center;
-}
-
-.sobre-text h2 { margin-bottom: 20px; }
-.sobre-text h2 span { 
-  color: var(--dourado); 
-  font-family: 'Fraunces', serif;
-}
-.sobre-text p { margin-bottom: 18px; font-size: var(--fs-base); line-height: 1.8; }
-
-.diferenciais {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 32px;
-}
-
-.diff-item {
-  background: var(--creme);
-  border: 1px solid var(--creme2);
-  padding: 18px 16px;
-  border-radius: var(--radius);
-  font-weight: 600;
-  font-size: var(--fs-sm);
-  color: var(--verde);
-  text-align: left;
-  line-height: 1.4;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: var(--transition);
-}
-
-.diff-item:hover {
-  background: var(--verde);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-}
-
-.diff-item:hover i { color: var(--dourado2); }
-.diff-item i { 
-  font-size: var(--fs-lg);
-  color: var(--dourado);
-  width: 28px;
-  text-align: center;
-}
-
-/* ============================================
-   SERVIÇOS
-============================================ */
-.servicos-section { background: var(--creme); }
-
-.card {
-  background: white;
-  padding: 32px 28px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border-top: 3px solid transparent;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-top-color: var(--dourado);
-}
-
-.card-icon {
-  width: 52px;
-  height: 52px;
-  background: var(--creme);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transition: var(--transition);
-}
-
-.card-icon i {
-  font-size: 26px;
-  color: var(--verde);
-  transition: var(--transition);
-}
-
-.card:hover .card-icon { background: var(--verde); }
-.card:hover .card-icon i { color: white; transform: scale(1.1); }
-
-.card h3 { font-size: var(--fs-md); margin-bottom: 10px; }
-.card p { font-size: var(--fs-sm); line-height: 1.65; flex: 1; }
-
-/* ============================================
-   PROCESSO / METODOLOGIA
-============================================ */
-.processo-section { background: var(--verde); color: white; }
-.processo-section h2 { color: white; }
-.processo-section .section-subtitle { color: rgba(255,255,255,0.7); }
-
-.processo-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 50px;
-  position: relative;
-}
-
-.processo-steps::before {
-  content: '';
-  position: absolute;
-  top: 28px;
-  left: 12%;
-  right: 12%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--dourado), rgba(184,132,58,0.3));
-  z-index: 0;
-}
-
-.step {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.step-num {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--dourado);
-  color: white;
-  font-family: 'Fraunces', serif;
-  font-size: var(--fs-xl);
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  box-shadow: 0 4px 20px rgba(184,132,58,0.4);
-}
-
-.step h3 { color: white; font-size: var(--fs-base); margin-bottom: 10px; }
-.step p { color: rgba(255,255,255,0.65); font-size: var(--fs-sm); }
-
-/* ============================================
-   DRONE & LiDAR
-============================================ */
-.drone-card {
-  background: white;
-  border-radius: var(--radius);
-  padding: 32px 28px;
-  box-shadow: var(--shadow);
-  border-left: 4px solid var(--dourado);
-  transition: var(--transition);
-}
-
-.drone-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-
-.drone-card .card-icon {
-  background: var(--creme);
-}
-
-.drone-card .card-icon i {
-  font-size: 26px;
-  color: var(--verde);
-  transition: var(--transition);
-}
-
-.drone-card:hover .card-icon { background: var(--verde); }
-.drone-card:hover .card-icon i { color: white; }
-
-.drone-card h3 { font-size: var(--fs-md); margin-bottom: 10px; }
-.drone-card p { font-size: var(--fs-sm); line-height: 1.65; }
-
-/* ============================================
-   FAQ
-============================================ */
-.faq-section { 
-  background: linear-gradient(135deg, #f8f6f2 0%, var(--creme) 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.faq-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -10%;
-  width: 300px;
-  height: 300px;
-  background: rgba(184,132,58,0.03);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.faq-section::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -5%;
-  width: 250px;
-  height: 250px;
-  background: rgba(26,55,40,0.03);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.faq-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-top: 50px;
-  position: relative;
-  z-index: 1;
-}
-
-.faq-card {
-  background: white;
-  border-radius: var(--radius);
-  padding: 30px;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  border: 1px solid rgba(184,132,58,0.1);
-}
-
-.faq-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--dourado);
-}
-
-.faq-card-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.faq-card-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--creme);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: var(--fs-lg);
-  color: var(--dourado);
-  transition: var(--transition);
-}
-
-.faq-card:hover .faq-card-icon {
-  background: var(--verde);
-  color: white;
-}
-
-.faq-card h3 {
-  font-size: var(--fs-md);
-  margin: 0;
-  color: var(--verde);
-}
-
-.faq-card p {
-  font-size: var(--fs-sm);
-  color: var(--texto2);
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* ============================================
-   CTA
-============================================ */
-.cta-section {
-  background: linear-gradient(135deg, var(--verde) 0%, var(--verde2) 100%);
-  color: white;
-  text-align: center;
-  padding: 80px 0;
-}
-.cta-section h2 { color: white; font-size: clamp(var(--fs-2xl), 4vw, var(--fs-3xl)); margin-bottom: 16px; }
-.cta-section p { color: rgba(255,255,255,0.8); font-size: var(--fs-md); margin-bottom: 36px; }
-
-/* ============================================
-   CONTATO
-============================================ */
-.contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-
-.contato-info h2 { margin-bottom: 16px; }
-.contato-info > p { font-size: var(--fs-base); margin-bottom: 36px; line-height: 1.75; }
-
-.info-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  margin-bottom: 20px;
-}
-
-.info-icon {
-  width: 42px;
-  height: 42px;
-  background: var(--creme);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: var(--fs-md);
-}
-
-.info-label {
-  font-size: var(--fs-xs);
-  color: var(--texto2);
-  margin-bottom: 2px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.info-value {
-  font-weight: 600;
-  color: var(--verde);
-  font-size: var(--fs-sm);
-}
-.info-value a { color: var(--verde2); text-decoration: none; font-size: var(--fs-sm); }
-.info-value a:hover { color: var(--dourado); }
-
-/* Formulário */
-.form-card {
-  background: white;
-  border-radius: var(--radius);
-  padding: 40px;
-  box-shadow: var(--shadow);
-}
-
-.form-group { margin-bottom: 20px; }
-.form-group label {
-  display: block;
-  margin-bottom: 7px;
-  font-weight: 600;
-  font-size: var(--fs-sm);
-  color: var(--verde);
-  letter-spacing: 0.02em;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 16px;
-  border: 1.5px solid #e0ddd6;
-  border-radius: var(--radius-sm);
-  font-family: 'Outfit', sans-serif;
-  font-size: var(--fs-sm);
-  color: var(--texto);
-  background: #fdfcf9;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--verde);
-  box-shadow: 0 0 0 3px rgba(26,55,40,0.08);
-}
-
-.form-group textarea { resize: vertical; min-height: 130px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-.btn-submit {
-  background: var(--verde);
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  width: 100%;
-  border-radius: var(--radius);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 600;
-  font-size: var(--fs-base);
-  cursor: pointer;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
-.btn-submit:hover {
-  background: var(--verde2);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(26,55,40,0.25);
-}
-.btn-submit:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
-
-#formMessage { margin-top: 14px; font-size: var(--fs-sm); }
-.msg-success {
-  background: #d4f0e0;
-  color: #1a5c35;
-  padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  font-size: var(--fs-sm);
-}
-.msg-error {
-  background: #fde8e8;
-  color: #8b1a1a;
-  padding: 12px 16px;
-  border-radius: var(--radius-sm);
-  font-size: var(--fs-sm);
-}
-
-/* ============================================
-   FOOTER - ATUALIZADO COM CORES DO INÍCIO
-============================================ */
-footer {
-  background: linear-gradient(135deg, var(--verde) 0%, var(--verde2) 100%);
-  color: rgba(255,255,255,0.9);
-  padding: 60px 0 30px;
-  border-top: 3px solid var(--dourado);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 50px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  margin-bottom: 30px;
-}
-
-.footer-brand .logo-text { color: white; font-size: var(--fs-lg); }
-.footer-brand .logo-text .geo-verde,
-.footer-brand .logo-text .sabbagh-dourado {
-  font-size: var(--fs-lg);
-}
-.footer-brand .logo-text .geo-verde {
-  color: white;
-}
-.footer-brand .logo-text .sabbagh-dourado {
-  color: var(--dourado2);
-}
-.footer-brand p {
-  font-size: var(--fs-sm);
-  color: rgba(255,255,255,0.8);
-  line-height: 1.7;
-  margin-top: 14px;
-  margin-bottom: 20px;
-}
-
-.footer-col h4 {
-  font-family: 'Fraunces', serif;
-  color: var(--dourado2);
-  font-size: var(--fs-base);
-  margin-bottom: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-  padding-bottom: 8px;
-}
-
-.footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 10px; }
-.footer-col ul li a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  font-size: var(--fs-sm);
-  transition: color 0.2s;
-  display: inline-block;
-}
-.footer-col ul li a:hover { 
-  color: var(--dourado2);
-  transform: translateX(3px);
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.footer-bottom p { 
-  font-size: var(--fs-xs); 
-  color: rgba(255,255,255,0.6);
-}
-.footer-dev { 
-  color: rgba(255,255,255,0.6); 
-}
-.footer-dev span { 
-  color: var(--dourado2);
-  font-weight: 600;
-}
-
-/* ============================================
-   BACK TO TOP
-============================================ */
-.back-to-top {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  background: var(--dourado);
-  color: white;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-  z-index: 9999;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-  transition: var(--transition);
-}
-.back-to-top i { font-size: var(--fs-md); color: white; }
-.back-to-top.show { display: flex; }
-.back-to-top:hover { 
-  background: var(--dourado2); 
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-
-/* ============================================
-   RESPONSIVIDADE
-============================================ */
-@media (max-width: 900px) {
-  .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
-  .processo-steps { grid-template-columns: repeat(2, 1fr); }
-  .processo-steps::before { display: none; }
-  .especializacao-grid { grid-template-columns: repeat(2, 1fr); }
-  .faq-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 768px) {
-  body { padding-top: 70px; }
-  section { padding: 65px 0; }
-  .header-inner { height: 70px; }
-  
-  .menu-toggle { display: flex; align-items: center; justify-content: center; }
-  nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: white;
-    flex-direction: column;
-    padding: 16px 20px 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    gap: 4px;
-    border-top: 1px solid var(--creme2);
-  }
-  nav.active { display: flex; }
-  nav a { width: 100%; padding: 12px 16px; }
-  .nav-cta { text-align: center; margin-top: 8px; }
-  
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .contato-grid { grid-template-columns: 1fr; gap: 40px; }
-  .form-row { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; text-align: center; }
-  
-  .especializacao-grid { grid-template-columns: 1fr; }
-  .processo-steps { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-  .diferenciais { grid-template-columns: 1fr; }
-  .form-card { padding: 24px 20px; }
-}
-</style>
+<!-- GOOGLE ANALYTICS OTIMIZADO -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7EMHP39XQF"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': true });
+</script>
 </head>
 <body>
 
 <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-<!-- HEADER - Logo com rotação -->
+<!-- HEADER -->
 <header id="site-header" role="banner">
   <div class="header-inner">
-    <a href="#home" class="logo" aria-label="GeoSabbagh - Página inicial">
+    <a href="#home" class="logo" aria-label="GeoSabbagh – página inicial">
       <div class="logo-icon" aria-hidden="true">
-        <svg width="42" height="42" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <svg width="42" height="42" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo GeoSabbagh">
           <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
           <line x1="256" y1="56" x2="256" y2="456" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
           <line x1="56" y1="256" x2="456" y2="256" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
@@ -1105,7 +252,7 @@ footer {
     </a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
-      <i class="fa-solid fa-bars"></i>
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
     </button>
 
     <nav id="mainNav" aria-label="Menu principal">
@@ -1120,7 +267,6 @@ footer {
 </header>
 
 <main id="main-content">
-
   <!-- HERO -->
   <section class="hero" id="home" aria-label="Apresentação">
     <div class="container">
@@ -1137,11 +283,11 @@ footer {
         </p>
         <div class="hero-btns">
           <a href="#contato" class="btn btn-primary">
-            <i class="fa-solid fa-phone-alt"></i>
+            <i class="fa-solid fa-phone-alt" aria-hidden="true"></i>
             Solicitar Orçamento
           </a>
           <a href="#servicos" class="btn btn-outline-white">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             Conhecer Serviços
           </a>
         </div>
@@ -1154,21 +300,21 @@ footer {
     <div class="container">
       <div class="especializacao-grid">
         <div class="especializacao-item fade-in">
-          <div class="especializacao-icon">
+          <div class="especializacao-icon" aria-hidden="true">
             <i class="fa-solid fa-map-location-dot"></i>
           </div>
           <h3>Geotecnologias</h3>
           <p>Dominamos as mais avançadas tecnologias geoespaciais para análise e interpretação de dados territoriais com precisão e eficiência.</p>
         </div>
         <div class="especializacao-item fade-in">
-          <div class="especializacao-icon">
+          <div class="especializacao-icon" aria-hidden="true">
             <i class="fa-solid fa-draw-polygon"></i>
           </div>
           <h3>Desenvolvimento SIG</h3>
           <p>Criação e customização de Sistemas de Informação Geográfica para atender necessidades específicas de projetos ambientais.</p>
         </div>
         <div class="especializacao-item fade-in">
-          <div class="especializacao-icon">
+          <div class="especializacao-icon" aria-hidden="true">
             <i class="fa-solid fa-satellite-dish"></i>
           </div>
           <h3>Sensoriamento Remoto</h3>
@@ -1187,25 +333,25 @@ footer {
           <h2 id="sobre-heading">Sobre a <span>GeoSabbagh</span></h2>
           <p>Desde 2015, a GeoSabbagh oferece análises espaciais de alta precisão para o setor ambiental. Nossa consultoria transforma dados brutos em informações geográficas valiosas, fornecendo a base técnica para projetos de licenciamento, conservação e planejamento territorial em todo o Brasil.</p>
           <p>Atendemos consultorias ambientais, empresas de engenharia, órgãos públicos e profissionais que necessitam de mapas técnicos, modelagem espacial e interpretação de sensoriamento remoto com rigor cartográfico e agilidade.</p>
-          <a href="#contato" class="btn btn-verde"><i class="fa-solid fa-envelope"></i> Falar com um especialista</a>
+          <a href="#contato" class="btn btn-verde"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Falar com um especialista</a>
         </div>
         <div class="fade-in">
           <h3>Nossos Diferenciais</h3>
           <div class="diferenciais">
             <div class="diff-item">
-              <i class="fa-solid fa-bolt"></i>
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i>
               +10 anos em projetos ambientais
             </div>
             <div class="diff-item">
-              <i class="fa-solid fa-layer-group"></i>
+              <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
               Especialistas em SIG e Geotecnologias
             </div>
             <div class="diff-item">
-              <i class="fa-solid fa-hand-holding-heart"></i>
+              <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
               Atendimento Personalizado
             </div>
             <div class="diff-item">
-              <i class="fa-solid fa-map-marker-alt"></i>
+              <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
               Atendimento em todo Brasil
             </div>
           </div>
@@ -1320,7 +466,7 @@ footer {
       <div class="faq-grid">
         <div class="faq-card fade-in">
           <div class="faq-card-header">
-            <div class="faq-card-icon">
+            <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-question"></i>
             </div>
             <h3>O que são Geotecnologias?</h3>
@@ -1330,7 +476,7 @@ footer {
 
         <div class="faq-card fade-in">
           <div class="faq-card-header">
-            <div class="faq-card-icon">
+            <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-cube"></i>
             </div>
             <h3>O que é Desenvolvimento SIG?</h3>
@@ -1340,7 +486,7 @@ footer {
 
         <div class="faq-card fade-in">
           <div class="faq-card-header">
-            <div class="faq-card-icon">
+            <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-file-lines"></i>
             </div>
             <h3>Como o geoprocessamento é usado no licenciamento ambiental?</h3>
@@ -1350,7 +496,7 @@ footer {
 
         <div class="faq-card fade-in">
           <div class="faq-card-header">
-            <div class="faq-card-icon">
+            <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-database"></i>
             </div>
             <h3>Quais formatos de dados vocês entregam?</h3>
@@ -1360,7 +506,7 @@ footer {
 
         <div class="faq-card fade-in">
           <div class="faq-card-header">
-            <div class="faq-card-icon">
+            <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-helicopter"></i>
             </div>
             <h3>Como drones ajudam em estudos ambientais?</h3>
@@ -1370,7 +516,7 @@ footer {
 
         <div class="faq-card fade-in">
           <div class="faq-card-header">
-            <div class="faq-card-icon">
+            <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-globe"></i>
             </div>
             <h3>Atendem em todo o Brasil?</h3>
@@ -1388,8 +534,8 @@ footer {
       <h2 class="fade-in">Vamos trabalhar no seu projeto?</h2>
       <p class="fade-in">Fale com um especialista em geotecnologias e transforme dados geoespaciais em soluções ambientais precisas.</p>
       <div class="fade-in" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-        <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Solicitar Análise Técnica</a>
-        <a href="mailto:contato.geosabbagh@gmail.com" class="btn btn-outline-white"><i class="fa-solid fa-envelope"></i> Enviar e-mail direto</a>
+        <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar Análise Técnica</a>
+        <a href="mailto:contato.geosabbagh@gmail.com" class="btn btn-outline-white" rel="noopener noreferrer"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Enviar e-mail direto</a>
       </div>
     </div>
   </section>
@@ -1404,15 +550,15 @@ footer {
           <p>Precisa de um consultor em geotecnologias ou de mapas para o seu licenciamento? Estamos prontos para atender você em todo o Brasil.</p>
           <div style="margin-top: 32px;">
             <div class="info-item">
-              <div class="info-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
+              <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-map-marker-alt"></i></div>
               <div><div class="info-label">Localização</div><div class="info-value">São Paulo – SP (Atendimento Remoto Nacional)</div></div>
             </div>
             <div class="info-item">
-              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
               <div><div class="info-label">E-mail</div><div class="info-value"><a href="mailto:contato.geosabbagh@gmail.com">contato.geosabbagh@gmail.com</a></div></div>
             </div>
             <div class="info-item">
-              <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
               <div><div class="info-label">Horário de atendimento</div><div class="info-value">Segunda a Sexta, 9h às 18h</div></div>
             </div>
           </div>
@@ -1455,7 +601,7 @@ footer {
                 <textarea id="message" name="message" rows="5" required placeholder="Descreva seu projeto, área de estudo e prazo estimado..."></textarea>
               </div>
               <button type="submit" class="btn-submit" id="submitBtn">
-                <i class="fa-solid fa-paper-plane"></i>
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                 Enviar mensagem
               </button>
               <div id="formMessage" role="alert" aria-live="polite"></div>
@@ -1467,14 +613,14 @@ footer {
   </section>
 </main>
 
-<!-- FOOTER - Atualizado com as cores do início -->
+<!-- FOOTER -->
 <footer role="contentinfo">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#home" class="logo" aria-label="GeoSabbagh - Voltar ao início" style="text-decoration: none; display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
           <div class="footer-logo-icon" aria-hidden="true">
-            <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo GeoSabbagh">
               <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
               <line x1="256" y1="56" x2="256" y2="456" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
               <line x1="56" y1="256" x2="456" y2="256" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
@@ -1507,7 +653,7 @@ footer {
           <li><a href="#processo">Metodologia</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contato">Contato</a></li>
-          <li><a href="mailto:contato.geosabbagh@gmail.com">E-mail direto</a></li>
+          <li><a href="mailto:contato.geosabbagh@gmail.com" rel="noopener noreferrer">E-mail direto</a></li>
         </ul>
       </div>
     </div>
@@ -1519,106 +665,15 @@ footer {
 </footer>
 
 <button id="backToTop" class="back-to-top" title="Voltar ao topo" aria-label="Voltar ao topo">
-  <i class="fa-solid fa-chevron-up"></i>
+  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
 </button>
 
-<!-- JAVASCRIPT -->
+<!-- JAVASCRIPT OTIMIZADO (MINIFICADO) -->
 <script>
-(function() {
-  'use strict';
-
-  var header    = document.getElementById('site-header');
-  var backToTop = document.getElementById('backToTop');
-
-  window.addEventListener('scroll', function() {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-    backToTop.classList.toggle('show', window.scrollY > 500);
-    updateActiveNav();
-  }, { passive: true });
-
-  var menuToggle = document.getElementById('menuToggle');
-  var mainNav    = document.getElementById('mainNav');
-
-  menuToggle.addEventListener('click', function() {
-    var isExpanded = mainNav.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', String(isExpanded));
-    menuToggle.setAttribute('aria-label', isExpanded ? 'Fechar menu' : 'Abrir menu');
-  });
-
-  mainNav.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      mainNav.classList.remove('active');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Abrir menu');
-    });
-  });
-
-  backToTop.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  var sections = document.querySelectorAll('section[id]');
-  var navLinks  = document.querySelectorAll('nav a[href^="#"]');
-
-  function updateActiveNav() {
-    var current = '';
-    sections.forEach(function(sec) {
-      if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id') || '';
-    });
-    navLinks.forEach(function(link) {
-      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-    });
-  }
-
-  var revealObs = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.fade-in').forEach(function(el) { revealObs.observe(el); });
-
-  var form      = document.getElementById('contactForm');
-  var submitBtn = document.getElementById('submitBtn');
-  var formMsg   = document.getElementById('formMessage');
-
-  if (form) {
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-
-      var action = form.getAttribute('action') || '';
-      
-      try {
-        var resp = await fetch(action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (resp.ok) {
-          formMsg.innerHTML = '<div class="msg-success">✅ Mensagem enviada! Retornaremos em breve.</div>';
-          form.reset();
-          if (typeof gtag !== 'undefined') gtag('event', 'form_submit', { event_category: 'contato', event_label: 'formulario_principal' });
-        } else { 
-          throw new Error(); 
-        }
-      } catch(_) {
-        formMsg.innerHTML = '<div class="msg-error">❌ Erro ao enviar. Tente via e-mail: contato.geosabbagh@gmail.com</div>';
-      }
-
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
-      setTimeout(function() { formMsg.innerHTML = ''; }, 8000);
-    });
-  }
-
-  var fy = document.getElementById('footer-year');
-  if (fy) fy.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Geotecnologias e Desenvolvimento SIG';
-}());
+!function(){"use strict";var e=document.getElementById("site-header"),t=document.getElementById("backToTop");function n(){var e="";sections.forEach(function(t){window.scrollY>=t.offsetTop-120&&(e=t.getAttribute("id")||"")}),navLinks.forEach(function(t){t.classList.toggle("active",t.getAttribute("href")==="#"+e)})}window.addEventListener("scroll",function(){e.classList.toggle("scrolled",window.scrollY>40),t.classList.toggle("show",window.scrollY>500),n()},{passive:!0});var o=document.getElementById("menuToggle"),l=document.getElementById("mainNav");o.addEventListener("click",function(){var e=l.classList.toggle("active");o.setAttribute("aria-expanded",String(e)),o.setAttribute("aria-label",e?"Fechar menu":"Abrir menu")}),l.querySelectorAll("a").forEach(function(e){e.addEventListener("click",function(){l.classList.remove("active"),o.setAttribute("aria-expanded","false"),o.setAttribute("aria-label","Abrir menu")})}),t.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});var sections=document.querySelectorAll("section[id]"),navLinks=document.querySelectorAll('nav a[href^="#"]');n();var revealObs=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("visible"),revealObs.unobserve(e.target))})},{threshold:.1,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".fade-in").forEach(function(e){revealObs.observe(e)});var form=document.getElementById("contactForm"),submitBtn=document.getElementById("submitBtn"),formMsg=document.getElementById("formMessage");if(form){form.addEventListener("submit",async function(e){e.preventDefault(),submitBtn.disabled=!0,submitBtn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';var t=form.getAttribute("action")||"";try{var n=await fetch(t,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});if(n.ok)formMsg.innerHTML='<div class="msg-success">✅ Mensagem enviada! Retornaremos em breve.</div>',form.reset(),"undefined"!=typeof gtag&&gtag("event","form_submit",{event_category:"contato",event_label:"formulario_principal"});else throw new Error}catch(e){formMsg.innerHTML='<div class="msg-error">❌ Erro ao enviar. Tente via e-mail: contato.geosabbagh@gmail.com</div>'}submitBtn.disabled=!1,submitBtn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Enviar mensagem',setTimeout(function(){formMsg.innerHTML=""},8e3)})}var fy=document.getElementById("footer-year");fy&&(fy.textContent="© "+new Date().getFullYear()+" GeoSabbagh – Geotecnologias e Desenvolvimento SIG")}();
 </script>
 
+<!-- LINK PARA SITEMAP -->
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
 </body>
 </html>
