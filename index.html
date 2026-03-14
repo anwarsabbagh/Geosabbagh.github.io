@@ -44,146 +44,840 @@
 <meta name="twitter:title" content="GeoSabbagh | Geotecnologias">
 <meta name="twitter:description" content="Consultoria em geoprocessamento e SIG para licenciamento ambiental">
 
-<!-- CSS OTIMIZADO (CORRIGIDO) -->
+<!-- CSS OTIMIZADO E CORRIGIDO -->
 <style>
-/*! GeoSabbagh v1.0 - Otimizado PageSpeed */
-:root{--verde:#1A3728;--verde2:#2C5F46;--dourado:#B8843A;--dourado2:#d4a055;--creme:#F4F0E8;--creme2:#EDE8DC;--texto:#2A2F28;--texto2:#5a6457;--branco:#FDFCF9;--radius:12px;--radius-sm:8px;--shadow:0 4px 24px rgba(26,55,40,0.1);--shadow-lg:0 12px 40px rgba(26,55,40,0.15);--transition:all 0.35s cubic-bezier(0.4,0,0.2,1);--max-w:1200px;--fs-xs:0.75rem;--fs-sm:0.875rem;--fs-base:1rem;--fs-md:1.125rem;--fs-lg:1.25rem;--fs-xl:1.5rem;--fs-2xl:1.875rem;--fs-3xl:2.25rem;--fs-4xl:3rem}
+/*! GeoSabbagh v2.0 - Versão Corrigida e Otimizada */
+:root {
+  --verde: #1A3728;
+  --verde2: #2C5F46;
+  --dourado: #B8843A;
+  --dourado2: #d4a055;
+  --creme: #F4F0E8;
+  --creme2: #EDE8DC;
+  --texto: #2A2F28;
+  --texto2: #5a6457;
+  --branco: #FDFCF9;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(26,55,40,0.1);
+  --shadow-lg: 0 12px 40px rgba(26,55,40,0.15);
+  --transition: all 0.3s ease;
+  --max-w: 1200px;
+  
+  /* Tamanhos de fonte padronizados */
+  --fs-xs: 0.75rem;    /* 12px */
+  --fs-sm: 0.875rem;   /* 14px */
+  --fs-base: 1rem;     /* 16px - tamanho padrão */
+  --fs-md: 1.125rem;   /* 18px */
+  --fs-lg: 1.25rem;    /* 20px */
+  --fs-xl: 1.5rem;     /* 24px */
+  --fs-2xl: 2rem;      /* 32px */
+  --fs-3xl: 2.5rem;    /* 40px */
+  --fs-4xl: 3rem;      /* 48px */
+}
+
 *,::after,::before{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--branco);color:var(--texto);font-family:Outfit,sans-serif;font-size:var(--fs-base);line-height:1.6;overflow-x:hidden;padding-top:80px}
-.logo-text .geo-verde{color:var(--verde);font-family:Fraunces,serif;font-size:var(--fs-xl);font-weight:700}
-.logo-text .sabbagh-dourado{color:var(--dourado);font-family:Fraunces,serif;font-size:var(--fs-xl);font-weight:700}
-.logo-icon{animation:rotacao 35s linear infinite;display:flex;height:46px;justify-content:center;width:46px;will-change:transform}
-.logo-icon svg{filter:drop-shadow(0 2px 4px rgba(0,0,0,0.12));height:100%;width:100%}
-@keyframes rotacao{to{transform:rotate(1turn)}}
-.footer-logo-icon{animation:rotacao 35s linear infinite;display:flex;height:40px;justify-content:center;width:40px;will-change:transform}
-.skip-link{background:var(--dourado);border-radius:0 0 var(--radius-sm) 0;color:#fff;font-size:var(--fs-sm);font-weight:600;left:0;padding:10px 20px;position:absolute;text-decoration:none;top:-100%;z-index:9999}
-.skip-link:focus{top:0}
-:focus-visible{border-radius:4px;outline:2px solid var(--dourado);outline-offset:3px}
-header{background:rgba(253,252,249,0.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,55,40,0.08);position:fixed;top:0;transition:var(--transition);width:100%;z-index:1000}
-header.scrolled{box-shadow:0 2px 20px rgba(26,55,40,0.1)}
-.header-inner{align-items:center;display:flex;height:80px;justify-content:space-between;margin:0 auto;max-width:var(--max-w);padding:0 25px}
-.logo{align-items:center;display:flex;gap:10px;text-decoration:none}
-nav{align-items:center;display:flex;gap:8px}
-nav a{border-radius:var(--radius-sm);color:var(--texto2);font-size:var(--fs-sm);font-weight:500;padding:8px 14px;text-decoration:none;transition:var(--transition)}
-nav a:hover,.nav-cta,.nav-cta:hover{color:#fff}
-nav a:hover{background:var(--creme);color:var(--verde)}
-nav a.active{color:var(--verde);font-weight:600}
-.nav-cta{background:var(--verde)!important;padding:9px 20px!important}
-.nav-cta:hover{background:var(--verde2)!important;transform:translateY(-1px)}
-.menu-toggle{background:0 0;border:none;cursor:pointer;display:none;padding:8px;transition:var(--transition)}
-.menu-toggle:hover{background:var(--creme)}
-.menu-toggle i{color:var(--verde);font-size:var(--fs-xl)}
-.container{margin:0 auto;max-width:var(--max-w);padding:0 25px}
-section{padding:90px 0}
-h1,h2,h3,h4{color:var(--verde);font-family:Fraunces,serif;line-height:1.2}
-h1{font-size:clamp(var(--fs-3xl),5vw,var(--fs-4xl))}
-h2{font-size:clamp(var(--fs-2xl),4vw,var(--fs-3xl));margin-bottom:12px}
+body{
+  background:var(--branco);
+  color:var(--texto);
+  font-family:Outfit,sans-serif;
+  font-size:var(--fs-base);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+/* HEADER FIXO */
+header{
+  background:rgba(253,252,249,0.98);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(26,55,40,0.08);
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  box-shadow:0 2px 20px rgba(26,55,40,0.05);
+}
+
+.header-inner{
+  align-items:center;
+  display:flex;
+  height:80px;
+  justify-content:space-between;
+  margin:0 auto;
+  max-width:var(--max-w);
+  padding:0 25px;
+}
+
+/* LOGO */
+.logo{
+  align-items:center;
+  display:flex;
+  gap:10px;
+  text-decoration:none;
+}
+.logo-text{
+  font-size:var(--fs-lg);
+}
+.logo-text .geo-verde{
+  color:var(--verde);
+  font-family:Fraunces,serif;
+  font-weight:700;
+}
+.logo-text .sabbagh-dourado{
+  color:var(--dourado);
+  font-family:Fraunces,serif;
+  font-weight:700;
+}
+.logo-icon{
+  display:flex;
+  height:46px;
+  justify-content:center;
+  width:46px;
+}
+.logo-icon svg{
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+  height:100%;
+  width:100%;
+}
+
+/* NAVEGAÇÃO - TAMANHO PADRONIZADO */
+nav{
+  align-items:center;
+  display:flex;
+  gap:8px;
+}
+nav a{
+  border-radius:var(--radius-sm);
+  color:var(--texto2);
+  font-size:var(--fs-base);
+  font-weight:500;
+  padding:10px 16px;
+  text-decoration:none;
+  transition:var(--transition);
+}
+nav a:hover{
+  background:var(--creme);
+  color:var(--verde);
+}
+nav a.active{
+  color:var(--verde);
+  font-weight:600;
+}
+.nav-cta{
+  background:var(--verde)!important;
+  color:#fff!important;
+  padding:10px 20px!important;
+  border-radius:var(--radius)!important;
+}
+.nav-cta:hover{
+  background:var(--verde2)!important;
+  transform:translateY(-2px);
+}
+
+/* MENU TOGGLE (MOBILE) */
+.menu-toggle{
+  background:0 0;
+  border:none;
+  cursor:pointer;
+  display:none;
+  padding:10px;
+}
+.menu-toggle i{
+  color:var(--verde);
+  font-size:var(--fs-xl);
+}
+
+/* CONTAINER */
+.container{
+  margin:0 auto;
+  max-width:var(--max-w);
+  padding:0 25px;
+}
+
+/* SEÇÕES */
+section{padding:100px 0}
+
+/* TÍTULOS PADRONIZADOS */
+h1,h2,h3,h4{
+  color:var(--verde);
+  font-family:Fraunces,serif;
+  line-height:1.2;
+}
+h1{
+  font-size:var(--fs-4xl);
+  margin-bottom:20px;
+}
+h2{
+  font-size:var(--fs-3xl);
+  margin-bottom:20px;
+}
 h2 span{color:var(--dourado)}
-h3{font-size:var(--fs-lg);margin-bottom:10px}
-p{color:var(--texto2);font-size:var(--fs-base);line-height:1.7}
-.section-subtitle{color:var(--texto2);font-size:var(--fs-md);margin-bottom:50px;max-width:600px}
-.tag{background:rgba(184,132,58,0.1);border-radius:50px;color:var(--dourado);display:inline-block;font-size:var(--fs-xs);font-weight:600;letter-spacing:.1em;margin-bottom:14px;padding:4px 12px;text-transform:uppercase}
-.grid-2,.grid-3{display:grid;gap:28px;margin-top:40px}
+h3{
+  font-size:var(--fs-xl);
+  margin-bottom:15px;
+}
+h4{
+  font-size:var(--fs-lg);
+  margin-bottom:10px;
+}
+
+/* TEXTOS PADRONIZADOS */
+p{
+  color:var(--texto2);
+  font-size:var(--fs-base);
+  line-height:1.7;
+  margin-bottom:15px;
+}
+.section-subtitle{
+  color:var(--texto2);
+  font-size:var(--fs-md);
+  margin-bottom:50px;
+  max-width:600px;
+}
+
+/* TAG */
+.tag{
+  background:rgba(184,132,58,0.1);
+  border-radius:50px;
+  color:var(--dourado);
+  display:inline-block;
+  font-size:var(--fs-sm);
+  font-weight:600;
+  letter-spacing:.1em;
+  margin-bottom:20px;
+  padding:6px 16px;
+  text-transform:uppercase;
+}
+
+/* GRIDS */
+.grid-2,.grid-3{
+  display:grid;
+  gap:30px;
+  margin-top:40px;
+}
 .grid-2{grid-template-columns:repeat(2,1fr)}
 .grid-3{grid-template-columns:repeat(3,1fr)}
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
-.btn{align-items:center;border:none;border-radius:var(--radius);cursor:pointer;display:inline-flex;font-family:Outfit,sans-serif;font-size:var(--fs-sm);font-weight:600;gap:8px;padding:14px 30px;text-decoration:none;transition:var(--transition)}
-.btn-primary{background:var(--dourado);box-shadow:0 4px 16px rgba(184,132,58,0.35);color:#fff}
-.btn-primary:hover{background:var(--dourado2);box-shadow:0 8px 24px rgba(184,132,58,0.4);transform:translateY(-2px)}
-.btn-outline-white{border:2px solid rgba(255,255,255,0.7);color:#fff}
-.btn-outline-white:hover{background:rgba(255,255,255,0.12);border-color:#fff;transform:translateY(-2px)}
-.btn-verde{background:var(--verde);box-shadow:0 4px 16px rgba(26,55,40,0.25);color:#fff}
-.btn-verde:hover{background:var(--verde2);box-shadow:0 6px 20px rgba(26,55,40,0.25);transform:translateY(-2px)}
-.hero{background:linear-gradient(135deg,var(--verde),var(--verde2));color:#fff;overflow:hidden;padding:100px 0;position:relative}
-.hero::before{background:radial-gradient(circle at 20% 50%,rgba(255,255,255,0.05) 0,transparent 50%),radial-gradient(circle at 80% 80%,rgba(184,132,58,0.1) 0,transparent 50%);content:"";inset:0;pointer-events:none;position:absolute}
-.hero-content{margin:0 auto;max-width:800px;text-align:center}
-.hero-content .tag{background:rgba(184,132,58,0.2);color:var(--dourado2);margin-bottom:20px}
-.hero h1{color:#fff;font-size:clamp(var(--fs-3xl),5.5vw,var(--fs-4xl));margin-bottom:25px}
-.hero h1 em{color:var(--dourado2);display:block;font-size:.9em;font-style:italic;margin-top:10px}
-.hero-desc{color:rgba(255,255,255,0.9);font-size:var(--fs-md);line-height:1.8;margin:0 auto 40px;max-width:700px}
-.hero-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
-.especializacao-bar{background:var(--creme2);border-bottom:1px solid rgba(26,55,40,0.06);border-top:1px solid rgba(26,55,40,0.06);padding:60px 0}
-.especializacao-grid{display:grid;gap:40px;grid-template-columns:repeat(3,1fr);text-align:center}
-.especializacao-item{padding:20px}
-.especializacao-icon{background:#fff;border-radius:50%;box-shadow:var(--shadow);display:flex;height:80px;justify-content:center;align-items:center;margin:0 auto 20px;transition:var(--transition);width:80px}
-.especializacao-item:hover .especializacao-icon{background:var(--verde);transform:translateY(-5px)}
-.especializacao-icon i{color:var(--verde);font-size:36px;transition:var(--transition);display:flex;justify-content:center;align-items:center;width:100%;height:100%}
-.especializacao-item:hover .especializacao-icon i{color:#fff}
-.sobre-grid{align-items:center;display:grid;gap:70px;grid-template-columns:1fr 1fr}
-.diferenciais{display:grid;gap:14px;grid-template-columns:1fr 1fr;margin-top:32px}
-.diff-item{align-items:center;background:var(--creme);border:1px solid var(--creme2);border-radius:var(--radius);color:var(--verde);display:flex;font-size:var(--fs-sm);font-weight:600;gap:12px;padding:18px 16px;text-align:left;transition:var(--transition)}
-.diff-item:hover{background:var(--verde);box-shadow:var(--shadow);color:#fff;transform:translateY(-3px)}
-.diff-item i{color:var(--dourado);font-size:var(--fs-lg);text-align:center;width:28px}
+
+/* ANIMAÇÕES REMOVIDAS */
+.fade-in{
+  opacity:1;
+  transform:none;
+}
+
+/* BOTÕES PADRONIZADOS */
+.btn{
+  align-items:center;
+  border:none;
+  border-radius:var(--radius);
+  cursor:pointer;
+  display:inline-flex;
+  font-family:Outfit,sans-serif;
+  font-size:var(--fs-base);
+  font-weight:600;
+  gap:8px;
+  padding:14px 28px;
+  text-decoration:none;
+  transition:var(--transition);
+}
+.btn-primary{
+  background:var(--dourado);
+  box-shadow:0 4px 16px rgba(184,132,58,0.35);
+  color:#fff;
+}
+.btn-primary:hover{
+  background:var(--dourado2);
+  box-shadow:0 8px 24px rgba(184,132,58,0.4);
+  transform:translateY(-2px);
+}
+.btn-outline-white{
+  border:2px solid rgba(255,255,255,0.7);
+  color:#fff;
+}
+.btn-outline-white:hover{
+  background:rgba(255,255,255,0.12);
+  border-color:#fff;
+  transform:translateY(-2px);
+}
+.btn-verde{
+  background:var(--verde);
+  box-shadow:0 4px 16px rgba(26,55,40,0.25);
+  color:#fff;
+}
+.btn-verde:hover{
+  background:var(--verde2);
+  transform:translateY(-2px);
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,var(--verde),var(--verde2));
+  color:#fff;
+  padding:120px 0;
+  margin-top:80px;
+}
+.hero h1{
+  color:#fff;
+  font-size:var(--fs-4xl);
+  margin-bottom:20px;
+}
+.hero h1 em{
+  color:var(--dourado2);
+  display:block;
+  font-style:italic;
+  margin-top:10px;
+}
+.hero-desc{
+  color:rgba(255,255,255,0.9);
+  font-size:var(--fs-lg);
+  line-height:1.8;
+  margin:0 auto 40px;
+  max-width:700px;
+}
+.hero-btns{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  justify-content:center;
+}
+
+/* ESPECIALIZAÇÃO */
+.especializacao-bar{
+  background:var(--creme2);
+  padding:80px 0;
+}
+.especializacao-grid{
+  display:grid;
+  gap:40px;
+  grid-template-columns:repeat(3,1fr);
+  text-align:center;
+}
+.especializacao-item{
+  padding:20px;
+}
+.especializacao-icon{
+  background:#fff;
+  border-radius:50%;
+  box-shadow:var(--shadow);
+  display:flex;
+  height:90px;
+  justify-content:center;
+  align-items:center;
+  margin:0 auto 25px;
+  transition:var(--transition);
+  width:90px;
+}
+.especializacao-item:hover .especializacao-icon{
+  background:var(--verde);
+  transform:translateY(-5px);
+}
+.especializacao-icon i{
+  color:var(--verde);
+  font-size:40px;
+  transition:var(--transition);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100%;
+}
+.especializacao-item:hover .especializacao-icon i{
+  color:#fff;
+}
+
+/* SOBRE */
+.sobre-grid{
+  align-items:center;
+  display:grid;
+  gap:70px;
+  grid-template-columns:1fr 1fr;
+}
+.diferenciais{
+  display:grid;
+  gap:15px;
+  grid-template-columns:1fr 1fr;
+  margin-top:30px;
+}
+.diff-item{
+  align-items:center;
+  background:var(--creme);
+  border:1px solid var(--creme2);
+  border-radius:var(--radius);
+  color:var(--verde);
+  display:flex;
+  font-size:var(--fs-base);
+  font-weight:600;
+  gap:12px;
+  padding:18px;
+  transition:var(--transition);
+}
+.diff-item:hover{
+  background:var(--verde);
+  color:#fff;
+  transform:translateY(-3px);
+}
+.diff-item i{
+  color:var(--dourado);
+  font-size:var(--fs-lg);
+  width:28px;
+  text-align:center;
+}
 .diff-item:hover i{color:var(--dourado2)}
+
+/* SERVIÇOS */
 .servicos-section{background:var(--creme)}
-.card{background:#fff;border-radius:var(--radius);border-top:3px solid transparent;box-shadow:var(--shadow);display:flex;flex-direction:column;padding:32px 28px;transition:var(--transition)}
-.card:hover{border-top-color:var(--dourado);box-shadow:var(--shadow-lg);transform:translateY(-6px)}
-.card-icon{align-items:center;background:var(--creme);border-radius:var(--radius-sm);display:flex;height:52px;justify-content:center;margin-bottom:20px;transition:var(--transition);width:52px}
-.card-icon i{color:var(--verde);font-size:26px;transition:var(--transition);display:flex;justify-content:center;align-items:center;width:100%;height:100%}
-.card:hover .card-icon{background:var(--verde)}
-.card:hover .card-icon i{color:#fff;transform:scale(1.1)}
-.processo-section{background:var(--verde);color:#fff}
+.card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  padding:35px 30px;
+  transition:var(--transition);
+  border-top:3px solid transparent;
+}
+.card:hover{
+  border-top-color:var(--dourado);
+  box-shadow:var(--shadow-lg);
+  transform:translateY(-6px);
+}
+.card-icon{
+  align-items:center;
+  background:var(--creme);
+  border-radius:var(--radius-sm);
+  display:flex;
+  height:60px;
+  justify-content:center;
+  margin-bottom:20px;
+  transition:var(--transition);
+  width:60px;
+}
+.card-icon i{
+  color:var(--verde);
+  font-size:30px;
+  transition:var(--transition);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:100%;
+}
+.card:hover .card-icon{
+  background:var(--verde);
+}
+.card:hover .card-icon i{
+  color:#fff;
+  transform:scale(1.1);
+}
+
+/* PROCESSO */
+.processo-section{
+  background:var(--verde);
+  color:#fff;
+  padding:100px 0;
+}
 .processo-section h2{color:#fff}
-.processo-steps{display:grid;gap:30px;grid-template-columns:repeat(4,1fr);margin-top:50px;position:relative}
-.processo-steps::before{background:linear-gradient(90deg,var(--dourado),rgba(184,132,58,0.3));content:"";height:2px;left:12%;position:absolute;right:12%;top:28px;z-index:0}
-.step{position:relative;text-align:center;z-index:1}
-.step-num{align-items:center;background:var(--dourado);border-radius:50%;box-shadow:0 4px 20px rgba(184,132,58,0.4);color:#fff;display:flex;font-family:Fraunces,serif;font-size:var(--fs-xl);font-weight:700;height:56px;justify-content:center;margin:0 auto 20px;width:56px}
-.step h3{color:#fff;font-size:var(--fs-base)}
-.step p{color:rgba(255,255,255,0.65);font-size:var(--fs-sm)}
-.drone-card{background:#fff;border-left:4px solid var(--dourado);border-radius:var(--radius);box-shadow:var(--shadow);padding:32px 28px;transition:var(--transition)}
-.drone-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
-.faq-section{background:linear-gradient(135deg,#f8f6f2,var(--creme));overflow:hidden;position:relative}
-.faq-grid{display:grid;gap:30px;grid-template-columns:repeat(2,1fr);margin-top:50px;position:relative;z-index:1}
-.faq-card{background:#fff;border:1px solid rgba(184,132,58,0.1);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px;transition:var(--transition)}
-.faq-card:hover{border-color:var(--dourado);box-shadow:var(--shadow-lg);transform:translateY(-5px)}
-.faq-card-header{align-items:center;display:flex;gap:15px;margin-bottom:20px}
-.faq-card-icon{align-items:center;background:var(--creme);border-radius:50%;color:var(--dourado);display:flex;font-size:var(--fs-lg);height:50px;justify-content:center;transition:var(--transition);width:50px}
-.faq-card:hover .faq-card-icon{background:var(--verde);color:#fff}
-.cta-section{background:linear-gradient(135deg,var(--verde),var(--verde2));color:#fff;padding:80px 0;text-align:center}
-.cta-section h2{color:#fff;font-size:clamp(var(--fs-2xl),4vw,var(--fs-3xl))}
-.contato-grid{display:grid;gap:60px;grid-template-columns:1fr 1fr}
-.info-item{align-items:flex-start;display:flex;gap:14px;margin-bottom:20px}
-.info-icon{align-items:center;background:var(--creme);border-radius:var(--radius-sm);display:flex;flex-shrink:0;font-size:var(--fs-md);height:42px;justify-content:center;width:42px}
-.info-label{color:var(--texto2);font-size:var(--fs-xs);font-weight:500;letter-spacing:.06em;margin-bottom:2px;text-transform:uppercase}
-.info-value{color:var(--verde);font-size:var(--fs-sm);font-weight:600}
-.form-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:40px}
-.form-group{margin-bottom:20px}
-.form-group label{color:var(--verde);display:block;font-size:var(--fs-sm);font-weight:600;letter-spacing:.02em;margin-bottom:7px}
-.form-group input,.form-group select,.form-group textarea{background:#fdfcf9;border:1.5px solid #e0ddd6;border-radius:var(--radius-sm);color:var(--texto);font-family:Outfit,sans-serif;font-size:var(--fs-sm);padding:12px 16px;transition:border-color .2s,box-shadow .2s;width:100%}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--verde);box-shadow:0 0 0 3px rgba(26,55,40,0.08);outline:0}
-.form-row{display:grid;gap:16px;grid-template-columns:1fr 1fr}
-.btn-submit{background:var(--verde);border:none;border-radius:var(--radius);color:#fff;cursor:pointer;display:flex;font-family:Outfit,sans-serif;font-size:var(--fs-base);font-weight:600;gap:8px;justify-content:center;padding:15px 30px;transition:var(--transition);width:100%}
-.btn-submit:hover{background:var(--verde2);box-shadow:0 6px 20px rgba(26,55,40,0.25);transform:translateY(-2px)}
-footer{background:linear-gradient(135deg,var(--verde),var(--verde2));border-top:3px solid var(--dourado);color:rgba(255,255,255,0.9);padding:60px 0 30px}
-.footer-grid{display:grid;gap:50px;grid-template-columns:2fr 1fr 1fr;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:30px}
-.footer-brand p{color:rgba(255,255,255,0.8);font-size:var(--fs-sm);line-height:1.7;margin-top:14px}
-.footer-col h4{color:var(--dourado2);font-family:Fraunces,serif;font-size:var(--fs-base);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.2)}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:10px}
-.footer-col ul li a{color:rgba(255,255,255,0.7);font-size:var(--fs-sm);text-decoration:none;transition:color .2s;display:inline-block}
-.footer-col ul li a:hover{color:var(--dourado2);transform:translateX(3px)}
-.footer-bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
-.footer-bottom p{color:rgba(255,255,255,0.6);font-size:var(--fs-xs)}
-.footer-dev span{color:var(--dourado2);font-weight:600}
-.back-to-top{background:var(--dourado);border:none;border-radius:50%;bottom:28px;box-shadow:0 4px 14px rgba(0,0,0,0.3);color:#fff;cursor:pointer;display:none;height:44px;justify-content:center;position:fixed;right:28px;transition:var(--transition);width:44px;z-index:9999}
-.back-to-top.show{display:flex}
-.back-to-top:hover{background:var(--dourado2);box-shadow:0 6px 20px rgba(0,0,0,0.4);transform:translateY(-3px)}
-@media (max-width:900px){.sobre-grid{grid-template-columns:1fr}.processo-steps{grid-template-columns:repeat(2,1fr)}.processo-steps::before{display:none}.especializacao-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:768px){body{padding-top:70px}.header-inner{height:70px}.menu-toggle{display:flex}.grid-2,.grid-3,.contato-grid,.footer-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
-@media (max-width:480px){.diferenciais{grid-template-columns:1fr}.form-card{padding:24px 20px}}
+.processo-steps{
+  display:grid;
+  gap:30px;
+  grid-template-columns:repeat(4,1fr);
+  margin-top:50px;
+}
+.step{text-align:center}
+.step-num{
+  align-items:center;
+  background:var(--dourado);
+  border-radius:50%;
+  box-shadow:0 4px 20px rgba(184,132,58,0.4);
+  color:#fff;
+  display:flex;
+  font-family:Fraunces,serif;
+  font-size:var(--fs-2xl);
+  font-weight:700;
+  height:70px;
+  justify-content:center;
+  margin:0 auto 20px;
+  width:70px;
+}
+.step h3{
+  color:#fff;
+  font-size:var(--fs-lg);
+  margin-bottom:10px;
+}
+.step p{
+  color:rgba(255,255,255,0.7);
+  font-size:var(--fs-base);
+}
+
+/* DRONE CARD */
+.drone-card{
+  background:#fff;
+  border-left:4px solid var(--dourado);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:35px 30px;
+  transition:var(--transition);
+}
+.drone-card:hover{
+  box-shadow:var(--shadow-lg);
+  transform:translateY(-4px);
+}
+
+/* FAQ */
+.faq-section{
+  background:linear-gradient(135deg,#f8f6f2,var(--creme));
+  padding:100px 0;
+}
+.faq-grid{
+  display:grid;
+  gap:30px;
+  grid-template-columns:repeat(2,1fr);
+  margin-top:50px;
+}
+.faq-card{
+  background:#fff;
+  border:1px solid rgba(184,132,58,0.1);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:35px;
+  transition:var(--transition);
+}
+.faq-card:hover{
+  border-color:var(--dourado);
+  box-shadow:var(--shadow-lg);
+  transform:translateY(-5px);
+}
+.faq-card-header{
+  align-items:center;
+  display:flex;
+  gap:15px;
+  margin-bottom:20px;
+}
+.faq-card-icon{
+  align-items:center;
+  background:var(--creme);
+  border-radius:50%;
+  color:var(--dourado);
+  display:flex;
+  font-size:var(--fs-lg);
+  height:50px;
+  justify-content:center;
+  transition:var(--transition);
+  width:50px;
+  flex-shrink:0;
+}
+.faq-card:hover .faq-card-icon{
+  background:var(--verde);
+  color:#fff;
+}
+.faq-card h3{
+  font-size:var(--fs-lg);
+  margin-bottom:0;
+}
+
+/* CTA */
+.cta-section{
+  background:linear-gradient(135deg,var(--verde),var(--verde2));
+  color:#fff;
+  padding:100px 0;
+  text-align:center;
+}
+.cta-section h2{
+  color:#fff;
+  font-size:var(--fs-3xl);
+}
+.cta-section p{
+  color:rgba(255,255,255,0.9);
+  font-size:var(--fs-lg);
+  margin-bottom:30px;
+}
+
+/* CONTATO */
+.contato-grid{
+  display:grid;
+  gap:60px;
+  grid-template-columns:1fr 1fr;
+}
+.info-item{
+  align-items:flex-start;
+  display:flex;
+  gap:15px;
+  margin-bottom:25px;
+}
+.info-icon{
+  align-items:center;
+  background:var(--creme);
+  border-radius:var(--radius-sm);
+  display:flex;
+  flex-shrink:0;
+  font-size:var(--fs-md);
+  height:45px;
+  justify-content:center;
+  width:45px;
+}
+.info-label{
+  color:var(--texto2);
+  font-size:var(--fs-xs);
+  font-weight:500;
+  letter-spacing:.06em;
+  margin-bottom:4px;
+  text-transform:uppercase;
+}
+.info-value{
+  color:var(--verde);
+  font-size:var(--fs-base);
+  font-weight:600;
+}
+.info-value a{
+  color:var(--verde);
+  text-decoration:none;
+}
+.info-value a:hover{
+  color:var(--dourado);
+  text-decoration:underline;
+}
+
+/* FORMULÁRIO */
+.form-card{
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:45px;
+}
+.form-group{margin-bottom:25px}
+.form-group label{
+  color:var(--verde);
+  display:block;
+  font-size:var(--fs-base);
+  font-weight:600;
+  margin-bottom:8px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  background:#fdfcf9;
+  border:1.5px solid #e0ddd6;
+  border-radius:var(--radius-sm);
+  color:var(--texto);
+  font-family:Outfit,sans-serif;
+  font-size:var(--fs-base);
+  padding:14px 18px;
+  transition:border-color .2s,box-shadow .2s;
+  width:100%;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--verde);
+  box-shadow:0 0 0 3px rgba(26,55,40,0.08);
+  outline:0;
+}
+.form-row{
+  display:grid;
+  gap:20px;
+  grid-template-columns:1fr 1fr;
+}
+.btn-submit{
+  background:var(--verde);
+  border:none;
+  border-radius:var(--radius);
+  color:#fff;
+  cursor:pointer;
+  display:flex;
+  font-family:Outfit,sans-serif;
+  font-size:var(--fs-lg);
+  font-weight:600;
+  gap:10px;
+  justify-content:center;
+  padding:16px 30px;
+  transition:var(--transition);
+  width:100%;
+}
+.btn-submit:hover{
+  background:var(--verde2);
+  transform:translateY(-2px);
+}
+
+/* FOOTER */
+footer{
+  background:linear-gradient(135deg,var(--verde),var(--verde2));
+  border-top:3px solid var(--dourado);
+  color:#fff;
+  padding:80px 0 30px;
+}
+.footer-grid{
+  display:grid;
+  gap:50px;
+  grid-template-columns:2fr 1fr 1fr;
+  padding-bottom:50px;
+  border-bottom:1px solid rgba(255,255,255,0.15);
+  margin-bottom:30px;
+}
+.footer-brand .logo{
+  margin-bottom:15px;
+}
+.footer-brand .logo-text .geo-verde{
+  color:#fff;
+}
+.footer-brand p{
+  color:rgba(255,255,255,0.8);
+  font-size:var(--fs-base);
+  line-height:1.7;
+  margin-top:15px;
+}
+.footer-col h4{
+  color:var(--dourado2);
+  font-family:Fraunces,serif;
+  font-size:var(--fs-lg);
+  margin-bottom:20px;
+  padding-bottom:10px;
+  border-bottom:1px solid rgba(255,255,255,0.2);
+}
+.footer-col ul{
+  list-style:none;
+}
+.footer-col ul li{
+  margin-bottom:12px;
+}
+.footer-col ul li a{
+  color:rgba(255,255,255,0.7);
+  font-size:var(--fs-base);
+  text-decoration:none;
+  transition:color .2s;
+  display:inline-block;
+}
+.footer-col ul li a:hover{
+  color:var(--dourado2);
+  transform:translateX(3px);
+}
+.footer-bottom{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  justify-content:space-between;
+  align-items:center;
+}
+.footer-bottom p{
+  color:rgba(255,255,255,0.6);
+  font-size:var(--fs-base);
+}
+.footer-dev span{
+  color:var(--dourado2);
+  font-weight:600;
+}
+
+/* BACK TO TOP - SEMPRE VISÍVEL */
+.back-to-top{
+  background:var(--dourado);
+  border:none;
+  border-radius:50%;
+  bottom:30px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.3);
+  color:#fff;
+  cursor:pointer;
+  display:flex;
+  height:50px;
+  justify-content:center;
+  align-items:center;
+  position:fixed;
+  right:30px;
+  transition:var(--transition);
+  width:50px;
+  z-index:9999;
+}
+.back-to-top i{
+  font-size:var(--fs-lg);
+}
+.back-to-top:hover{
+  background:var(--dourado2);
+  transform:translateY(-3px);
+}
+
+/* SKIP LINK */
+.skip-link{
+  background:var(--dourado);
+  border-radius:0 0 var(--radius-sm) 0;
+  color:#fff;
+  font-size:var(--fs-base);
+  font-weight:600;
+  left:0;
+  padding:10px 20px;
+  position:absolute;
+  text-decoration:none;
+  top:-100%;
+  z-index:9999;
+}
+.skip-link:focus{top:0}
+
+/* RESPONSIVIDADE */
+@media (max-width:1100px){
+  .container{padding:0 30px}
+}
+
+@media (max-width:900px){
+  h1{font-size:var(--fs-3xl)}
+  h2{font-size:var(--fs-2xl)}
+  .hero h1{font-size:var(--fs-3xl)}
+  .sobre-grid{grid-template-columns:1fr; gap:40px}
+  .processo-steps{grid-template-columns:repeat(2,1fr)}
+  .especializacao-grid{grid-template-columns:repeat(2,1fr)}
+  .faq-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width:768px){
+  .header-inner{height:70px}
+  .menu-toggle{display:flex}
+  nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    background:var(--branco);
+    flex-direction:column;
+    padding:20px;
+    box-shadow:var(--shadow);
+    border-bottom:1px solid rgba(26,55,40,0.1);
+  }
+  nav.active{display:flex}
+  nav a{width:100%; text-align:center}
+  
+  .grid-2,.grid-3,.contato-grid,.footer-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+  .form-row{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column; text-align:center}
+  
+  section{padding:70px 0}
+  .hero{padding:100px 0}
+  .hero-desc{font-size:var(--fs-base)}
+}
+
+@media (max-width:480px){
+  h1{font-size:var(--fs-2xl)}
+  h2{font-size:var(--fs-xl)}
+  .hero h1{font-size:var(--fs-2xl)}
+  .container{padding:0 20px}
+  .btn{width:100%; justify-content:center}
+  .hero-btns{flex-direction:column}
+  .diferenciais{grid-template-columns:1fr}
+  .form-card{padding:25px}
+  .back-to-top{bottom:20px; right:20px}
+}
 </style>
 
-<!-- FONT AWESOME (CARREGADO COM DEFER) -->
+<!-- FONT AWESOME -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
-<!-- GOOGLE FONTS (CARREGADO COM DEFER) -->
+<!-- GOOGLE FONTS -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap"></noscript>
 
-<!-- SCHEMA.ORG APRIMORADO -->
+<!-- SCHEMA.ORG -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -219,7 +913,7 @@ footer{background:linear-gradient(135deg,var(--verde),var(--verde2));border-top:
 }
 </script>
 
-<!-- GOOGLE ANALYTICS OTIMIZADO -->
+<!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EMHP39XQF"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -271,7 +965,7 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <!-- HERO -->
   <section class="hero" id="home" aria-label="Apresentação">
     <div class="container">
-      <div class="hero-content fade-in">
+      <div class="hero-content">
         <span class="tag">Geotecnologias & Desenvolvimento SIG</span>
         <h1>
           Especialista em Soluções Geoespaciais
@@ -300,21 +994,21 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <div class="especializacao-bar" aria-label="Áreas de Especialização">
     <div class="container">
       <div class="especializacao-grid">
-        <div class="especializacao-item fade-in">
+        <div class="especializacao-item">
           <div class="especializacao-icon" aria-hidden="true">
             <i class="fa-solid fa-map-location-dot"></i>
           </div>
           <h3>Geotecnologias</h3>
           <p>Dominamos as mais avançadas tecnologias geoespaciais para análise e interpretação de dados territoriais com precisão e eficiência.</p>
         </div>
-        <div class="especializacao-item fade-in">
+        <div class="especializacao-item">
           <div class="especializacao-icon" aria-hidden="true">
             <i class="fa-solid fa-draw-polygon"></i>
           </div>
           <h3>Desenvolvimento SIG</h3>
           <p>Criação e customização de Sistemas de Informação Geográfica para atender necessidades específicas de projetos ambientais.</p>
         </div>
-        <div class="especializacao-item fade-in">
+        <div class="especializacao-item">
           <div class="especializacao-icon" aria-hidden="true">
             <i class="fa-solid fa-satellite-dish"></i>
           </div>
@@ -329,14 +1023,14 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <section class="sobre" id="sobre" aria-labelledby="sobre-heading">
     <div class="container">
       <div class="sobre-grid">
-        <div class="sobre-text fade-in">
+        <div class="sobre-text">
           <span class="tag">Quem somos</span>
           <h2 id="sobre-heading">Sobre a <span>GeoSabbagh</span></h2>
           <p>Desde 2015, a GeoSabbagh oferece análises espaciais de alta precisão para o setor ambiental. Nossa consultoria transforma dados brutos em informações geográficas valiosas, fornecendo a base técnica para projetos de licenciamento, conservação e planejamento territorial em todo o Brasil.</p>
           <p>Atendemos consultorias ambientais, empresas de engenharia, órgãos públicos e profissionais que necessitam de mapas técnicos, modelagem espacial e interpretação de sensoriamento remoto com rigor cartográfico e agilidade.</p>
           <a href="#contato" class="btn btn-verde"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Falar com um especialista</a>
         </div>
-        <div class="fade-in">
+        <div>
           <h3>Nossos Diferenciais</h3>
           <div class="diferenciais">
             <div class="diff-item">
@@ -364,36 +1058,36 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <!-- SERVIÇOS -->
   <section class="servicos servicos-section" id="servicos" aria-labelledby="servicos-heading">
     <div class="container">
-      <span class="tag fade-in">O que fazemos</span>
-      <h2 class="fade-in" id="servicos-heading">Serviços de <span>Geoprocessamento e SIG</span></h2>
-      <p class="section-subtitle fade-in">Soluções completas em geotecnologias para o setor ambiental, do mapeamento ao diagnóstico.</p>
+      <span class="tag">O que fazemos</span>
+      <h2 id="servicos-heading">Serviços de <span>Geoprocessamento e SIG</span></h2>
+      <p class="section-subtitle">Soluções completas em geotecnologias para o setor ambiental, do mapeamento ao diagnóstico.</p>
       <div class="grid-3">
-        <article class="card fade-in">
+        <article class="card">
           <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-map"></i></div>
           <h3>Mapas para Licenciamento Ambiental</h3>
           <p>Elaboração de mapas temáticos (EIA/RIMA, RAS, PCA) com delimitação de APPs, reserva legal e áreas de influência com rigor cartográfico.</p>
         </article>
-        <article class="card fade-in">
+        <article class="card">
           <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
           <h3>Análise Espacial Ambiental</h3>
           <p>Diagnósticos territoriais, zoneamento, áreas de influência e modelos de adequabilidade para projetos ambientais.</p>
         </article>
-        <article class="card fade-in">
+        <article class="card">
           <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-satellite"></i></div>
           <h3>Classificação de Uso e Cobertura do Solo (LULC)</h3>
           <p>Mapeamento de vegetação, áreas antropizadas e monitoramento temporal com imagens de satélite Landsat e Sentinel.</p>
         </article>
-        <article class="card fade-in">
+        <article class="card">
           <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-mountain"></i></div>
           <h3>Análise de Relevo e Declividade</h3>
           <p>Modelagem hipsométrica, perfis topográficos e análise de fragilidade do relevo para diagnósticos do meio físico.</p>
         </article>
-        <article class="card fade-in">
+        <article class="card">
           <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-water"></i></div>
           <h3>Modelagem Espacial e Hidrológica</h3>
           <p>Estudos de escoamento superficial, áreas de inundação, tempo de concentração e apoio a projetos de outorga hídrica.</p>
         </article>
-        <article class="card fade-in">
+        <article class="card">
           <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-location-crosshairs"></i></div>
           <h3>Georreferenciamento e Padronização SIG</h3>
           <p>Organização, padronização e conversão de bases cartográficas para integração perfeita em plataformas e projetos.</p>
@@ -401,22 +1095,22 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
       </div>
       
       <!-- Drone & LiDAR -->
-      <div style="margin-top: 70px;">
-        <span class="tag fade-in">Tecnologias avançadas</span>
-        <h2 class="fade-in">Levantamentos com <span>Drone e LiDAR</span></h2>
-        <p class="section-subtitle fade-in">Dados tridimensionais de alta resolução para diagnósticos detalhados.</p>
+      <div style="margin-top: 80px;">
+        <span class="tag">Tecnologias avançadas</span>
+        <h2>Levantamentos com <span>Drone e LiDAR</span></h2>
+        <p class="section-subtitle">Dados tridimensionais de alta resolução para diagnósticos detalhados.</p>
         <div class="grid-3">
-          <article class="drone-card fade-in">
+          <article class="drone-card">
             <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-helicopter"></i></div>
             <h3>Levantamento com Drone / VANT</h3>
             <p>Captação de imagens aéreas de altíssima resolução para mapeamento de APPs, fragmentos florestais e áreas de recuperação ambiental.</p>
           </article>
-          <article class="drone-card fade-in">
+          <article class="drone-card">
             <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></div>
             <h3>Processamento Fotogramétrico</h3>
             <p>Geração de ortomosaicos georreferenciados e modelos digitais de superfície (MDS) para análises de alta precisão espacial.</p>
           </article>
-          <article class="drone-card fade-in">
+          <article class="drone-card">
             <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-cubes"></i></div>
             <h3>Processamento de Dados LiDAR</h3>
             <p>Geração de modelos digitais de terreno (MDT), nuvens de pontos e análise de relevo de alta resolução para estudos do meio físico.</p>
@@ -429,26 +1123,26 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <!-- PROCESSO / METODOLOGIA -->
   <section class="processo-section" id="processo" aria-labelledby="processo-heading">
     <div class="container">
-      <span class="tag fade-in" style="background: rgba(184,132,58,0.2); color: var(--dourado2);">Como trabalhamos</span>
-      <h2 class="fade-in" id="processo-heading" style="color: white;">Nossa <span>Metodologia</span></h2>
-      <p class="section-subtitle fade-in" style="color: rgba(255,255,255,0.7);">Um processo estruturado para garantir precisão, agilidade e qualidade em cada projeto.</p>
+      <span class="tag" style="background: rgba(184,132,58,0.2); color: var(--dourado2);">Como trabalhamos</span>
+      <h2 id="processo-heading">Nossa <span>Metodologia</span></h2>
+      <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Um processo estruturado para garantir precisão, agilidade e qualidade em cada projeto.</p>
       <div class="processo-steps">
-        <div class="step fade-in">
+        <div class="step">
           <div class="step-num" aria-hidden="true">1</div>
           <h3>Briefing e Levantamento</h3>
           <p>Entendemos o escopo, área de estudo, prazos e exigências do órgão licenciador.</p>
         </div>
-        <div class="step fade-in">
+        <div class="step">
           <div class="step-num" aria-hidden="true">2</div>
           <h3>Coleta e Processamento</h3>
           <p>Aquisição de imagens de satélite, dados LiDAR/drone e bases cartográficas oficiais.</p>
         </div>
-        <div class="step fade-in">
+        <div class="step">
           <div class="step-num" aria-hidden="true">3</div>
           <h3>Análise e Modelagem</h3>
           <p>Processamento SIG com ferramentas QGIS/ArcGIS, análises espaciais e modelagem temática.</p>
         </div>
-        <div class="step fade-in">
+        <div class="step">
           <div class="step-num" aria-hidden="true">4</div>
           <h3>Entrega e Validação</h3>
           <p>Entrega de bases de dados (GDB, GPKG, Shapefile), mapas finalizados e documentação técnica.</p>
@@ -460,12 +1154,12 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <!-- FAQ -->
   <section class="faq-section" id="faq" aria-labelledby="faq-heading">
     <div class="container">
-      <span class="tag fade-in">Dúvidas comuns</span>
-      <h2 class="fade-in" id="faq-heading">Perguntas <span>Frequentes</span></h2>
-      <p class="section-subtitle fade-in">Tudo o que você precisa saber sobre geotecnologias e desenvolvimento SIG.</p>
+      <span class="tag">Dúvidas comuns</span>
+      <h2 id="faq-heading">Perguntas <span>Frequentes</span></h2>
+      <p class="section-subtitle">Tudo o que você precisa saber sobre geotecnologias e desenvolvimento SIG.</p>
       
       <div class="faq-grid">
-        <div class="faq-card fade-in">
+        <div class="faq-card">
           <div class="faq-card-header">
             <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-question"></i>
@@ -475,7 +1169,7 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
           <p>São o conjunto de tecnologias para coleta, processamento e análise de dados geográficos. Incluem SIG, sensoriamento remoto, GPS, drones e LiDAR, fundamentais para estudos ambientais precisos.</p>
         </div>
 
-        <div class="faq-card fade-in">
+        <div class="faq-card">
           <div class="faq-card-header">
             <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-cube"></i>
@@ -485,7 +1179,7 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
           <p>É a criação e customização de Sistemas de Informação Geográfica para necessidades específicas. Desenvolvemos soluções personalizadas para análise espacial, automação de processos e integração de dados.</p>
         </div>
 
-        <div class="faq-card fade-in">
+        <div class="faq-card">
           <div class="faq-card-header">
             <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-file-lines"></i>
@@ -495,7 +1189,7 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
           <p>É fundamental para diagnosticar a área de estudo, mapear restrições legais (APP, Reserva Legal, UCs), analisar alternativas locacionais e produzir os mapas técnicos obrigatórios para órgãos ambientais.</p>
         </div>
 
-        <div class="faq-card fade-in">
+        <div class="faq-card">
           <div class="faq-card-header">
             <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-database"></i>
@@ -505,7 +1199,7 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
           <p>Trabalhamos com os principais formatos do mercado: Geodatabase (GDB), GeoPackage (GPKG), Shapefile, GeoJSON, rasters GeoTIFF e bancos de dados PostGIS, garantindo compatibilidade com qualquer projeto.</p>
         </div>
 
-        <div class="faq-card fade-in">
+        <div class="faq-card">
           <div class="faq-card-header">
             <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-helicopter"></i>
@@ -515,7 +1209,7 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
           <p>Drones permitem obter imagens de altíssima resolução e modelos 3D de áreas específicas de forma rápida e econômica. São ideais para monitorar regeneração florestal, identificar focos de erosão e criar modelos detalhados de APPs.</p>
         </div>
 
-        <div class="faq-card fade-in">
+        <div class="faq-card">
           <div class="faq-card-header">
             <div class="faq-card-icon" aria-hidden="true">
               <i class="fa-solid fa-globe"></i>
@@ -531,10 +1225,10 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <!-- CTA -->
   <section class="cta-section" aria-label="Chamada para ação">
     <div class="container">
-      <span class="tag fade-in" style="background: rgba(184,132,58,0.2); color: var(--dourado2);">Pronto para começar?</span>
-      <h2 class="fade-in">Vamos trabalhar no seu projeto?</h2>
-      <p class="fade-in">Fale com um especialista em geotecnologias e transforme dados geoespaciais em soluções ambientais precisas.</p>
-      <div class="fade-in" style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+      <span class="tag" style="background: rgba(184,132,58,0.2); color: var(--dourado2);">Pronto para começar?</span>
+      <h2>Vamos trabalhar no seu projeto?</h2>
+      <p>Fale com um especialista em geotecnologias e transforme dados geoespaciais em soluções ambientais precisas.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
         <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar Análise Técnica</a>
         <a href="mailto:contato.geosabbagh@gmail.com" class="btn btn-outline-white" rel="noopener noreferrer"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Enviar e-mail direto</a>
       </div>
@@ -545,11 +1239,11 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <section class="contato" id="contato" aria-labelledby="contato-heading">
     <div class="container">
       <div class="contato-grid">
-        <div class="contato-info fade-in">
+        <div class="contato-info">
           <span class="tag">Fale conosco</span>
           <h2 id="contato-heading">Entre em <span>Contato</span></h2>
           <p>Precisa de um consultor em geotecnologias ou de mapas para o seu licenciamento? Estamos prontos para atender você em todo o Brasil.</p>
-          <div style="margin-top: 32px;">
+          <div style="margin-top: 40px;">
             <div class="info-item">
               <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-map-marker-alt"></i></div>
               <div><div class="info-label">Localização</div><div class="info-value">São Paulo – SP (Atendimento Remoto Nacional)</div></div>
@@ -565,7 +1259,7 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
           </div>
         </div>
 
-        <div class="form-contato fade-in">
+        <div class="form-contato">
           <div class="form-card">
             <form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST" novalidate>
               <input type="hidden" name="_subject" value="Novo contato do site GeoSabbagh">
@@ -619,7 +1313,7 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#home" class="logo" aria-label="GeoSabbagh - Voltar ao início" style="text-decoration: none; display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+        <a href="#home" class="logo" aria-label="GeoSabbagh - Voltar ao início">
           <div class="footer-logo-icon" aria-hidden="true">
             <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logotipo GeoSabbagh">
               <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
@@ -669,9 +1363,84 @@ gtag('config', 'G-7EMHP39XQF', { 'transport_type': 'beacon', 'anonymize_ip': tru
   <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
 </button>
 
-<!-- JAVASCRIPT OTIMIZADO (MINIFICADO) -->
+<!-- JAVASCRIPT SIMPLIFICADO -->
 <script>
-!function(){"use strict";var e=document.getElementById("site-header"),t=document.getElementById("backToTop");function n(){var e="";sections.forEach(function(t){window.scrollY>=t.offsetTop-120&&(e=t.getAttribute("id")||"")}),navLinks.forEach(function(t){t.classList.toggle("active",t.getAttribute("href")==="#"+e)})}window.addEventListener("scroll",function(){e.classList.toggle("scrolled",window.scrollY>40),t.classList.toggle("show",window.scrollY>500),n()},{passive:!0});var o=document.getElementById("menuToggle"),l=document.getElementById("mainNav");o.addEventListener("click",function(){var e=l.classList.toggle("active");o.setAttribute("aria-expanded",String(e)),o.setAttribute("aria-label",e?"Fechar menu":"Abrir menu")}),l.querySelectorAll("a").forEach(function(e){e.addEventListener("click",function(){l.classList.remove("active"),o.setAttribute("aria-expanded","false"),o.setAttribute("aria-label","Abrir menu")})}),t.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});var sections=document.querySelectorAll("section[id]"),navLinks=document.querySelectorAll('nav a[href^="#"]');n();var revealObs=new IntersectionObserver(function(e){e.forEach(function(e){e.isIntersecting&&(e.target.classList.add("visible"),revealObs.unobserve(e.target))})},{threshold:.1,rootMargin:"0px 0px -40px 0px"});document.querySelectorAll(".fade-in").forEach(function(e){revealObs.observe(e)});var form=document.getElementById("contactForm"),submitBtn=document.getElementById("submitBtn"),formMsg=document.getElementById("formMessage");if(form){form.addEventListener("submit",async function(e){e.preventDefault(),submitBtn.disabled=!0,submitBtn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';var t=form.getAttribute("action")||"";try{var n=await fetch(t,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});if(n.ok)formMsg.innerHTML='<div class="msg-success">✅ Mensagem enviada! Retornaremos em breve.</div>',form.reset(),"undefined"!=typeof gtag&&gtag("event","form_submit",{event_category:"contato",event_label:"formulario_principal"});else throw new Error}catch(e){formMsg.innerHTML='<div class="msg-error">❌ Erro ao enviar. Tente via e-mail: contato.geosabbagh@gmail.com</div>'}submitBtn.disabled=!1,submitBtn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Enviar mensagem',setTimeout(function(){formMsg.innerHTML=""},8e3)})}var fy=document.getElementById("footer-year");fy&&(fy.textContent="© "+new Date().getFullYear()+" GeoSabbagh – Geotecnologias e Desenvolvimento SIG")}();
+!function() {
+  "use strict";
+  
+  // Menu mobile
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      const expanded = mainNav.classList.toggle('active');
+      this.setAttribute('aria-expanded', expanded);
+      this.setAttribute('aria-label', expanded ? 'Fechar menu' : 'Abrir menu');
+    });
+  }
+  
+  // Fechar menu ao clicar em um link
+  if (mainNav) {
+    mainNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mainNav.classList.remove('active');
+        if (menuToggle) {
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.setAttribute('aria-label', 'Abrir menu');
+        }
+      });
+    });
+  }
+  
+  // Botão voltar ao topo
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+  
+  // Formulário
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formMsg = document.getElementById('formMessage');
+  
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+      
+      try {
+        const response = await fetch(form.getAttribute('action'), {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        
+        if (response.ok) {
+          formMsg.innerHTML = '<div class="msg-success">✅ Mensagem enviada! Retornaremos em breve.</div>';
+          form.reset();
+        } else {
+          throw new Error();
+        }
+      } catch (error) {
+        formMsg.innerHTML = '<div class="msg-error">❌ Erro ao enviar. Tente via e-mail: contato.geosabbagh@gmail.com</div>';
+      }
+      
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+      setTimeout(() => { formMsg.innerHTML = ''; }, 8000);
+    });
+  }
+  
+  // Atualizar ano no rodapé
+  const footerYear = document.getElementById('footer-year');
+  if (footerYear) {
+    footerYear.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Geotecnologias e Desenvolvimento SIG';
+  }
+}();
 </script>
 
 <!-- LINK PARA SITEMAP -->
