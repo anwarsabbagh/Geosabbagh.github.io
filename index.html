@@ -1,623 +1,2060 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<meta name="google-site-verification" content="ffnTCQIbys8xV6poGMrGTkEexWnv-RpnCtBf7unQo64" />
-<title>GeoSabbagh – Consultoria em Geotecnologias, SIG e Licenciamento Ambiental | São Paulo, Brasil</title>
-<meta name="description" content="GeoSabbagh: consultoria especializada em geoprocessamento, SIG, mapas para licenciamento ambiental (EIA/RIMA, RAS, PCA), análise espacial, sensoriamento remoto e levantamentos com drone e LiDAR em todo o Brasil. Mais de 10 anos de atuação.">
-<meta name="keywords" content="geotecnologias, SIG, geoprocessamento, licenciamento ambiental, mapas técnicos, análise espacial, drone, LiDAR, QGIS, ArcGIS, sensoriamento remoto, APP, reserva legal">
-<meta name="author" content="Anwar Sabbagh">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="application-name" content="GeoSabbagh">
-<link rel="canonical" href="https://anwarsabbagh.github.io/GeoSabbagh.github.io/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%22128%22%20height%3D%22128%22%20viewBox%3D%220%200%20128%20128%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2224%22%20fill%3D%22%231A3728%22%2F%3E%3Cpath%20d%3D%22M92%2046L64%2060L36%2046L36%2082L64%2096L92%2082L92%2046Z%22%20fill%3D%22%23B8843A%22%20stroke%3D%22%23F4F0E8%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M64%2060L64%2096%22%20stroke%3D%22%23F4F0E8%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2242%22%20r%3D%2212%22%20fill%3D%22%23B8843A%22%20stroke%3D%22%23F4F0E8%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E">
-<link rel="manifest" href="site.webmanifest">
-<meta name="theme-color" content="#1A3728">
-<meta property="og:type" content="website">
-<meta property="og:title" content="GeoSabbagh | Consultoria em Geotecnologias, SIG e Licenciamento Ambiental">
-<meta property="og:description" content="Consultoria especializada em geoprocessamento, SIG e análise territorial para licenciamento ambiental. Mais de 10 anos, +200 projetos, atendimento remoto em todo Brasil.">
-<meta property="og:url" content="https://anwarsabbagh.github.io/GeoSabbagh.github.io/">
-<meta property="og:site_name" content="GeoSabbagh">
-<meta property="og:image" content="https://anwarsabbagh.github.io/GeoSabbagh.github.io/img/og-image.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="GeoSabbagh | Geotecnologias e SIG">
-<meta name="twitter:description" content="Consultoria em geoprocessamento e SIG para licenciamento ambiental. +10 anos, atendimento remoto em todo Brasil.">
-<meta name="twitter:image" content="https://anwarsabbagh.github.io/GeoSabbagh.github.io/img/og-image.webp">
-<link rel="sitemap" type="application/xml" href="sitemap.xml">
-<style>
-:root{--verde:#1A3728;--verde2:#2C5F46;--dourado:#B8843A;--dourado2:#d4a055;--creme:#F4F0E8;--creme2:#EDE8DC;--texto:#2A2F28;--texto2:#4a5447;--branco:#FDFCF9;--radius:12px;--radius-sm:8px;--shadow:0 4px 24px rgba(26,55,40,0.1);--shadow-lg:0 12px 40px rgba(26,55,40,0.15);--transition:all 0.3s ease;--max-w:1200px;--fs-xs:0.75rem;--fs-sm:0.875rem;--fs-base:1rem;--fs-md:1.125rem;--fs-lg:1.25rem;--fs-xl:1.5rem;--fs-2xl:2rem;--fs-3xl:2.5rem;--fs-4xl:3rem}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--branco);color:var(--texto);font-family:'Outfit',sans-serif;font-size:var(--fs-base);line-height:1.6;overflow-x:hidden;width:100%;position:relative}
-header{background:rgba(253,252,249,0.98);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,55,40,0.08);position:fixed;top:0;left:0;width:100%;z-index:1000;box-shadow:0 2px 20px rgba(26,55,40,0.05)}
-.header-inner{align-items:center;display:flex;height:80px;justify-content:space-between;margin:0 auto;max-width:var(--max-w);padding:0 25px;position:relative}
-.logo{align-items:center;display:flex;gap:10px;text-decoration:none;z-index:1001}
-.logo-text{font-size:var(--fs-lg)}
-.logo-text .geo-verde{color:var(--verde);font-family:'Fraunces',serif;font-weight:700}
-.logo-text .sabbagh-dourado{color:var(--dourado);font-family:'Fraunces',serif;font-weight:700}
-.logo-icon{display:flex;height:46px;width:46px}
-.logo-icon svg{filter:drop-shadow(0 2px 4px rgba(0,0,0,0.12));height:100%;width:100%}
-.menu-toggle{background:transparent;border:none;cursor:pointer;display:none;width:48px;height:48px;padding:12px;position:relative;z-index:1001;border-radius:var(--radius-sm);transition:var(--transition)}
-.menu-toggle:hover{background:var(--creme)}
-.menu-toggle i{color:var(--verde);font-size:24px}
-nav{align-items:center;display:flex;gap:8px}
-nav a{border-radius:var(--radius-sm);color:var(--texto2);font-size:var(--fs-base);font-weight:500;padding:10px 16px;text-decoration:none;transition:var(--transition);white-space:nowrap}
-nav a:hover{background:var(--creme);color:var(--verde)}
-nav a.active{color:var(--verde);font-weight:600}
-.nav-cta{background:var(--verde);color:#fff;padding:10px 20px;border-radius:var(--radius)}
-.nav-cta:hover{background:var(--verde2);color:#fff;transform:translateY(-2px)}
-.menu-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);backdrop-filter:blur(3px);z-index:998;opacity:0;transition:opacity 0.3s ease;pointer-events:none}
-.menu-overlay.active{display:block;opacity:1;pointer-events:auto}
-.container{margin:0 auto;max-width:var(--max-w);padding:0 25px;width:100%}
-section{padding:100px 0;width:100%;overflow:hidden}
-body.menu-open{overflow:hidden}
-@media(max-width:768px){
-  .header-inner{height:70px;padding:0 20px}
-  .menu-toggle{display:flex;align-items:center;justify-content:center}
-  nav{position:fixed;top:70px;left:0;width:100%;background:var(--branco);flex-direction:column;align-items:stretch;padding:20px;gap:10px;box-shadow:0 10px 30px rgba(0,0,0,0.1);transform:translateY(-100%);opacity:0;visibility:hidden;transition:transform 0.3s ease,opacity 0.3s ease,visibility 0.3s ease;z-index:999;border-bottom:1px solid rgba(26,55,40,0.1);max-height:calc(100vh - 70px);overflow-y:auto}
-  nav.active{transform:translateY(0);opacity:1;visibility:visible}
-  nav a{width:100%;text-align:center;padding:15px 20px;font-size:var(--fs-lg);border-radius:var(--radius)}
-  .nav-cta{margin-top:10px;padding:15px 20px}
-}
-h1,h2,h3,h4{color:var(--verde);font-family:'Fraunces',serif;line-height:1.2}
-h1{font-size:var(--fs-4xl);margin-bottom:20px}
-h2{font-size:var(--fs-3xl);margin-bottom:20px}
-h2 span{color:var(--dourado)}
-h3{font-size:var(--fs-xl);margin-bottom:15px}
-p{color:var(--texto2);font-size:var(--fs-base);line-height:1.7;margin-bottom:15px}
-.section-subtitle{color:var(--texto2);font-size:var(--fs-md);margin-bottom:50px;max-width:600px}
-.tag{background:rgba(184,132,58,0.1);border-radius:50px;color:var(--dourado);display:inline-block;font-size:var(--fs-sm);font-weight:600;letter-spacing:.1em;margin-bottom:20px;padding:6px 16px;text-transform:uppercase}
-.grid-2,.grid-3{display:grid;gap:30px;margin-top:40px}
-.grid-2{grid-template-columns:repeat(2,1fr)}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.btn{align-items:center;border:none;border-radius:var(--radius);cursor:pointer;display:inline-flex;font-family:'Outfit',sans-serif;font-size:var(--fs-base);font-weight:600;gap:8px;padding:14px 28px;text-decoration:none;transition:var(--transition)}
-.btn-primary{background:var(--dourado);box-shadow:0 4px 16px rgba(184,132,58,0.35);color:#fff}
-.btn-primary:hover{background:var(--dourado2);box-shadow:0 8px 24px rgba(184,132,58,0.4);transform:translateY(-2px)}
-.btn-outline-white{border:2px solid rgba(255,255,255,0.7);color:#fff}
-.btn-outline-white:hover{background:rgba(255,255,255,0.12);border-color:#fff;transform:translateY(-2px)}
-.btn-verde{background:var(--verde);box-shadow:0 4px 16px rgba(26,55,40,0.25);color:#fff}
-.btn-verde:hover{background:var(--verde2);transform:translateY(-2px)}
-.hero{background:linear-gradient(135deg,var(--verde),var(--verde2));color:#fff;padding:120px 0;margin-top:80px}
-.hero h1{color:#fff;font-size:var(--fs-4xl);margin-bottom:20px}
-.hero h1 em{color:var(--dourado2);display:block;font-style:italic;margin-top:10px}
-.hero-desc{color:rgba(255,255,255,0.9);font-size:var(--fs-lg);line-height:1.8;margin:0 auto 40px;max-width:700px}
-.hero-btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
-.especializacao-bar{background:var(--creme2);padding:80px 0}
-.especializacao-grid{display:grid;gap:40px;grid-template-columns:repeat(3,1fr);text-align:center}
-.especializacao-item{padding:20px}
-.especializacao-icon{background:#fff;border-radius:50%;box-shadow:var(--shadow);display:flex;height:90px;justify-content:center;align-items:center;margin:0 auto 25px;transition:var(--transition);width:90px}
-.especializacao-item:hover .especializacao-icon{background:var(--verde);transform:translateY(-5px)}
-.especializacao-icon i{color:var(--verde);font-size:40px;transition:var(--transition);display:flex;justify-content:center;align-items:center;width:100%;height:100%}
-.especializacao-item:hover .especializacao-icon i{color:#fff}
-.sobre-grid{align-items:center;display:grid;gap:70px;grid-template-columns:1fr 1fr}
-.diferenciais{display:grid;gap:15px;grid-template-columns:1fr 1fr;margin-top:30px}
-.diff-item{align-items:center;background:var(--creme);border:1px solid var(--creme2);border-radius:var(--radius);color:var(--verde);display:flex;font-size:var(--fs-base);font-weight:600;gap:12px;padding:18px;transition:var(--transition)}
-.diff-item:hover{background:var(--verde);color:#fff;transform:translateY(-3px)}
-.diff-item i{color:var(--dourado);font-size:var(--fs-lg);width:28px;text-align:center}
-.diff-item:hover i{color:var(--dourado2)}
-.servicos-section{background:var(--creme)}
-.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);display:flex;flex-direction:column;padding:35px 30px;transition:var(--transition);border-top:3px solid transparent}
-.card:hover{border-top-color:var(--dourado);box-shadow:var(--shadow-lg);transform:translateY(-6px)}
-.card-icon{align-items:center;background:var(--creme);border-radius:var(--radius-sm);display:flex;height:60px;justify-content:center;margin-bottom:20px;transition:var(--transition);width:60px}
-.card-icon i{color:var(--verde);font-size:30px;transition:var(--transition);display:flex;justify-content:center;align-items:center;width:100%;height:100%}
-.card:hover .card-icon{background:var(--verde)}
-.card:hover .card-icon i{color:#fff;transform:scale(1.1)}
-.drone-card{background:#fff;border-left:4px solid var(--dourado);border-radius:var(--radius);box-shadow:var(--shadow);padding:35px 30px;transition:var(--transition)}
-.drone-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
-
-/* =============================================
-   CAROUSEL - VERSÃO APENAS COM NOMES
-   Design limpo, apenas texto com destaque
-   ============================================= */
-.clientes-section{background:var(--branco);padding:80px 0;border-top:1px solid var(--creme2);border-bottom:1px solid var(--creme2);position:relative;overflow:hidden}
-.clientes-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(184,132,58,0.03) 0%,transparent 50%);z-index:0;pointer-events:none}
-.clientes-section .container{position:relative;z-index:2;max-width:var(--max-w);margin:0 auto;padding:0 25px}
-.clientes-section h2{text-align:center;font-size:var(--fs-3xl);margin-bottom:15px}
-.clientes-section h2 span{color:var(--dourado)}
-.clientes-subtitulo{text-align:center;max-width:700px;margin:0 auto 60px;color:var(--texto2);font-size:var(--fs-md);line-height:1.7}
-.clientes-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:50px;margin-bottom:70px;text-align:center}
-.stat-item{flex:0 1 auto;min-width:150px}
-.stat-number{display:block;font-family:'Fraunces',serif;font-size:var(--fs-3xl);font-weight:700;color:var(--verde);line-height:1.2;margin-bottom:5px}
-.stat-label{font-size:var(--fs-base);color:var(--texto2);text-transform:uppercase;letter-spacing:0.5px}
-
-/* Carrossel - apenas nomes */
-.clientes-carousel-wrapper{position:relative;margin:40px 0 20px;height:100px}
-.clientes-carousel{width:100%;height:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
-.carousel-track{display:flex;align-items:center;gap:30px;height:100%;width:max-content;will-change:transform;animation:carousel-scroll 60s linear infinite}
-.clientes-carousel:hover .carousel-track{animation-play-state:paused}
-@keyframes carousel-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* Card do cliente - apenas texto */
-.cliente-nome{flex:0 0 auto;display:flex;align-items:center;justify-content:center;padding:12px 24px;background:var(--creme);border:1.5px solid transparent;border-radius:40px;font-size:1.1rem;font-weight:600;color:var(--verde);white-space:nowrap;transition:var(--transition);cursor:default;box-shadow:var(--shadow)}
-.cliente-nome:hover{background:var(--verde);color:#fff;border-color:var(--dourado);transform:translateY(-3px);box-shadow:var(--shadow-lg)}
-
-/* Responsividade */
-@media(max-width:768px){
-  .cliente-nome{font-size:1rem;padding:10px 18px}
-  .carousel-track{gap:20px}
-  .clientes-carousel-wrapper{height:80px}
-}
-@media(max-width:480px){
-  .cliente-nome{font-size:0.9rem;padding:8px 14px}
-}
-
-.processo-section{background:var(--verde);color:#fff;padding:100px 0}
-.processo-section h2{color:#fff}
-.processo-steps{display:grid;gap:30px;grid-template-columns:repeat(4,1fr);margin-top:50px}
-.step{text-align:center}
-.step-num{align-items:center;background:var(--dourado);border-radius:50%;box-shadow:0 4px 20px rgba(184,132,58,0.4);color:#fff;display:flex;font-family:'Fraunces',serif;font-size:var(--fs-2xl);font-weight:700;height:70px;justify-content:center;margin:0 auto 20px;width:70px}
-.step h3{color:#fff;font-size:var(--fs-lg);margin-bottom:10px}
-.step p{color:rgba(255,255,255,0.7);font-size:var(--fs-base)}
-.faq-section{background:linear-gradient(135deg,#f8f6f2,var(--creme));padding:100px 0}
-.faq-grid{display:grid;gap:30px;grid-template-columns:repeat(2,1fr);margin-top:50px}
-.faq-card{background:#fff;border:1px solid rgba(184,132,58,0.1);border-radius:var(--radius);box-shadow:var(--shadow);padding:35px;transition:var(--transition)}
-.faq-card:hover{border-color:var(--dourado);box-shadow:var(--shadow-lg);transform:translateY(-5px)}
-.faq-card-header{align-items:center;display:flex;gap:15px;margin-bottom:20px}
-.faq-card-icon{align-items:center;background:var(--creme);border-radius:50%;color:var(--dourado);display:flex;font-size:var(--fs-lg);height:50px;justify-content:center;transition:var(--transition);width:50px;flex-shrink:0}
-.faq-card:hover .faq-card-icon{background:var(--verde);color:#fff}
-.faq-card h3{font-size:var(--fs-lg);margin-bottom:0}
-.cta-section{background:linear-gradient(135deg,var(--verde),var(--verde2));color:#fff;padding:100px 0;text-align:center}
-.cta-section h2{color:#fff;font-size:var(--fs-3xl)}
-.cta-section p{color:rgba(255,255,255,0.9);font-size:var(--fs-lg);margin-bottom:30px}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.contato-grid{display:grid;gap:60px;grid-template-columns:1fr 1fr}
-.info-item{align-items:flex-start;display:flex;gap:15px;margin-bottom:25px}
-.info-icon{align-items:center;background:var(--creme);border-radius:var(--radius-sm);display:flex;flex-shrink:0;font-size:var(--fs-md);height:45px;justify-content:center;width:45px}
-.info-label{color:var(--texto2);font-size:var(--fs-xs);font-weight:500;letter-spacing:.06em;margin-bottom:4px;text-transform:uppercase}
-.info-value{color:var(--verde);font-size:var(--fs-base);font-weight:600}
-.info-value a{color:var(--verde);text-decoration:none}
-.info-value a:hover{color:var(--dourado);text-decoration:underline}
-.form-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:45px}
-.form-group{margin-bottom:25px}
-.form-group label{color:var(--verde);display:block;font-size:var(--fs-base);font-weight:600;margin-bottom:8px}
-.form-group input,.form-group select,.form-group textarea{background:#fdfcf9;border:1.5px solid #e0ddd6;border-radius:var(--radius-sm);color:var(--texto);font-family:'Outfit',sans-serif;font-size:var(--fs-base);padding:14px 18px;transition:border-color .2s,box-shadow .2s;width:100%}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--verde);box-shadow:0 0 0 3px rgba(26,55,40,0.08);outline:0}
-.form-row{display:grid;gap:20px;grid-template-columns:1fr 1fr}
-.btn-submit{background:var(--verde);border:none;border-radius:var(--radius);color:#fff;cursor:pointer;display:flex;font-family:'Outfit',sans-serif;font-size:var(--fs-lg);font-weight:600;gap:10px;justify-content:center;padding:16px 30px;transition:var(--transition);width:100%}
-.btn-submit:hover{background:var(--verde2);transform:translateY(-2px)}
-footer{background:linear-gradient(135deg,var(--verde),var(--verde2));border-top:3px solid var(--dourado);color:#fff;padding:80px 0 30px}
-.footer-grid{display:grid;gap:50px;grid-template-columns:2fr 1fr 1fr;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:30px}
-.footer-brand .logo{margin-bottom:15px}
-.footer-brand .logo-text .geo-verde{color:#fff}
-.footer-brand p{color:rgba(255,255,255,0.8);font-size:var(--fs-base);line-height:1.7;margin-top:15px}
-.footer-col h4{color:var(--dourado2);font-family:'Fraunces',serif;font-size:var(--fs-lg);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.2)}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:12px}
-.footer-col ul li a{color:rgba(255,255,255,0.7);font-size:var(--fs-base);text-decoration:none;transition:color .2s;display:inline-block}
-.footer-col ul li a:hover{color:var(--dourado2);transform:translateX(3px)}
-.footer-bottom{display:flex;flex-wrap:wrap;gap:15px;justify-content:space-between;align-items:center}
-.footer-bottom p{color:rgba(255,255,255,0.6);font-size:var(--fs-base)}
-.footer-dev span{color:var(--dourado2);font-weight:600}
-.back-to-top{background:var(--dourado);border:none;border-radius:50%;bottom:30px;box-shadow:0 4px 14px rgba(0,0,0,0.3);color:#fff;cursor:pointer;display:flex;height:50px;justify-content:center;align-items:center;position:fixed;right:30px;transition:var(--transition),opacity 0.3s ease,visibility 0.3s ease;width:50px;z-index:999;opacity:0;visibility:hidden;pointer-events:none}
-.back-to-top.visible{opacity:1;visibility:visible;pointer-events:auto}
-.back-to-top i{font-size:var(--fs-lg)}
-.back-to-top:hover{background:var(--dourado2);transform:translateY(-3px)}
-.skip-link{background:var(--dourado);border-radius:0 0 var(--radius-sm) 0;color:#fff;font-size:var(--fs-base);font-weight:600;left:0;padding:10px 20px;position:absolute;text-decoration:none;top:-100%;z-index:9999}
-.skip-link:focus{top:0}
-@media(max-width:1100px){.container{padding:0 30px}}
-@media(max-width:900px){
-  h1{font-size:var(--fs-3xl)}h2{font-size:var(--fs-2xl)}
-  .hero h1{font-size:var(--fs-3xl)}
-  .sobre-grid{grid-template-columns:1fr;gap:40px}
-  .processo-steps{grid-template-columns:repeat(2,1fr)}
-  .especializacao-grid{grid-template-columns:repeat(2,1fr)}
-  .faq-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .clientes-stats{gap:30px}
-}
-@media(max-width:768px){
-  .grid-2,.grid-3,.contato-grid,.footer-grid{grid-template-columns:1fr;gap:25px}
-  .form-row{grid-template-columns:1fr}
-  .footer-bottom{flex-direction:column;text-align:center}
-  section{padding:70px 0}
-  .hero{padding:100px 0}
-  .hero-desc{font-size:var(--fs-base)}
-  .clientes-stats{flex-direction:column;gap:20px;align-items:center}
-  .stat-item{width:100%;max-width:200px}
-}
-@media(max-width:480px){
-  h1{font-size:var(--fs-2xl)}h2{font-size:var(--fs-xl)}
-  .hero h1{font-size:var(--fs-2xl)}
-  .container{padding:0 20px}
-  .btn{width:100%;justify-content:center}
-  .hero-btns{flex-direction:column}
-  .diferenciais{grid-template-columns:1fr}
-  .processo-steps{grid-template-columns:1fr}
-  .especializacao-grid{grid-template-columns:1fr}
-  .form-card{padding:25px}
-  .back-to-top{bottom:20px;right:20px}
-}
-</style>
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap"></noscript>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://anwarsabbagh.github.io/GeoSabbagh.github.io/#business","name":"GeoSabbagh","alternateName":"GeoSabbagh Consultoria em Geotecnologias","url":"https://anwarsabbagh.github.io/GeoSabbagh.github.io/","logo":{"@type":"ImageObject","url":"https://anwarsabbagh.github.io/GeoSabbagh.github.io/android-chrome-512x512.png","width":512,"height":512},"image":"https://anwarsabbagh.github.io/GeoSabbagh.github.io/img/og-image.webp","description":"Consultoria especializada em Geotecnologias e SIG para o setor ambiental. Mapas para licenciamento, an\u00e1lise espacial, sensoriamento remoto e drone/LiDAR.","email":"contato.geosabbagh@gmail.com","foundingDate":"2015","areaServed":{"@type":"Country","name":"Brasil"},"address":{"@type":"PostalAddress","addressLocality":"S\u00e3o Paulo","addressRegion":"SP","addressCountry":"BR"},"openingHours":"Mo-Fr 09:00-18:00","knowsAbout":["Geoprocessamento","SIG","Licenciamento Ambiental","Sensoriamento Remoto","Drone","LiDAR","QGIS","ArcGIS"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servi\u00e7os de Geotecnologias","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Mapas para Licenciamento Ambiental"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"An\u00e1lise Espacial Ambiental"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Desenvolvimento SIG"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Classifica\u00e7\u00e3o de Uso do Solo LULC"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Levantamento com Drone e LiDAR"}}]},"sameAs":["https://www.linkedin.com/company/geosabbagh","https://twitter.com/geosabbagh"]},{"@type":"WebSite","@id":"https://anwarsabbagh.github.io/GeoSabbagh.github.io/#website","url":"https://anwarsabbagh.github.io/GeoSabbagh.github.io/","name":"GeoSabbagh","description":"Consultoria em Geotecnologias, SIG e Licenciamento Ambiental","inLanguage":"pt-BR"}]}
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7EMHP39XQF"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7EMHP39XQF',{'transport_type':'beacon','anonymize_ip':true});</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T9TBXKX5');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="ffnTCQIbys8xV6poGMrGTkEexWnv-RpnCtBf7unQo64">
+  
+  <!-- Primary Meta Tags -->
+  <title>GeoSabbagh: Consultoria em Geoprocessamento e SIG para Licenciamento Ambiental</title>
+  <meta name="title" content="GeoSabbagh: Consultoria em Geoprocessamento e SIG para Licenciamento Ambiental">
+  <meta name="description" content="Especialistas em geoprocessamento para licenciamento ambiental. +200 projetos realizados. Mapas técnicos (EIA/RIMA), análise espacial e sensoriamento remoto para todo Brasil. Solicite orçamento.">
+  <meta name="keywords" content="geoprocessamento, SIG, licenciamento ambiental, mapas EIA/RIMA, análise espacial, sensoriamento remoto, drone, LiDAR, consultoria ambiental São Paulo">
+  <meta name="author" content="Anwar Sabbagh">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://geosabbagh.com.br">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geosabbagh.com.br">
+  <meta property="og:title" content="GeoSabbagh - Consultoria em Geoprocessamento para Licenciamento Ambiental">
+  <meta property="og:description" content="+200 projetos realizados em geoprocessamento e SIG para EIA/RIMA. Atendimento em todo Brasil.">
+  <meta property="og:image" content="https://geosabbagh.com.br/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="GeoSabbagh">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://geosabbagh.com.br">
+  <meta property="twitter:title" content="GeoSabbagh - Consultoria em Geoprocessamento">
+  <meta property="twitter:description" content="Especialistas em SIG para licenciamento ambiental. Solicite orçamento.">
+  <meta property="twitter:image" content="https://geosabbagh.com.br/img/og-image.jpg">
+  
+  <!-- Business Meta -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#1A3728">
+  <meta name="application-name" content="GeoSabbagh">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20width%3D%22128%22%20height%3D%22128%22%20viewBox%3D%220%200%20128%20128%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2224%22%20fill%3D%22%231A3728%22%2F%3E%3Cpath%20d%3D%22M92%2046L64%2060L36%2046L36%2082L64%2096L92%2082L92%2046Z%22%20fill%3D%22%23B8843A%22%20stroke%3D%22%23F4F0E8%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M64%2060L64%2096%22%20stroke%3D%22%23F4F0E8%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2242%22%20r%3D%2212%22%20fill%3D%22%23B8843A%22%20stroke%3D%22%23F4F0E8%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E">
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://geosabbagh.com.br/#business",
+        "name": "GeoSabbagh",
+        "alternateName": "GeoSabbagh Consultoria em Geotecnologias",
+        "url": "https://geosabbagh.com.br",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://geosabbagh.com.br/android-chrome-512x512.png",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://geosabbagh.com.br/img/og-image.jpg",
+        "description": "Consultoria especializada em geoprocessamento, SIG e análise espacial para licenciamento ambiental. Atendimento em todo Brasil.",
+        "email": "contato.geosabbagh@gmail.com",
+        "telephone": "+55-11-93040-1920",
+        "foundingDate": "2015",
+        "areaServed": {
+          "@type": "Country",
+          "name": "Brasil"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "knowsAbout": [
+          "Geoprocessamento",
+          "SIG",
+          "Licenciamento Ambiental",
+          "EIA/RIMA",
+          "Sensoriamento Remoto",
+          "Drone",
+          "LiDAR"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços de Geotecnologias",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mapas para Licenciamento Ambiental",
+                "description": "Elaboração de mapas temáticos para EIA/RIMA, RAS e PCA"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Análise Espacial Ambiental",
+                "description": "Diagnósticos territoriais, zoneamento e modelos de adequabilidade"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Levantamento com Drone e LiDAR",
+                "description": "Captação de imagens aéreas e modelos 3D de alta resolução"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://geosabbagh.com.br/#website",
+        "url": "https://geosabbagh.com.br",
+        "name": "GeoSabbagh",
+        "description": "Consultoria em Geoprocessamento e SIG para Licenciamento Ambiental",
+        "inLanguage": "pt-BR"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EMHP39XQF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7EMHP39XQF', {
+      'transport_type': 'beacon',
+      'anonymize_ip': true
+    });
+  </script>
+  
+  <style>
+    /* ===== VARIABLES ===== */
+    :root {
+      --verde: #1A3728;
+      --verde2: #2C5F46;
+      --dourado: #B8843A;
+      --dourado2: #d4a055;
+      --creme: #F4F0E8;
+      --creme2: #EDE8DC;
+      --texto: #2A2F28;
+      --texto2: #4a5447;
+      --branco: #FDFCF9;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 24px rgba(26,55,40,0.1);
+      --shadow-lg: 0 12px 40px rgba(26,55,40,0.15);
+      --transition: all 0.3s ease;
+      --max-w: 1200px;
+      --fs-xs: 0.75rem;
+      --fs-sm: 0.875rem;
+      --fs-base: 1rem;
+      --fs-md: 1.125rem;
+      --fs-lg: 1.25rem;
+      --fs-xl: 1.5rem;
+      --fs-2xl: 2rem;
+      --fs-3xl: 2.5rem;
+      --fs-4xl: 3rem;
+    }
+    
+    /* ===== RESET ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    
+    body {
+      background: var(--branco);
+      color: var(--texto);
+      font-family: 'Outfit', sans-serif;
+      font-size: var(--fs-base);
+      line-height: 1.6;
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+    }
+    
+    /* ===== HEADER ===== */
+    header {
+      background: rgba(253,252,249,0.98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(26,55,40,0.08);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(26,55,40,0.05);
+    }
+    
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 25px;
+      height: 80px;
+      position: relative;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      z-index: 1001;
+    }
+    
+    .logo-text {
+      font-size: var(--fs-lg);
+    }
+    
+    .geo-verde {
+      color: var(--verde);
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+    }
+    
+    .sabbagh-dourado {
+      color: var(--dourado);
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+    }
+    
+    .logo-icon {
+      display: flex;
+      width: 46px;
+      height: 46px;
+    }
+    
+    .logo-icon svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+    }
+    
+    .header-contact {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+    
+    .header-phone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--creme);
+      border-radius: 50%;
+      color: var(--verde);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .header-phone:hover {
+      background: var(--dourado);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    
+    .header-phone i {
+      font-size: 1.3rem;
+    }
+    
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      width: 48px;
+      height: 48px;
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 1001;
+    }
+    
+    .menu-toggle:hover {
+      background: var(--creme);
+    }
+    
+    .menu-toggle i {
+      color: var(--verde);
+      font-size: 24px;
+    }
+    
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    nav a {
+      color: var(--texto2);
+      font-size: var(--fs-base);
+      font-weight: 500;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+    
+    nav a:hover {
+      background: var(--creme);
+      color: var(--verde);
+    }
+    
+    .nav-cta {
+      background: var(--verde);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+    }
+    
+    .nav-cta:hover {
+      background: var(--verde2);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(3px);
+      z-index: 998;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .menu-overlay.active {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    body.menu-open {
+      overflow: hidden;
+    }
+    
+    /* ===== WHATSAPP FLOAT ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 100px;
+      background: #25D366;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+      z-index: 999;
+      transition: var(--transition);
+    }
+    
+    .whatsapp-float i {
+      font-size: 1.8rem;
+    }
+    
+    .whatsapp-float:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+      background: #22c15e;
+    }
+    
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 25px;
+      width: 100%;
+    }
+    
+    section {
+      padding: 100px 0;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3, h4 {
+      color: var(--verde);
+      font-family: 'Fraunces', serif;
+      line-height: 1.2;
+    }
+    
+    h1 {
+      font-size: var(--fs-4xl);
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: var(--fs-3xl);
+      margin-bottom: 20px;
+    }
+    
+    h2 span {
+      color: var(--dourado);
+    }
+    
+    h3 {
+      font-size: var(--fs-xl);
+      margin-bottom: 15px;
+    }
+    
+    p {
+      color: var(--texto2);
+      font-size: var(--fs-base);
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+    
+    .section-subtitle {
+      color: var(--texto2);
+      font-size: var(--fs-md);
+      margin-bottom: 50px;
+      max-width: 600px;
+    }
+    
+    .tag {
+      display: inline-block;
+      background: rgba(184,132,58,0.1);
+      color: var(--dourado);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+    
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'Outfit', sans-serif;
+      font-size: var(--fs-base);
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .btn-primary {
+      background: var(--dourado);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(184,132,58,0.35);
+    }
+    
+    .btn-primary:hover {
+      background: var(--dourado2);
+      box-shadow: 0 8px 24px rgba(184,132,58,0.4);
+      transform: translateY(-2px);
+    }
+    
+    .btn-outline-white {
+      border: 2px solid rgba(255,255,255,0.7);
+      color: #fff;
+    }
+    
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #fff;
+      transform: translateY(-2px);
+    }
+    
+    .btn-verde {
+      background: var(--verde);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(26,55,40,0.25);
+    }
+    
+    .btn-verde:hover {
+      background: var(--verde2);
+      transform: translateY(-2px);
+    }
+    
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--verde), var(--verde2));
+      color: #fff;
+      padding: 160px 0 120px;
+      margin-top: 80px;
+    }
+    
+    .hero h1 {
+      color: #fff;
+      font-size: var(--fs-4xl);
+      margin-bottom: 20px;
+    }
+    
+    .hero h1 span {
+      color: var(--dourado2);
+      display: block;
+      font-style: italic;
+      margin-top: 10px;
+    }
+    
+    .hero-desc {
+      color: rgba(255,255,255,0.9);
+      font-size: var(--fs-lg);
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+    
+    /* ===== ESPECIALIZACAO ===== */
+    .especializacao-bar {
+      background: var(--creme2);
+      padding: 80px 0;
+    }
+    
+    .especializacao-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+    
+    .especializacao-item {
+      padding: 20px;
+    }
+    
+    .especializacao-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 25px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .especializacao-item:hover .especializacao-icon {
+      background: var(--verde);
+      transform: translateY(-5px);
+    }
+    
+    .especializacao-icon i {
+      color: var(--verde);
+      font-size: 40px;
+      transition: var(--transition);
+    }
+    
+    .especializacao-item:hover .especializacao-icon i {
+      color: #fff;
+    }
+    
+    /* ===== SOBRE ===== */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    
+    .diferenciais {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .diff-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px;
+      background: var(--creme);
+      border: 1px solid var(--creme2);
+      border-radius: var(--radius);
+      color: var(--verde);
+      font-size: var(--fs-base);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .diff-item:hover {
+      background: var(--verde);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+    
+    .diff-item i {
+      color: var(--dourado);
+      font-size: var(--fs-lg);
+      width: 28px;
+      text-align: center;
+    }
+    
+    .diff-item:hover i {
+      color: var(--dourado2);
+    }
+    
+    /* ===== SERVICOS ===== */
+    .servicos-section {
+      background: var(--creme);
+    }
+    
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .card {
+      display: flex;
+      flex-direction: column;
+      padding: 35px 30px;
+      background: #fff;
+      border-radius: var(--radius);
+      border-top: 3px solid transparent;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .card:hover {
+      border-top-color: var(--dourado);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-6px);
+    }
+    
+    .card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+      background: var(--creme);
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    
+    .card-icon i {
+      color: var(--verde);
+      font-size: 30px;
+      transition: var(--transition);
+    }
+    
+    .card:hover .card-icon {
+      background: var(--verde);
+    }
+    
+    .card:hover .card-icon i {
+      color: #fff;
+      transform: scale(1.1);
+    }
+    
+    .drone-card {
+      padding: 35px 30px;
+      background: #fff;
+      border-left: 4px solid var(--dourado);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .drone-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    
+    /* ===== CLIENTES ===== */
+    .clientes-section {
+      background: var(--branco);
+      padding: 80px 0;
+      border-top: 1px solid var(--creme2);
+      border-bottom: 1px solid var(--creme2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .clientes-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 50%, rgba(184,132,58,0.03) 0%, transparent 50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    
+    .clientes-section .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .clientes-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      margin-bottom: 70px;
+      text-align: center;
+    }
+    
+    .stat-item {
+      min-width: 150px;
+    }
+    
+    .stat-number {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: var(--fs-3xl);
+      font-weight: 700;
+      color: var(--verde);
+      line-height: 1.2;
+      margin-bottom: 5px;
+    }
+    
+    .stat-label {
+      font-size: var(--fs-base);
+      color: var(--texto2);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .clientes-carousel-wrapper {
+      position: relative;
+      margin: 40px 0 20px;
+      height: 100px;
+    }
+    
+    .clientes-carousel {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+    
+    .carousel-track {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      height: 100%;
+      width: max-content;
+      will-change: transform;
+      animation: scroll 70s linear infinite;
+    }
+    
+    .clientes-carousel:hover .carousel-track {
+      animation-play-state: paused;
+    }
+    
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .cliente-nome {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      background: var(--creme);
+      border: 1.5px solid transparent;
+      border-radius: 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--verde);
+      white-space: nowrap;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    
+    a.cliente-nome {
+      cursor: pointer;
+    }
+    
+    .cliente-nome:hover {
+      background: var(--verde);
+      color: #fff;
+      border-color: var(--dourado);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* ===== DEPOIMENTOS ===== */
+    .depoimentos {
+      background: var(--branco);
+      padding: 80px 0;
+    }
+    
+    .depoimentos h2 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    
+    blockquote {
+      background: #fff;
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--dourado);
+    }
+    
+    blockquote p {
+      font-size: 1.1rem;
+      font-style: italic;
+      margin-bottom: 20px;
+      color: var(--texto);
+    }
+    
+    blockquote cite {
+      color: var(--verde);
+      font-weight: 600;
+      font-style: normal;
+    }
+    
+    /* ===== PROCESSO ===== */
+    .processo-section {
+      background: var(--verde);
+      color: #fff;
+      padding: 100px 0;
+    }
+    
+    .processo-section h2 {
+      color: #fff;
+    }
+    
+    .processo-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .step {
+      text-align: center;
+    }
+    
+    .step-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      background: var(--dourado);
+      border-radius: 50%;
+      color: #fff;
+      font-family: 'Fraunces', serif;
+      font-size: var(--fs-2xl);
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(184,132,58,0.4);
+    }
+    
+    .step h3 {
+      color: #fff;
+      font-size: var(--fs-lg);
+      margin-bottom: 10px;
+    }
+    
+    .step p {
+      color: rgba(255,255,255,0.7);
+      font-size: var(--fs-base);
+    }
+    
+    /* ===== FAQ ===== */
+    .faq-section {
+      background: linear-gradient(135deg, #f8f6f2, var(--creme));
+      padding: 100px 0;
+    }
+    
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .faq-card {
+      padding: 35px;
+      background: #fff;
+      border: 1px solid rgba(184,132,58,0.1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .faq-card:hover {
+      border-color: var(--dourado);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-5px);
+    }
+    
+    .faq-card-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .faq-card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--creme);
+      border-radius: 50%;
+      color: var(--dourado);
+      font-size: var(--fs-lg);
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    
+    .faq-card:hover .faq-card-icon {
+      background: var(--verde);
+      color: #fff;
+    }
+    
+    .faq-card h3 {
+      font-size: var(--fs-lg);
+      margin-bottom: 0;
+    }
+    
+    /* ===== CTA ===== */
+    .cta-section {
+      background: linear-gradient(135deg, var(--verde), var(--verde2));
+      color: #fff;
+      padding: 100px 0;
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      color: #fff;
+      font-size: var(--fs-3xl);
+    }
+    
+    .cta-section p {
+      color: rgba(255,255,255,0.9);
+      font-size: var(--fs-lg);
+      margin-bottom: 30px;
+    }
+    
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* ===== CONTATO ===== */
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+    
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    
+    .info-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: var(--creme);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-md);
+      flex-shrink: 0;
+    }
+    
+    .info-label {
+      color: var(--texto2);
+      font-size: var(--fs-xs);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 4px;
+    }
+    
+    .info-value {
+      color: var(--verde);
+      font-size: var(--fs-base);
+      font-weight: 600;
+    }
+    
+    .info-value a {
+      color: var(--verde);
+      text-decoration: none;
+    }
+    
+    .info-value a:hover {
+      color: var(--dourado);
+      text-decoration: underline;
+    }
+    
+    .form-card {
+      background: #fff;
+      padding: 45px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      color: var(--verde);
+      font-size: var(--fs-base);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: #fdfcf9;
+      border: 1.5px solid #e0ddd6;
+      border-radius: var(--radius-sm);
+      font-family: 'Outfit', sans-serif;
+      font-size: var(--fs-base);
+      color: var(--texto);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--verde);
+      box-shadow: 0 0 0 3px rgba(26,55,40,0.08);
+      outline: 0;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .btn-submit {
+      width: 100%;
+      padding: 16px 30px;
+      background: var(--verde);
+      border: none;
+      border-radius: var(--radius);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: var(--fs-lg);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .btn-submit:hover {
+      background: var(--verde2);
+      transform: translateY(-2px);
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(135deg, var(--verde), var(--verde2));
+      color: #fff;
+      padding: 80px 0 30px;
+      border-top: 3px solid var(--dourado);
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      margin-bottom: 30px;
+    }
+    
+    .footer-brand .logo {
+      margin-bottom: 15px;
+    }
+    
+    .footer-brand .geo-verde {
+      color: #fff;
+    }
+    
+    .footer-brand p {
+      color: rgba(255,255,255,0.8);
+      font-size: var(--fs-base);
+      line-height: 1.7;
+      margin-top: 15px;
+    }
+    
+    .footer-col h4 {
+      color: var(--dourado2);
+      font-family: 'Fraunces', serif;
+      font-size: var(--fs-lg);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.7);
+      font-size: var(--fs-base);
+      text-decoration: none;
+      display: inline-block;
+      transition: color .2s, transform .2s;
+    }
+    
+    .footer-col ul li a:hover {
+      color: var(--dourado2);
+      transform: translateX(3px);
+    }
+    
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .footer-bottom p {
+      color: rgba(255,255,255,0.6);
+      font-size: var(--fs-base);
+    }
+    
+    .footer-dev span {
+      color: var(--dourado2);
+      font-weight: 600;
+    }
+    
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: var(--dourado);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition), opacity 0.3s ease, visibility 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    
+    .back-to-top i {
+      font-size: var(--fs-lg);
+    }
+    
+    .back-to-top:hover {
+      background: var(--dourado2);
+      transform: translateY(-3px);
+    }
+    
+    /* ===== SKIP LINK ===== */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      background: var(--dourado);
+      color: #fff;
+      font-size: var(--fs-base);
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 0 0 var(--radius-sm) 0;
+      text-decoration: none;
+      z-index: 9999;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .container { padding: 0 30px; }
+    }
+    
+    @media (max-width: 900px) {
+      h1 { font-size: var(--fs-3xl); }
+      h2 { font-size: var(--fs-2xl); }
+      .hero h1 { font-size: var(--fs-3xl); }
+      
+      .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+      .processo-steps { grid-template-columns: repeat(2, 1fr); }
+      .especializacao-grid { grid-template-columns: repeat(2, 1fr); }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .depoimentos-grid { grid-template-columns: 1fr; }
+      .clientes-stats { gap: 30px; }
+    }
+    
+    @media (max-width: 768px) {
+      .header-contact {
+        margin-right: 0;
+      }
+      
+      .header-phone {
+        width: 42px;
+        height: 42px;
+      }
+      
+      .header-phone i {
+        font-size: 1.2rem;
+      }
+      
+      .menu-toggle { display: flex; }
+      
+      nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--branco);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
+        border-bottom: 1px solid rgba(26,55,40,0.1);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+      }
+      
+      nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      nav a {
+        width: 100%;
+        text-align: center;
+        padding: 15px 20px;
+        font-size: var(--fs-lg);
+        border-radius: var(--radius);
+      }
+      
+      .nav-cta {
+        margin-top: 10px;
+      }
+      
+      .grid-2, .grid-3, .contato-grid, .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+      
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      section { padding: 70px 0; }
+      .hero { padding: 140px 0 100px; }
+      .hero-desc { font-size: var(--fs-base); }
+      
+      .clientes-stats {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+      
+      .stat-item { width: 100%; max-width: 200px; }
+      
+      .cliente-nome {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+      
+      .carousel-track { gap: 20px; }
+      .clientes-carousel-wrapper { height: 80px; }
+      
+      .whatsapp-float {
+        right: 20px;
+        bottom: 20px;
+        padding: 12px 20px;
+      }
+      
+      .whatsapp-float span { display: none; }
+      .whatsapp-float i { font-size: 2rem; }
+    }
+    
+    @media (max-width: 480px) {
+      h1 { font-size: var(--fs-2xl); }
+      h2 { font-size: var(--fs-xl); }
+      .hero h1 { font-size: var(--fs-2xl); }
+      
+      .container { padding: 0 20px; }
+      
+      .btn { width: 100%; justify-content: center; }
+      .hero-btns { flex-direction: column; }
+      
+      .diferenciais { grid-template-columns: 1fr; }
+      .processo-steps { grid-template-columns: 1fr; }
+      .especializacao-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 25px; }
+      .back-to-top { bottom: 20px; right: 20px; }
+      
+      .cliente-nome {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+      
+      .whatsapp-float {
+        right: 15px;
+        bottom: 15px;
+        padding: 10px;
+      }
+    }
+  </style>
+  
+  <!-- Font Awesome -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  
+  <!-- Google Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap"></noscript>
 </head>
 <body>
-<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-<header id="site-header" role="banner">
-  <div class="header-inner">
-    <a href="#home" class="logo" aria-label="GeoSabbagh – página inicial">
-      <div class="logo-icon" aria-hidden="true">
-        <svg width="42" height="42" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
-          <line x1="256" y1="56" x2="256" y2="456" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
-          <line x1="56" y1="256" x2="456" y2="256" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
-          <polygon points="256,60 226,130 286,130" fill="#cc5500" stroke="#b35e00" stroke-width="4"/>
-          <rect x="246" y="130" width="20" height="100" fill="#cc5500" rx="4"/>
-          <text x="256" y="440" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">S</text>
-          <text x="440" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">L</text>
-          <text x="72" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">O</text>
-          <circle cx="256" cy="256" r="20" fill="#FFD700" stroke="#b8860b" stroke-width="3"/>
-        </svg>
-      </div>
-      <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
-      <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
-    <nav id="mainNav" aria-label="Menu principal">
-      <a href="#home">Início</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#clientes">Clientes</a>
-      <a href="#processo">Processo</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contato" class="nav-cta">Falar com especialista</a>
-    </nav>
-  </div>
-</header>
-<div class="menu-overlay" id="menuOverlay"></div>
-<main id="main-content">
-<section class="hero" id="home" aria-label="Apresentação">
-  <div class="container">
-    <span class="tag">Geotecnologias &amp; Desenvolvimento SIG</span>
-    <h1>Especialista em Soluções Geoespaciais<em>para o Meio Ambiente</em></h1>
-    <p class="hero-desc">Desenvolvimento de Sistemas de Informação Geográfica, análises espaciais avançadas e sensoriamento remoto para licenciamento ambiental, planejamento territorial e projetos de conservação em todo o Brasil.</p>
-    <div class="hero-btns">
-      <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-phone-alt" aria-hidden="true"></i> Solicitar Orçamento</a>
-      <a href="#servicos" class="btn btn-outline-white"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Conhecer Serviços</a>
-    </div>
-  </div>
-</section>
-<div class="especializacao-bar" aria-label="Áreas de Especialização">
-  <div class="container">
-    <div class="especializacao-grid">
-      <div class="especializacao-item">
-        <div class="especializacao-icon" aria-hidden="true"><i class="fa-solid fa-map-location-dot"></i></div>
-        <h3>Geotecnologias</h3>
-        <p>Dominamos as mais avançadas tecnologias geoespaciais para análise e interpretação de dados territoriais com precisão e eficiência.</p>
-      </div>
-      <div class="especializacao-item">
-        <div class="especializacao-icon" aria-hidden="true"><i class="fa-solid fa-draw-polygon"></i></div>
-        <h3>Desenvolvimento SIG</h3>
-        <p>Criação e customização de Sistemas de Informação Geográfica para atender necessidades específicas de projetos ambientais.</p>
-      </div>
-      <div class="especializacao-item">
-        <div class="especializacao-icon" aria-hidden="true"><i class="fa-solid fa-satellite-dish"></i></div>
-        <h3>Sensoriamento Remoto</h3>
-        <p>Processamento avançado de imagens de satélite, dados LiDAR e levantamentos com drones para diagnósticos precisos.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<section class="sobre" id="sobre" aria-labelledby="sobre-heading">
-  <div class="container">
-    <div class="sobre-grid">
-      <div class="sobre-text">
-        <span class="tag">Quem somos</span>
-        <h2 id="sobre-heading">Sobre a <span>GeoSabbagh</span></h2>
-        <p>Desde 2015, a GeoSabbagh oferece análises espaciais de alta precisão para o setor ambiental. Nossa consultoria transforma dados brutos em informações geográficas valiosas, fornecendo a base técnica para projetos de licenciamento, conservação e planejamento territorial em todo o Brasil.</p>
-        <p>Atendemos consultorias ambientais, empresas de engenharia, órgãos públicos e profissionais que necessitam de mapas técnicos, modelagem espacial e interpretação de sensoriamento remoto com rigor cartográfico e agilidade.</p>
-        <a href="#contato" class="btn btn-verde"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Falar com um especialista</a>
-      </div>
-      <div>
-        <h3>Nossos Diferenciais</h3>
-        <div class="diferenciais">
-          <div class="diff-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i>+10 anos em projetos ambientais</div>
-          <div class="diff-item"><i class="fa-solid fa-layer-group" aria-hidden="true"></i>Especialistas em SIG e Geotecnologias</div>
-          <div class="diff-item"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>Atendimento Personalizado</div>
-          <div class="diff-item"><i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>Atendimento em todo Brasil</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="servicos servicos-section" id="servicos" aria-labelledby="servicos-heading">
-  <div class="container">
-    <span class="tag">O que fazemos</span>
-    <h2 id="servicos-heading">Serviços de <span>Geoprocessamento e SIG</span></h2>
-    <p class="section-subtitle">Soluções completas em geotecnologias para o setor ambiental, do mapeamento ao diagnóstico.</p>
-    <div class="grid-3">
-      <article class="card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-map"></i></div><h3>Mapas para Licenciamento Ambiental</h3><p>Elaboração de mapas temáticos (EIA/RIMA, RAS, PCA) com delimitação de APPs, reserva legal e áreas de influência com rigor cartográfico.</p></article>
-      <article class="card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>Análise Espacial Ambiental</h3><p>Diagnósticos territoriais, zoneamento, áreas de influência e modelos de adequabilidade para projetos ambientais.</p></article>
-      <article class="card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-satellite"></i></div><h3>Classificação de Uso e Cobertura do Solo (LULC)</h3><p>Mapeamento de vegetação, áreas antropizadas e monitoramento temporal com imagens de satélite Landsat e Sentinel.</p></article>
-      <article class="card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-mountain"></i></div><h3>Análise de Relevo e Declividade</h3><p>Modelagem hipsométrica, perfis topográficos e análise de fragilidade do relevo para diagnósticos do meio físico.</p></article>
-      <article class="card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-water"></i></div><h3>Modelagem Espacial e Hidrológica</h3><p>Estudos de escoamento superficial, áreas de inundação, tempo de concentração e apoio a projetos de outorga hídrica.</p></article>
-      <article class="card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-location-crosshairs"></i></div><h3>Georreferenciamento e Padronização SIG</h3><p>Organização, padronização e conversão de bases cartográficas para integração perfeita em plataformas e projetos.</p></article>
-    </div>
-    <div style="margin-top:80px">
-      <span class="tag">Tecnologias avançadas</span>
-      <h2>Levantamentos com <span>Drone e LiDAR</span></h2>
-      <p class="section-subtitle">Dados tridimensionais de alta resolução para diagnósticos detalhados.</p>
-      <div class="grid-3">
-        <article class="drone-card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-helicopter"></i></div><h3>Levantamento com Drone / VANT</h3><p>Captação de imagens aéreas de altíssima resolução para mapeamento de APPs, fragmentos florestais e áreas de recuperação ambiental.</p></article>
-        <article class="drone-card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></div><h3>Processamento Fotogramétrico</h3><p>Geração de ortomosaicos georreferenciados e modelos digitais de superfície (MDS) para análises de alta precisão espacial.</p></article>
-        <article class="drone-card"><div class="card-icon" aria-hidden="true"><i class="fa-solid fa-cubes"></i></div><h3>Processamento de Dados LiDAR</h3><p>Geração de modelos digitais de terreno (MDT), nuvens de pontos e análise de relevo de alta resolução para estudos do meio físico.</p></article>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="clientes" class="clientes-section" aria-labelledby="clientes-heading">
-  <div class="container">
-    <span class="tag">Quem confia no nosso trabalho</span>
-    <h2 id="clientes-heading">Nossos <span>Clientes e Projetos</span></h2>
-    <p class="clientes-subtitulo">Ao longo da nossa atuação em geoprocessamento, SIG e análise territorial, participamos de projetos com empresas, consultorias ambientais, instituições públicas e organizações internacionais.</p>
-    <div class="clientes-stats">
-      <div class="stat-item"><span class="stat-number">+200</span><span class="stat-label">Projetos</span></div>
-      <div class="stat-item"><span class="stat-number">+30</span><span class="stat-label">Clientes</span></div>
-      <div class="stat-item"><span class="stat-number">+10</span><span class="stat-label">Anos de atuação</span></div>
-      <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Brasil</span></div>
-    </div>
-    <div class="clientes-carousel-wrapper" aria-label="Carrossel de clientes">
-      <div class="clientes-carousel">
-        <div class="carousel-track" id="carouselTrack">
-          <!-- ENGENHARIA E CONSULTORIA -->
-          
-          <span class="cliente-nome">Jacobs</span>
-          <span class="cliente-nome">Worley</span>
-          <span class="cliente-nome">CH2M Hill</span>
-          <span class="cliente-nome">Egis Engenharia</span>
-          <span class="cliente-nome">Orbea</span>
-          <span class="cliente-nome">Inerco</span>
-          <span class="cliente-nome">Allber</span>
-          
-          <!-- CONSULTORIAS AMBIENTAIS -->
-          <span class="cliente-nome">Cema Consultoria</span>
-          <span class="cliente-nome">Lacerta Consultoria</span>
-          <span class="cliente-nome">Mutabilis</span>
-          
-          <span class="cliente-nome">EKOSEG</span>
-          <span class="cliente-nome">Adria Ambiente</span>
-          
-          <!-- ENERGIA E MINERAÇÃO -->
-          <span class="cliente-nome">SER Energia</span>
-          
-          <span class="cliente-nome">Nassau Cimentos</span>
-          <span class="cliente-nome">Petrobras</span>
-          
-          <!-- INFRAESTRUTURA E LOGÍSTICA -->
-          <span class="cliente-nome">Rumo</span>
-          
-         
-          
-          <!-- SANEAMENTO -->
-          <span class="cliente-nome">Sabesp</span>
-          <span class="cliente-nome">Terra Saneamento</span>
-          <span class="cliente-nome">Saneatec</span>
-          
-          
-          <!-- EMPRESAS E EMPREENDIMENTOS -->
-          <span class="cliente-nome">JHSF</span>
-          <span class="cliente-nome">Odebrecht</span>
-          <span class="cliente-nome">OR Realizações</span>
-          <span class="cliente-nome">Casas Bahia</span>
-          
-          <!-- INSTITUIÇÕES -->
-          <span class="cliente-nome">UFPE</span>
-          <span class="cliente-nome">PNUD</span>
-          <span class="cliente-nome">Instituto Ekko</span>
-          <span class="cliente-nome">Rede Sustentabilidade</span>
-        </div>
-      </div>
-    </div>
-    <p style="text-align:center;margin-top:16px;font-size:var(--fs-sm);color:var(--texto2);opacity:0.7">Passe o mouse sobre os nomes para pausar</p>
-  </div>
-</section>
-<section class="processo-section" id="processo" aria-labelledby="processo-heading">
-  <div class="container">
-    <span class="tag" style="background:rgba(184,132,58,0.2);color:var(--dourado2)">Como trabalhamos</span>
-    <h2 id="processo-heading">Nossa <span>Metodologia</span></h2>
-    <p class="section-subtitle" style="color:rgba(255,255,255,0.7)">Um processo estruturado para garantir precisão, agilidade e qualidade em cada projeto.</p>
-    <div class="processo-steps">
-      <div class="step"><div class="step-num" aria-hidden="true">1</div><h3>Briefing e Levantamento</h3><p>Entendemos o escopo, área de estudo, prazos e exigências do órgão licenciador.</p></div>
-      <div class="step"><div class="step-num" aria-hidden="true">2</div><h3>Coleta e Processamento</h3><p>Aquisição de imagens de satélite, dados LiDAR/drone e bases cartográficas oficiais.</p></div>
-      <div class="step"><div class="step-num" aria-hidden="true">3</div><h3>Análise e Modelagem</h3><p>Processamento SIG com ferramentas QGIS/ArcGIS, análises espaciais e modelagem temática.</p></div>
-      <div class="step"><div class="step-num" aria-hidden="true">4</div><h3>Entrega e Validação</h3><p>Entrega de bases de dados (GDB, GPKG, Shapefile), mapas finalizados e documentação técnica.</p></div>
-    </div>
-  </div>
-</section>
-<section class="faq-section" id="faq" aria-labelledby="faq-heading">
-  <div class="container">
-    <span class="tag">Dúvidas comuns</span>
-    <h2 id="faq-heading">Perguntas <span>Frequentes</span></h2>
-    <p class="section-subtitle">Tudo o que você precisa saber sobre geotecnologias e desenvolvimento SIG.</p>
-    <div class="faq-grid">
-      <div class="faq-card"><div class="faq-card-header"><div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-question"></i></div><h3>O que são Geotecnologias?</h3></div><p>São o conjunto de tecnologias para coleta, processamento e análise de dados geográficos. Incluem SIG, sensoriamento remoto, GPS, drones e LiDAR, fundamentais para estudos ambientais precisos.</p></div>
-      <div class="faq-card"><div class="faq-card-header"><div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-cube"></i></div><h3>O que é Desenvolvimento SIG?</h3></div><p>É a criação e customização de Sistemas de Informação Geográfica para necessidades específicas. Desenvolvemos soluções personalizadas para análise espacial, automação de processos e integração de dados.</p></div>
-      <div class="faq-card"><div class="faq-card-header"><div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></div><h3>Como o geoprocessamento é usado no licenciamento?</h3></div><p>É fundamental para diagnosticar a área de estudo, mapear restrições legais (APP, Reserva Legal, UCs), analisar alternativas locacionais e produzir os mapas técnicos obrigatórios para órgãos ambientais.</p></div>
-      <div class="faq-card"><div class="faq-card-header"><div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div><h3>Quais formatos de dados vocês entregam?</h3></div><p>Trabalhamos com os principais formatos do mercado: Geodatabase (GDB), GeoPackage (GPKG), Shapefile, GeoJSON, rasters GeoTIFF e bancos de dados PostGIS, garantindo compatibilidade com qualquer projeto.</p></div>
-      <div class="faq-card"><div class="faq-card-header"><div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-helicopter"></i></div><h3>Como drones ajudam em estudos ambientais?</h3></div><p>Drones permitem obter imagens de altíssima resolução e modelos 3D de áreas específicas de forma rápida e econômica. São ideais para monitorar regeneração florestal, identificar focos de erosão e criar modelos detalhados de APPs.</p></div>
-      <div class="faq-card"><div class="faq-card-header"><div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div><h3>Atendem em todo o Brasil?</h3></div><p>Sim. Realizamos atendimento 100% remoto, o que nos permite atender clientes em todos os estados brasileiros com a mesma qualidade e agilidade. A maioria dos serviços de geoprocessamento não requer visita presencial.</p></div>
-    </div>
-  </div>
-</section>
-<section class="cta-section" aria-label="Chamada para ação">
-  <div class="container">
-    <span class="tag" style="background:rgba(184,132,58,0.2);color:var(--dourado2)">Pronto para começar?</span>
-    <h2>Vamos trabalhar no seu projeto?</h2>
-    <p>Fale com um especialista em geotecnologias e transforme dados geoespaciais em soluções ambientais precisas.</p>
-    <div class="cta-btns">
-      <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar Análise Técnica</a>
-      <a href="mailto:contato.geosabbagh@gmail.com" class="btn btn-outline-white" rel="noopener noreferrer"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Enviar e-mail direto</a>
-    </div>
-  </div>
-</section>
-<section class="contato" id="contato" aria-labelledby="contato-heading">
-  <div class="container">
-    <div class="contato-grid">
-      <div class="contato-info">
-        <span class="tag">Fale conosco</span>
-        <h2 id="contato-heading">Entre em <span>Contato</span></h2>
-        <p>Precisa de um consultor em geotecnologias ou de mapas para o seu licenciamento? Estamos prontos para atender você em todo o Brasil.</p>
-        <div style="margin-top:40px">
-          <div class="info-item"><div class="info-icon" aria-hidden="true"><i class="fa-solid fa-map-marker-alt"></i></div><div><div class="info-label">Localização</div><div class="info-value">São Paulo – SP (Atendimento Remoto Nacional)</div></div></div>
-          <div class="info-item"><div class="info-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div><div><div class="info-label">E-mail</div><div class="info-value"><a href="mailto:contato.geosabbagh@gmail.com">contato.geosabbagh@gmail.com</a></div></div></div>
-          <div class="info-item"><div class="info-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div><div><div class="info-label">Horário de atendimento</div><div class="info-value">Segunda a Sexta, 9h às 18h</div></div></div>
-        </div>
-      </div>
-      <div class="form-contato">
-        <div class="form-card">
-          <form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST" novalidate>
-            <input type="hidden" name="_subject" value="Novo contato do site GeoSabbagh">
-            <div class="form-row">
-              <div class="form-group"><label for="name">Nome completo <span style="color:var(--dourado)">*</span></label><input type="text" id="name" name="name" autocomplete="name" required placeholder="Seu nome completo"></div>
-              <div class="form-group"><label for="phone">Telefone (opcional)</label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(11) 9xxxx-xxxx"></div>
-            </div>
-            <div class="form-group"><label for="email">E-mail <span style="color:var(--dourado)">*</span></label><input type="email" id="email" name="email" autocomplete="email" required placeholder="seu@email.com"></div>
-            <div class="form-group"><label for="service">Tipo de serviço</label>
-              <select id="service" name="service">
-                <option value="">Selecione o serviço...</option>
-                <option>Mapas para Licenciamento Ambiental</option>
-                <option>Análise Espacial</option>
-                <option>Classificação de Uso do Solo (LULC)</option>
-                <option>Análise de Relevo e Declividade</option>
-                <option>Modelagem Hidrológica</option>
-                <option>Levantamento com Drone / LiDAR</option>
-                <option>Desenvolvimento SIG</option>
-                <option>Outro</option>
-              </select>
-            </div>
-            <div class="form-group"><label for="message">Mensagem <span style="color:var(--dourado)">*</span></label><textarea id="message" name="message" rows="5" required placeholder="Descreva seu projeto, área de estudo e prazo estimado..."></textarea></div>
-            <button type="submit" class="btn-submit" id="submitBtn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Enviar mensagem</button>
-            <div id="formMessage" role="alert" aria-live="polite"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#home" class="logo" aria-label="GeoSabbagh - Voltar ao início">
-          <div class="footer-logo-icon" aria-hidden="true">
-            <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
-              <line x1="256" y1="56" x2="256" y2="456" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
-              <line x1="56" y1="256" x2="456" y2="256" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
-              <polygon points="256,60 226,130 286,130" fill="#cc5500" stroke="#b35e00" stroke-width="4"/>
-              <rect x="246" y="130" width="20" height="100" fill="#cc5500" rx="4"/>
-              <text x="256" y="440" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">S</text>
-              <text x="440" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">L</text>
-              <text x="72" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">O</text>
-              <circle cx="256" cy="256" r="20" fill="#FFD700" stroke="#b8860b" stroke-width="3"/>
-            </svg>
-          </div>
-          <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
-        </a>
-        <p>Consultoria especializada em Geotecnologias e Desenvolvimento de Sistemas de Informação Geográfica para o setor ambiental.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Serviços</h4>
-        <ul>
-          <li><a href="#servicos">Mapas para Licenciamento</a></li>
-          <li><a href="#servicos">Análise Espacial</a></li>
-          <li><a href="#servicos">Uso e Cobertura do Solo</a></li>
-          <li><a href="#servicos">Drone e LiDAR</a></li>
-          <li><a href="#servicos">Desenvolvimento SIG</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Empresa</h4>
-        <ul>
-          <li><a href="#sobre">Sobre nós</a></li>
-          <li><a href="#clientes">Clientes</a></li>
-          <li><a href="#processo">Metodologia</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contato">Contato</a></li>
-          <li><a href="mailto:contato.geosabbagh@gmail.com" rel="noopener noreferrer">E-mail direto</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p id="footer-year">© GeoSabbagh – Geotecnologias e Desenvolvimento SIG</p>
-      <p class="footer-dev">Desenvolvido por <span>Anwar Sabbagh</span></p>
-    </div>
-  </div>
-</footer>
-<button id="backToTop" class="back-to-top" title="Voltar ao topo" aria-label="Voltar ao topo">
-  <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-</button>
-<script>
-!function(){"use strict";
-var menuToggle=document.getElementById("menuToggle"),mainNav=document.getElementById("mainNav"),body=document.body,savedScrollY=0;
-function openMenu(){savedScrollY=window.scrollY;mainNav.classList.add("active");menuToggle.setAttribute("aria-expanded","true");menuToggle.setAttribute("aria-label","Fechar menu");var i=menuToggle.querySelector("i");if(i)i.classList.replace("fa-bars","fa-times");body.classList.add("menu-open")}
-function closeMenu(){mainNav.classList.remove("active");menuToggle.setAttribute("aria-expanded","false");menuToggle.setAttribute("aria-label","Abrir menu");var i=menuToggle.querySelector("i");if(i)i.classList.replace("fa-times","fa-bars");body.classList.remove("menu-open");window.scrollTo(0,savedScrollY)}
-if(menuToggle&&mainNav){
-  menuToggle.addEventListener("click",function(e){e.stopPropagation();mainNav.classList.contains("active")?closeMenu():openMenu()});
-  mainNav.querySelectorAll("a").forEach(function(l){l.addEventListener("click",closeMenu)});
-  document.addEventListener("click",function(e){if(mainNav.classList.contains("active")&&!mainNav.contains(e.target)&&!menuToggle.contains(e.target))closeMenu()})
-}
-
-/* =====================================================
-   CARROSSEL SIMPLIFICADO - APENAS NOMES
-   ===================================================== */
-var track=document.getElementById("carouselTrack");
-if(track){
-  // Clona todos os itens originais para efeito infinito
-  Array.from(track.children).forEach(function(item){
-    var clone=item.cloneNode(true);
-    clone.setAttribute("aria-hidden","true");
-    track.appendChild(clone);
-  });
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9TBXKX5"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   
-  // Calcula duracao proporcional (mais lenta)
-  var halfW=track.scrollWidth/2;
-  var dur=Math.max(25,Math.round(halfW/70)); // 70px/s - bem mais lento
-  track.style.animationDuration=dur+"s";
-}
-
-var btt=document.getElementById("backToTop");
-if(btt){
-  window.addEventListener("scroll",function(){btt.classList.toggle("visible",window.scrollY>300)},{passive:true});
-  btt.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
-}
-
-var form=document.getElementById("contactForm"),submitBtn=document.getElementById("submitBtn"),formMsg=document.getElementById("formMessage");
-if(form){
-  form.addEventListener("submit",async function(e){
-    e.preventDefault();submitBtn.disabled=true;
-    submitBtn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-    try{
-      var r=await fetch(form.getAttribute("action"),{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}});
-      if(r.ok){formMsg.innerHTML='<div style="color:green;margin-top:10px">✅ Mensagem enviada! Retornaremos em breve.</div>';form.reset();}
-      else throw new Error();
-    }catch(err){formMsg.innerHTML='<div style="color:red;margin-top:10px">❌ Erro ao enviar. Tente: contato.geosabbagh@gmail.com</div>';}
-    submitBtn.disabled=false;
-    submitBtn.innerHTML='<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
-    setTimeout(function(){formMsg.innerHTML=""},8000);
-  });
-}
-
-var fy=document.getElementById("footer-year");
-if(fy)fy.textContent="© "+new Date().getFullYear()+" GeoSabbagh – Geotecnologias e Desenvolvimento SIG";
-}();
-</script>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+  
+  <header id="site-header" role="banner">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="GeoSabbagh – Página inicial">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="42" height="42" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
+            <line x1="256" y1="56" x2="256" y2="456" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+            <line x1="56" y1="256" x2="456" y2="256" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+            <polygon points="256,60 226,130 286,130" fill="#cc5500" stroke="#b35e00" stroke-width="4"/>
+            <rect x="246" y="130" width="20" height="100" fill="#cc5500" rx="4"/>
+            <text x="256" y="440" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">S</text>
+            <text x="440" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">L</text>
+            <text x="72" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">O</text>
+            <circle cx="256" cy="256" r="20" fill="#FFD700" stroke="#b8860b" stroke-width="3"/>
+          </svg>
+        </div>
+        <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
+      </a>
+      
+      <div class="header-contact">
+        <a href="tel:+5511930401920" class="header-phone" title="Ligar para GeoSabbagh">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+      </div>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      
+      <nav id="mainNav" aria-label="Menu principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#processo">Processo</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato" class="nav-cta">Solicitar Orçamento</a>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="menu-overlay" id="menuOverlay"></div>
+  
+  <main id="main-content">
+    <!-- HERO SECTION -->
+    <section class="hero" id="home" aria-label="Apresentação">
+      <div class="container">
+        <div class="hero-content">
+          <span class="tag">Consultoria Especializada desde 2015</span>
+          <h1>
+            Consultoria em Geoprocessamento e SIG<br>
+            <span>para Licenciamento Ambiental</span>
+          </h1>
+          <p class="hero-desc">
+            Desenvolvemos mapas técnicos, análises espaciais e estudos ambientais 
+            para EIA/RIMA, RAS e PCA com precisão cartográfica e agilidade. 
+            <strong>+200 projetos realizados em todo Brasil.</strong>
+          </p>
+          <div class="hero-btns">
+            <a href="#contato" class="btn btn-primary">
+              <i class="fa-solid fa-phone-alt" aria-hidden="true"></i>
+              Solicitar Orçamento
+            </a>
+            <a href="#servicos" class="btn btn-outline-white">
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              Conhecer Serviços
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ESPECIALIZAÇÃO -->
+    <div class="especializacao-bar" aria-label="Áreas de Especialização">
+      <div class="container">
+        <div class="especializacao-grid">
+          <div class="especializacao-item">
+            <div class="especializacao-icon" aria-hidden="true">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <h3>Geotecnologias</h3>
+            <p>Dominamos as mais avançadas tecnologias geoespaciais para análise e interpretação de dados territoriais com precisão e eficiência.</p>
+          </div>
+          <div class="especializacao-item">
+            <div class="especializacao-icon" aria-hidden="true">
+              <i class="fa-solid fa-draw-polygon"></i>
+            </div>
+            <h3>Desenvolvimento SIG</h3>
+            <p>Criação e customização de Sistemas de Informação Geográfica para atender necessidades específicas de projetos ambientais.</p>
+          </div>
+          <div class="especializacao-item">
+            <div class="especializacao-icon" aria-hidden="true">
+              <i class="fa-solid fa-satellite-dish"></i>
+            </div>
+            <h3>Sensoriamento Remoto</h3>
+            <p>Processamento avançado de imagens de satélite, dados LiDAR e levantamentos com drones para diagnósticos precisos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre" aria-labelledby="sobre-heading">
+      <div class="container">
+        <div class="sobre-grid">
+          <div class="sobre-text">
+            <span class="tag">Quem somos</span>
+            <h2 id="sobre-heading">Sobre a <span>GeoSabbagh</span></h2>
+            <p>Desde 2015, a GeoSabbagh oferece análises espaciais de alta precisão para o setor ambiental. Nossa consultoria transforma dados brutos em informações geográficas valiosas, fornecendo a base técnica para projetos de licenciamento, conservação e planejamento territorial em todo o Brasil.</p>
+            <p>Atendemos consultorias ambientais, empresas de engenharia, órgãos públicos e profissionais que necessitam de mapas técnicos, modelagem espacial e interpretação de sensoriamento remoto com rigor cartográfico e agilidade.</p>
+            <a href="#contato" class="btn btn-verde"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Falar com um especialista</a>
+          </div>
+          <div>
+            <h2>Nossos Diferenciais</h2>
+            <div class="diferenciais">
+              <div class="diff-item">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                +10 anos em projetos ambientais
+              </div>
+              <div class="diff-item">
+                <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                Especialistas em SIG e Geotecnologias
+              </div>
+              <div class="diff-item">
+                <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
+                Atendimento Personalizado
+              </div>
+              <div class="diff-item">
+                <i class="fa-solid fa-map-marker-alt" aria-hidden="true"></i>
+                Atendimento em todo Brasil
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- SERVIÇOS -->
+    <section class="servicos servicos-section" id="servicos" aria-labelledby="servicos-heading">
+      <div class="container">
+        <span class="tag">O que fazemos</span>
+        <h2 id="servicos-heading">Serviços de <span>Geoprocessamento e SIG</span></h2>
+        <p class="section-subtitle">Soluções completas em geotecnologias para o setor ambiental, do mapeamento ao diagnóstico.</p>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-map"></i></div>
+            <h3>Mapas para Licenciamento Ambiental</h3>
+            <p>Elaboração de mapas temáticos (EIA/RIMA, RAS, PCA) com delimitação de APPs, reserva legal e áreas de influência com rigor cartográfico.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3>Análise Espacial Ambiental</h3>
+            <p>Diagnósticos territoriais, zoneamento, áreas de influência e modelos de adequabilidade para projetos ambientais.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-satellite"></i></div>
+            <h3>Classificação de Uso e Cobertura do Solo</h3>
+            <p>Mapeamento de vegetação, áreas antropizadas e monitoramento temporal com imagens de satélite Landsat e Sentinel.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-mountain"></i></div>
+            <h3>Análise de Relevo e Declividade</h3>
+            <p>Modelagem hipsométrica, perfis topográficos e análise de fragilidade do relevo para diagnósticos do meio físico.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-water"></i></div>
+            <h3>Modelagem Espacial e Hidrológica</h3>
+            <p>Estudos de escoamento superficial, áreas de inundação, tempo de concentração e apoio a projetos de outorga hídrica.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-location-crosshairs"></i></div>
+            <h3>Georreferenciamento e Padronização SIG</h3>
+            <p>Organização, padronização e conversão de bases cartográficas para integração perfeita em plataformas e projetos.</p>
+          </article>
+        </div>
+        
+        <!-- DRONE E LIDAR -->
+        <div style="margin-top: 80px;">
+          <span class="tag">Tecnologias avançadas</span>
+          <h2>Levantamentos com <span>Drone e LiDAR</span></h2>
+          <p class="section-subtitle">Dados tridimensionais de alta resolução para diagnósticos detalhados.</p>
+          <div class="grid-3">
+            <article class="drone-card">
+              <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-helicopter"></i></div>
+              <h3>Levantamento com Drone / VANT</h3>
+              <p>Captação de imagens aéreas de altíssima resolução para mapeamento de APPs, fragmentos florestais e áreas de recuperação ambiental.</p>
+            </article>
+            <article class="drone-card">
+              <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-layer-group"></i></div>
+              <h3>Processamento Fotogramétrico</h3>
+              <p>Geração de ortomosaicos georreferenciados e modelos digitais de superfície (MDS) para análises de alta precisão espacial.</p>
+            </article>
+            <article class="drone-card">
+              <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-cubes"></i></div>
+              <h3>Processamento de Dados LiDAR</h3>
+              <p>Geração de modelos digitais de terreno (MDT), nuvens de pontos e análise de relevo de alta resolução para estudos do meio físico.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CLIENTES -->
+    <section id="clientes" class="clientes-section" aria-labelledby="clientes-heading">
+      <div class="container">
+        <span class="tag">Quem confia no nosso trabalho</span>
+        <h2 id="clientes-heading">Nossos <span>Clientes e Projetos</span></h2>
+        <p class="clientes-subtitulo">Ao longo da nossa atuação, participamos de projetos com empresas, consultorias ambientais, instituições públicas e organizações internacionais.</p>
+        
+        <div class="clientes-stats">
+          <div class="stat-item"><span class="stat-number">+200</span><span class="stat-label">Projetos</span></div>
+          <div class="stat-item"><span class="stat-number">+30</span><span class="stat-label">Clientes</span></div>
+          <div class="stat-item"><span class="stat-number">+10</span><span class="stat-label">Anos de atuação</span></div>
+          <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Brasil</span></div>
+        </div>
+        
+        <div class="clientes-carousel-wrapper" aria-label="Carrossel de clientes">
+          <div class="clientes-carousel">
+            <div class="carousel-track" id="carouselTrack">
+              <!-- ENGENHARIA E CONSULTORIA -->
+              <span class="cliente-nome">Cobrape</span>
+              <span class="cliente-nome">Jacobs</span>
+              <span class="cliente-nome">Worley</span>
+              <span class="cliente-nome">CH2M Hill</span>
+              <span class="cliente-nome">Egis</span>
+              <span class="cliente-nome">Orbea</span>
+              <span class="cliente-nome">Inerco</span>
+              <span class="cliente-nome">Allber</span>
+              
+              <!-- CONSULTORIAS AMBIENTAIS -->
+              <span class="cliente-nome">Cema</span>
+              <span class="cliente-nome">Lacerta</span>
+              <span class="cliente-nome">Mutabilis</span>
+              <span class="cliente-nome">Conam</span>
+              <span class="cliente-nome">EKOSEG</span>
+              <span class="cliente-nome">Adria Ambiente</span>
+              
+              <!-- ENERGIA E MINERAÇÃO -->
+              <span class="cliente-nome">SER Energia</span>
+              <span class="cliente-nome">Largo Resources</span>
+              <span class="cliente-nome">Nassau</span>
+              <span class="cliente-nome">Petrobras</span>
+              
+              <!-- INFRAESTRUTURA -->
+              <span class="cliente-nome">Rumo</span>
+              <span class="cliente-nome">Libra Terminais</span>
+              <span class="cliente-nome">Cotegipe</span>
+              <span class="cliente-nome">TSG</span>
+              
+              <!-- SANEAMENTO -->
+              <span class="cliente-nome">Sabesp</span>
+              <span class="cliente-nome">Terra Saneamento</span>
+              <span class="cliente-nome">Saneatec</span>
+              <span class="cliente-nome">Corpus</span>
+              
+              <!-- EMPRESAS -->
+              <span class="cliente-nome">JHSF</span>
+              <span class="cliente-nome">Odebrecht</span>
+              <span class="cliente-nome">OR Realizações</span>
+              <span class="cliente-nome">Torre</span>
+              <span class="cliente-nome">Alkplast</span>
+              <span class="cliente-nome">Casas Bahia</span>
+              
+              <!-- INSTITUIÇÕES -->
+              <span class="cliente-nome">UFPE</span>
+              <span class="cliente-nome">PNUD</span>
+              <span class="cliente-nome">Acquaplan</span>
+              <span class="cliente-nome">Instituto Ekko</span>
+              <span class="cliente-nome">Rede Sustentabilidade</span>
+            </div>
+          </div>
+        </div>
+        <p style="text-align:center;margin-top:16px;font-size:var(--fs-sm);color:var(--texto2);opacity:0.7">Passe o mouse sobre os nomes para pausar</p>
+      </div>
+    </section>
+    
+    <!-- PROCESSO -->
+    <section class="processo-section" id="processo" aria-labelledby="processo-heading">
+      <div class="container">
+        <span class="tag" style="background:rgba(184,132,58,0.2);color:var(--dourado2)">Como trabalhamos</span>
+        <h2 id="processo-heading">Nossa <span>Metodologia</span></h2>
+        <p class="section-subtitle" style="color:rgba(255,255,255,0.7)">Um processo estruturado para garantir precisão, agilidade e qualidade em cada projeto.</p>
+        <div class="processo-steps">
+          <div class="step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3>Briefing</h3>
+            <p>Entendemos o escopo, área de estudo e exigências do órgão licenciador.</p>
+          </div>
+          <div class="step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3>Coleta de Dados</h3>
+            <p>Aquisição de imagens de satélite, dados LiDAR/drone e bases cartográficas.</p>
+          </div>
+          <div class="step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3>Processamento</h3>
+            <p>Análises espaciais com QGIS/ArcGIS e modelagem temática.</p>
+          </div>
+          <div class="step">
+            <div class="step-num" aria-hidden="true">4</div>
+            <h3>Entrega</h3>
+            <p>Bases de dados, mapas finalizados e documentação técnica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <span class="tag">Dúvidas comuns</span>
+        <h2 id="faq-heading">Perguntas <span>Frequentes</span></h2>
+        <p class="section-subtitle">Tudo o que você precisa saber sobre nossos serviços.</p>
+        
+        <div class="faq-grid">
+          <div class="faq-card">
+            <div class="faq-card-header">
+              <div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></div>
+              <h3>Como o geoprocessamento ajuda no licenciamento?</h3>
+            </div>
+            <p>É fundamental para diagnosticar a área de estudo, mapear restrições legais (APP, Reserva Legal) e produzir os mapas técnicos obrigatórios para órgãos ambientais.</p>
+          </div>
+          <div class="faq-card">
+            <div class="faq-card-header">
+              <div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
+              <h3>Quais formatos de dados vocês entregam?</h3>
+            </div>
+            <p>Entregamos nos principais formatos: Geodatabase (GDB), Shapefile, GeoJSON, GeoTIFF, garantindo compatibilidade com qualquer projeto.</p>
+          </div>
+          <div class="faq-card">
+            <div class="faq-card-header">
+              <div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-helicopter"></i></div>
+              <h3>Vocês fazem levantamentos com drone?</h3>
+            </div>
+            <p>Sim. Realizamos levantamentos com drone para áreas específicas, gerando ortomosaicos e modelos 3D de alta resolução.</p>
+          </div>
+          <div class="faq-card">
+            <div class="faq-card-header">
+              <div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+              <h3>Atendem em todo o Brasil?</h3>
+            </div>
+            <p>Sim. Realizamos atendimento 100% remoto, atendendo clientes em todos os estados brasileiros com a mesma qualidade e agilidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="cta-section" aria-label="Chamada para ação">
+      <div class="container">
+        <span class="tag" style="background:rgba(184,132,58,0.2);color:var(--dourado2)">Pronto para começar?</span>
+        <h2>Vamos trabalhar no seu projeto?</h2>
+        <p>Solicite uma análise técnica e descubra como podemos ajudar no seu licenciamento ambiental.</p>
+        <div class="cta-btns">
+          <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar Análise</a>
+          <a href="https://wa.me/5511930401920" class="btn btn-outline-white" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CONTATO -->
+    <section class="contato" id="contato" aria-labelledby="contato-heading">
+      <div class="container">
+        <div class="contato-grid">
+          <div class="contato-info">
+            <span class="tag">Fale conosco</span>
+            <h2 id="contato-heading">Entre em <span>Contato</span></h2>
+            <p>Precisa de uma consultoria em geoprocessamento para seu licenciamento? Estamos prontos para atender você em todo o Brasil.</p>
+            <div style="margin-top:40px">
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-map-marker-alt"></i></div>
+                <div>
+                  <div class="info-label">Localização</div>
+                  <div class="info-value">São Paulo – SP (Atendimento Remoto)</div>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <div class="info-label">E-mail</div>
+                  <div class="info-value"><a href="mailto:contato.geosabbagh@gmail.com">contato.geosabbagh@gmail.com</a></div>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <div class="info-label">Telefone</div>
+                  <div class="info-value">
+                    <a href="tel:+5511930401920" title="Ligar para GeoSabbagh">
+                      <i class="fa-solid fa-phone"></i> Clique para ligar
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                  <div class="info-label">Horário</div>
+                  <div class="info-value">Segunda a Sexta, 9h às 18h</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-contato">
+            <div class="form-card">
+              <form id="contactForm" action="https://formspree.io/f/mvzayqaj" method="POST" novalidate>
+                <input type="hidden" name="_subject" value="Novo contato do site GeoSabbagh">
+                <div class="form-group">
+                  <label for="name">Nome completo <span style="color:var(--dourado)">*</span></label>
+                  <input type="text" id="name" name="name" autocomplete="name" required placeholder="Seu nome">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">E-mail <span style="color:var(--dourado)">*</span></label>
+                    <input type="email" id="email" name="email" autocomplete="email" required placeholder="seu@email.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(11) 99999-9999">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Mensagem <span style="color:var(--dourado)">*</span></label>
+                  <textarea id="message" name="message" rows="4" required placeholder="Descreva seu projeto e necessidades..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit" id="submitBtn">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  Enviar mensagem
+                </button>
+                <div id="formMessage" role="alert" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="GeoSabbagh - Voltar ao início">
+            <div class="footer-logo-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="256" cy="256" r="200" fill="#f0f0f0" stroke="#333" stroke-width="8"/>
+                <line x1="256" y1="56" x2="256" y2="456" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+                <line x1="56" y1="256" x2="456" y2="256" stroke="#444" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+                <polygon points="256,60 226,130 286,130" fill="#cc5500" stroke="#b35e00" stroke-width="4"/>
+                <rect x="246" y="130" width="20" height="100" fill="#cc5500" rx="4"/>
+                <text x="256" y="440" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">S</text>
+                <text x="440" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">L</text>
+                <text x="72" y="280" font-family="Georgia, serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#666" opacity="0.8">O</text>
+                <circle cx="256" cy="256" r="20" fill="#FFD700" stroke="#b8860b" stroke-width="3"/>
+              </svg>
+            </div>
+            <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
+          </a>
+          <p>Consultoria especializada em Geotecnologias e Desenvolvimento de Sistemas de Informação Geográfica para o setor ambiental.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">Mapas para Licenciamento</a></li>
+            <li><a href="#servicos">Análise Espacial</a></li>
+            <li><a href="#servicos">Classificação de Uso do Solo</a></li>
+            <li><a href="#servicos">Drone e LiDAR</a></li>
+            <li><a href="#servicos">Desenvolvimento SIG</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#clientes">Clientes</a></li>
+            <li><a href="#processo">Metodologia</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p id="footer-year">© 2025 GeoSabbagh – Consultoria em Geotecnologias</p>
+        <p class="footer-dev">Desenvolvido por <span>Anwar Sabbagh</span></p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5511930401920" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>Fale conosco</span>
+  </a>
+  
+  <!-- BACK TO TOP -->
+  <button id="backToTop" class="back-to-top" title="Voltar ao topo" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </button>
+  
+  <script>
+    !function() {
+      "use strict";
+      
+      // Menu Mobile
+      const menuToggle = document.getElementById('menuToggle');
+      const mainNav = document.getElementById('mainNav');
+      const body = document.body;
+      const overlay = document.getElementById('menuOverlay');
+      let savedScrollY = 0;
+      
+      function openMenu() {
+        savedScrollY = window.scrollY;
+        mainNav.classList.add('active');
+        overlay.classList.add('active');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        menuToggle.setAttribute('aria-label', 'Fechar menu');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.replace('fa-bars', 'fa-times');
+        }
+        body.classList.add('menu-open');
+      }
+      
+      function closeMenu() {
+        mainNav.classList.remove('active');
+        overlay.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.replace('fa-times', 'fa-bars');
+        }
+        body.classList.remove('menu-open');
+        window.scrollTo(0, savedScrollY);
+      }
+      
+      if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (mainNav.classList.contains('active')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+        
+        mainNav.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', closeMenu);
+        });
+        
+        overlay.addEventListener('click', closeMenu);
+      }
+      
+      // Carrossel
+      const track = document.getElementById('carouselTrack');
+      if (track) {
+        Array.from(track.children).forEach(function(item) {
+          const clone = item.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+        });
+        
+        const halfW = track.scrollWidth / 2;
+        const dur = Math.max(30, Math.round(halfW / 60));
+        track.style.animationDuration = dur + 's';
+      }
+      
+      // Back to top
+      const btt = document.getElementById('backToTop');
+      if (btt) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            btt.classList.add('visible');
+          } else {
+            btt.classList.remove('visible');
+          }
+        }, { passive: true });
+        
+        btt.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+      
+      // Formulário
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const formMsg = document.getElementById('formMessage');
+      
+      if (form) {
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+          
+          try {
+            const response = await fetch(form.getAttribute('action'), {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { Accept: 'application/json' }
+            });
+            
+            if (response.ok) {
+              formMsg.innerHTML = '<div style="color:green;margin-top:10px">✅ Mensagem enviada! Retornaremos em breve.</div>';
+              form.reset();
+            } else {
+              throw new Error();
+            }
+          } catch (err) {
+            formMsg.innerHTML = '<div style="color:red;margin-top:10px">❌ Erro ao enviar. Tente: contato.geosabbagh@gmail.com</div>';
+          }
+          
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Enviar mensagem';
+          setTimeout(() => { formMsg.innerHTML = ''; }, 8000);
+        });
+      }
+      
+      // Ano no rodapé
+      const footerYear = document.getElementById('footer-year');
+      if (footerYear) {
+        footerYear.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Consultoria em Geotecnologias';
+      }
+    }();
+  </script>
 </body>
 </html>
