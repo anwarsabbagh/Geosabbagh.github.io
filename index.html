@@ -271,35 +271,6 @@
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
     }
     
-    .header-contact {
-      display: flex;
-      align-items: center;
-      margin-right: 20px;
-    }
-    
-    .header-phone {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: var(--creme);
-      border-radius: 50%;
-      color: var(--verde);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    .header-phone:hover {
-      background: var(--dourado);
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    
-    .header-phone i {
-      font-size: 1.3rem;
-    }
-    
     .menu-toggle {
       display: none;
       background: transparent;
@@ -1202,15 +1173,22 @@
     
     .footer-bottom {
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      gap: 5px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
     }
     
     .footer-bottom p {
       color: rgba(255,255,255,0.6);
       font-size: var(--fs-base);
+      text-align: center;
+    }
+    
+    .footer-dev {
+      color: rgba(255,255,255,0.6);
+      font-size: var(--fs-sm);
     }
     
     .footer-dev span {
@@ -1295,19 +1273,6 @@
     }
     
     @media (max-width: 768px) {
-      .header-contact {
-        margin-right: 0;
-      }
-      
-      .header-phone {
-        width: 42px;
-        height: 42px;
-      }
-      
-      .header-phone i {
-        font-size: 1.2rem;
-      }
-      
       .menu-toggle { display: flex; }
       
       nav {
@@ -1449,12 +1414,6 @@
         </div>
         <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
       </a>
-      
-      <div class="header-contact">
-        <a href="tel:+5511930401920" class="header-phone" title="Ligar para GeoSabbagh">
-          <i class="fa-solid fa-phone"></i>
-        </a>
-      </div>
       
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -1650,7 +1609,7 @@
           <div class="clientes-carousel">
             <div class="carousel-track" id="carouselTrack">
               <!-- ENGENHARIA E CONSULTORIA -->
-              
+              <span class="cliente-nome">Cobrape</span>
               <span class="cliente-nome">Jacobs</span>
               <span class="cliente-nome">Worley</span>
               <span class="cliente-nome">CH2M Hill</span>
@@ -1669,37 +1628,57 @@
               
               <!-- ENERGIA E MINERAÇÃO -->
               <span class="cliente-nome">SER Energia</span>
-              
-              <span class="cliente-nome">Nassau Cimentos</span>
+              <span class="cliente-nome">Largo Resources</span>
+              <span class="cliente-nome">Nassau</span>
               <span class="cliente-nome">Petrobras</span>
               
               <!-- INFRAESTRUTURA -->
               <span class="cliente-nome">Rumo</span>
-             
+              <span class="cliente-nome">Libra Terminais</span>
+              <span class="cliente-nome">Cotegipe</span>
+              <span class="cliente-nome">TSG</span>
               
               <!-- SANEAMENTO -->
               <span class="cliente-nome">Sabesp</span>
               <span class="cliente-nome">Terra Saneamento</span>
               <span class="cliente-nome">Saneatec</span>
-            
+              <span class="cliente-nome">Corpus</span>
               
               <!-- EMPRESAS -->
               <span class="cliente-nome">JHSF</span>
               <span class="cliente-nome">Odebrecht</span>
               <span class="cliente-nome">OR Realizações</span>
-            
+              <span class="cliente-nome">Torre</span>
+              <span class="cliente-nome">Alkplast</span>
               <span class="cliente-nome">Casas Bahia</span>
               
               <!-- INSTITUIÇÕES -->
               <span class="cliente-nome">UFPE</span>
               <span class="cliente-nome">PNUD</span>
-            
+              <span class="cliente-nome">Acquaplan</span>
               <span class="cliente-nome">Instituto Ekko</span>
               <span class="cliente-nome">Rede Sustentabilidade</span>
             </div>
           </div>
         </div>
-        <p style="text-align:center;margin-top:16px;font-size:var(--fs-sm);color:var(--texto2);opacity:0.7">Passe o mouse sobre os nomes para pausar</p>
+      </div>
+    </section>
+    
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos">
+      <div class="container">
+        <span class="tag">O que dizem nossos clientes</span>
+        <h2>Depoimentos</h2>
+        <div class="depoimentos-grid">
+          <blockquote>
+            <p>"A GeoSabbagh entregou os mapas para nosso EIA com precisão e dentro do prazo. Equipe técnica altamente qualificada."</p>
+            <cite>— Coordenador Ambiental, Grande Consultoria</cite>
+          </blockquote>
+          <blockquote>
+            <p>"Trabalhamos juntos em diversos projetos de licenciamento. A qualidade das análises espaciais é excepcional."</p>
+            <cite>— Diretor, Empresa de Engenharia</cite>
+          </blockquote>
+        </div>
       </div>
     </section>
     
@@ -1811,17 +1790,6 @@
                 </div>
               </div>
               <div class="info-item">
-                <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
-                <div>
-                  <div class="info-label">Telefone</div>
-                  <div class="info-value">
-                    <a href="tel:+5511930401920" title="Ligar para GeoSabbagh">
-                      <i class="fa-solid fa-phone"></i> Clique para ligar
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="info-item">
                 <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
                 <div>
                   <div class="info-label">Horário</div>
@@ -1911,7 +1879,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p id="footer-year">© 2025 GeoSabbagh – Consultoria em Geotecnologias</p>
+        <p id="footer-year">© 2026 GeoSabbagh – Consultoria Ambiental</p>
         <p class="footer-dev">Desenvolvido por <span>Anwar Sabbagh</span></p>
       </div>
     </div>
@@ -2049,7 +2017,7 @@
       // Ano no rodapé
       const footerYear = document.getElementById('footer-year');
       if (footerYear) {
-        footerYear.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Consultoria em Geotecnologias';
+        footerYear.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Consultoria Ambiental';
       }
     }();
   </script>
