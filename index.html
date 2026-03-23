@@ -81,7 +81,7 @@
         "image": "https://geosabbagh.com.br/img/og-image.jpg",
         "description": "Consultoria especializada em geoprocessamento, SIG e análise espacial para licenciamento ambiental. Atendimento em todo Brasil.",
         "email": "contato.geosabbagh@gmail.com",
-        "telephone": "+55-11-93040-1920",
+        "telephone": "+55-11-92602-7440",
         "foundingDate": "2015",
         "areaServed": {
           "@type": "Country",
@@ -144,18 +144,6 @@
       }
     ]
   }
-  </script>
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7EMHP39XQF"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7EMHP39XQF', {
-      'transport_type': 'beacon',
-      'anonymize_ip': true
-    });
   </script>
   
   <style>
@@ -1721,7 +1709,7 @@
         <p>Solicite uma análise técnica e descubra como podemos ajudar no seu licenciamento ambiental.</p>
         <div class="cta-btns">
           <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar Análise</a>
-          <a href="https://wa.me/5511930401920" class="btn btn-outline-white" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://wa.me/5511926027440" class="btn btn-outline-white" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
     </section>
@@ -1846,7 +1834,7 @@
   </footer>
   
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/5511930401920" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/5511926027440" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <i class="fa-brands fa-whatsapp"></i>
     <span>Fale conosco</span>
   </a>
@@ -1958,6 +1946,18 @@
       if (footerYear) {
         footerYear.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Consultoria Ambiental';
       }
+      
+      // Verificação de carregamento do GTM
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          if (typeof window.dataLayer === 'undefined') {
+            console.warn('⚠️ GTM não carregado corretamente');
+          } else {
+            console.log('✅ GTM carregado com sucesso');
+            window.dataLayer.push({ 'event': 'page_ready' });
+          }
+        }, 1000);
+      });
     }();
   </script>
 </body>
