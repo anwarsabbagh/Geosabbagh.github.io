@@ -16,9 +16,9 @@
   <meta name="google-site-verification" content="ffnTCQIbys8xV6poGMrGTkEexWnv-RpnCtBf7unQo64">
   
   <!-- Primary Meta Tags -->
-  <title>GeoSabbagh: Consultoria em Geoprocessamento e SIG para Licenciamento Ambiental</title>
-  <meta name="title" content="GeoSabbagh: Consultoria em Geoprocessamento e SIG para Licenciamento Ambiental">
-  <meta name="description" content="Especialistas em geoprocessamento para licenciamento ambiental. +200 projetos realizados. Mapas técnicos (EIA/RIMA), análise espacial e sensoriamento remoto para todo Brasil. Solicite orçamento.">
+  <title>GeoSabbagh: Dados Geoespaciais e Análises SIG para Licenciamento Ambiental</title>
+  <meta name="title" content="GeoSabbagh: Dados Geoespaciais e Análises SIG para Licenciamento Ambiental">
+  <meta name="description" content="Fornecemos mapas técnicos, análises espaciais e dados geoespaciais para consultorias ambientais e empresas de engenharia. +200 projetos realizados em todo Brasil.">
   <meta name="keywords" content="geoprocessamento, SIG, licenciamento ambiental, mapas EIA/RIMA, análise espacial, sensoriamento remoto, drone, LiDAR, consultoria ambiental São Paulo">
   <meta name="author" content="Anwar Sabbagh">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -29,8 +29,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://geosabbagh.com.br">
-  <meta property="og:title" content="GeoSabbagh - Consultoria em Geoprocessamento para Licenciamento Ambiental">
-  <meta property="og:description" content="+200 projetos realizados em geoprocessamento e SIG para EIA/RIMA. Atendimento em todo Brasil.">
+  <meta property="og:title" content="GeoSabbagh - Dados Geoespaciais para Licenciamento Ambiental">
+  <meta property="og:description" content="+200 projetos realizados em geoprocessamento e SIG. Mapas técnicos, análises espaciais e dados geoespaciais para EIA/RIMA.">
   <meta property="og:image" content="https://geosabbagh.com.br/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -40,8 +40,8 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://geosabbagh.com.br">
-  <meta property="twitter:title" content="GeoSabbagh - Consultoria em Geoprocessamento">
-  <meta property="twitter:description" content="Especialistas em SIG para licenciamento ambiental. Solicite orçamento.">
+  <meta property="twitter:title" content="GeoSabbagh - Dados Geoespaciais e SIG">
+  <meta property="twitter:description" content="Especialistas em mapas técnicos e análises espaciais para licenciamento ambiental.">
   <meta property="twitter:image" content="https://geosabbagh.com.br/img/og-image.jpg">
   
   <!-- Business Meta -->
@@ -79,7 +79,7 @@
           "height": 512
         },
         "image": "https://geosabbagh.com.br/img/og-image.jpg",
-        "description": "Consultoria especializada em geoprocessamento, SIG e análise espacial para licenciamento ambiental. Atendimento em todo Brasil.",
+        "description": "Especialistas em dados geoespaciais, análises SIG e mapas técnicos para consultorias ambientais, empresas de engenharia e órgãos públicos em todo o Brasil.",
         "email": "contato.geosabbagh@gmail.com",
         "telephone": "+55-11-92602-7440",
         "foundingDate": "2015",
@@ -139,7 +139,7 @@
         "@id": "https://geosabbagh.com.br/#website",
         "url": "https://geosabbagh.com.br",
         "name": "GeoSabbagh",
-        "description": "Consultoria em Geoprocessamento e SIG para Licenciamento Ambiental",
+        "description": "Dados Geoespaciais e Análises SIG para Licenciamento Ambiental",
         "inLanguage": "pt-BR"
       }
     ]
@@ -684,6 +684,58 @@
       transform: translateY(-4px);
     }
     
+    /* ===== FORMATOS ENTREGA ===== */
+    .formatos-box {
+      margin-top: 60px;
+      padding: 40px 30px;
+      background: var(--creme);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    
+    .formatos-box i {
+      font-size: 2.5rem;
+      color: var(--dourado);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    
+    .formatos-box h3 {
+      margin-bottom: 15px;
+    }
+    
+    /* ===== FERRAMENTAS ===== */
+    .ferramentas-section {
+      background: var(--branco);
+      padding: 60px 0;
+    }
+    
+    .ferramentas-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      text-align: center;
+    }
+    
+    .ferramenta-item {
+      text-align: center;
+      min-width: 100px;
+    }
+    
+    .ferramenta-item i {
+      font-size: 2.8rem;
+      color: var(--verde);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    
+    .ferramenta-item p {
+      font-size: var(--fs-sm);
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    
     /* ===== CLIENTES ===== */
     .clientes-section {
       background: var(--branco);
@@ -783,7 +835,7 @@
       background: var(--creme);
       border: 1.5px solid transparent;
       border-radius: 40px;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--verde);
       white-space: nowrap;
@@ -792,54 +844,12 @@
       box-shadow: var(--shadow);
     }
     
-    a.cliente-nome {
-      cursor: pointer;
-    }
-    
     .cliente-nome:hover {
       background: var(--verde);
       color: #fff;
       border-color: var(--dourado);
       transform: translateY(-3px);
       box-shadow: var(--shadow-lg);
-    }
-    
-    /* ===== DEPOIMENTOS ===== */
-    .depoimentos {
-      background: var(--branco);
-      padding: 80px 0;
-    }
-    
-    .depoimentos h2 {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    
-    .depoimentos-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-    }
-    
-    blockquote {
-      background: #fff;
-      padding: 35px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border-left: 4px solid var(--dourado);
-    }
-    
-    blockquote p {
-      font-size: 1.1rem;
-      font-style: italic;
-      margin-bottom: 20px;
-      color: var(--texto);
-    }
-    
-    blockquote cite {
-      color: var(--verde);
-      font-weight: 600;
-      font-style: normal;
     }
     
     /* ===== PROCESSO ===== */
@@ -1225,7 +1235,6 @@
       .especializacao-grid { grid-template-columns: repeat(2, 1fr); }
       .faq-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
-      .depoimentos-grid { grid-template-columns: 1fr; }
       .clientes-stats { gap: 30px; }
     }
     
@@ -1293,7 +1302,7 @@
       .stat-item { width: 100%; max-width: 200px; }
       
       .cliente-nome {
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 10px 20px;
       }
       
@@ -1308,6 +1317,9 @@
       
       .whatsapp-float span { display: none; }
       .whatsapp-float i { font-size: 2rem; }
+      
+      .ferramentas-grid { gap: 30px; }
+      .ferramenta-item i { font-size: 2rem; }
     }
     
     @media (max-width: 576px) {
@@ -1330,7 +1342,7 @@
       .form-card { padding: 25px; }
       
       .cliente-nome {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         padding: 8px 16px;
       }
       
@@ -1341,12 +1353,14 @@
       }
       
       .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .ferramentas-grid { gap: 20px; flex-wrap: wrap; }
+      .ferramenta-item { min-width: 80px; }
     }
     
     @media (max-width: 400px) {
       .logo-text { font-size: var(--fs-sm); }
       .logo-icon { width: 35px; height: 35px; }
-      .cliente-nome { font-size: 0.8rem; padding: 6px 12px; }
+      .cliente-nome { font-size: 0.7rem; padding: 6px 12px; }
     }
   </style>
   
@@ -1407,20 +1421,19 @@
     <section class="hero" id="home" aria-label="Apresentação">
       <div class="container">
         <div class="hero-content">
-          <span class="tag">Consultoria Especializada desde 2015</span>
+          <span class="tag">Especialistas em Dados Geoespaciais desde 2015</span>
           <h1>
-            Consultoria em Geoprocessamento e SIG<br>
+            Dados Geoespaciais e Análises SIG<br>
             <span>para Licenciamento Ambiental</span>
           </h1>
           <p class="hero-desc">
-            Desenvolvemos mapas técnicos, análises espaciais e estudos ambientais 
-            para EIA/RIMA, RAS e PCA com precisão cartográfica e agilidade. 
+            Fornecemos mapas técnicos, análises espaciais e dados geoespaciais de alta precisão para consultorias ambientais, empresas de engenharia e profissionais que elaboram EIA/RIMA, RAS e PCA.
             <strong>+200 projetos realizados em todo Brasil.</strong>
           </p>
           <div class="hero-btns">
             <a href="#contato" class="btn btn-primary">
               <i class="fa-solid fa-phone-alt" aria-hidden="true"></i>
-              Solicitar Orçamento
+              Solicitar Proposta Técnica
             </a>
             <a href="#servicos" class="btn btn-outline-white">
               <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
@@ -1467,8 +1480,8 @@
           <div class="sobre-text">
             <span class="tag">Quem somos</span>
             <h2 id="sobre-heading">Sobre a <span>GeoSabbagh</span></h2>
-            <p>Desde 2015, a GeoSabbagh oferece análises espaciais de alta precisão para o setor ambiental. Nossa consultoria transforma dados brutos em informações geográficas valiosas, fornecendo a base técnica para projetos de licenciamento, conservação e planejamento territorial em todo o Brasil.</p>
-            <p>Atendemos consultorias ambientais, empresas de engenharia, órgãos públicos e profissionais que necessitam de mapas técnicos, modelagem espacial e interpretação de sensoriamento remoto com rigor cartográfico e agilidade.</p>
+            <p>Desde 2015, a GeoSabbagh é referência na produção de dados geoespaciais e análises SIG para o setor ambiental. Transformamos dados brutos em informações geográficas de alta precisão, fornecendo a base cartográfica e as análises espaciais que consultorias ambientais, empresas de engenharia e órgãos públicos utilizam em seus projetos de licenciamento, conservação e planejamento territorial.</p>
+            <p><strong>Nosso trabalho é fornecer a base técnica para quem executa o licenciamento ambiental.</strong> Atendemos consultorias ambientais, empresas de engenharia, órgãos públicos e profissionais que necessitam de mapas técnicos, modelagem espacial e interpretação de sensoriamento remoto com rigor cartográfico e agilidade.</p>
             <a href="#contato" class="btn btn-verde"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Falar com um especialista</a>
           </div>
           <div>
@@ -1476,7 +1489,7 @@
             <div class="diferenciais">
               <div class="diff-item">
                 <i class="fa-solid fa-bolt" aria-hidden="true"></i>
-                +10 anos em projetos ambientais
+                +10 anos em projetos geoespaciais
               </div>
               <div class="diff-item">
                 <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
@@ -1558,6 +1571,41 @@
             </article>
           </div>
         </div>
+        
+        <!-- FORMATOS DE ENTREGA -->
+        <div class="formatos-box">
+          <i class="fa-solid fa-file-export" aria-hidden="true"></i>
+          <h3>Formatos de Entrega</h3>
+          <p>Trabalhamos com os principais formatos do mercado para garantir compatibilidade total com seus projetos: <strong>Shapefile (.shp)</strong>, <strong>Geodatabase (.gdb)</strong>, <strong>GeoJSON</strong>, <strong>GeoTIFF</strong>, <strong>KML/KMZ</strong> e <strong>PDF de alta resolução</strong>.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FERRAMENTAS E TECNOLOGIAS -->
+    <section class="ferramentas-section" aria-label="Tecnologias utilizadas">
+      <div class="container">
+        <div class="ferramentas-grid">
+          <div class="ferramenta-item">
+            <i class="fa-brands fa-python" aria-hidden="true"></i>
+            <p>Python / GIS</p>
+          </div>
+          <div class="ferramenta-item">
+            <i class="fa-solid fa-map" aria-hidden="true"></i>
+            <p>ArcGIS / QGIS</p>
+          </div>
+          <div class="ferramenta-item">
+            <i class="fa-solid fa-satellite" aria-hidden="true"></i>
+            <p>Landsat / Sentinel</p>
+          </div>
+          <div class="ferramenta-item">
+            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            <p>Modelagem Espacial</p>
+          </div>
+          <div class="ferramenta-item">
+            <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+            <p>Google Earth Engine</p>
+          </div>
+        </div>
       </div>
     </section>
     
@@ -1579,51 +1627,29 @@
           <div class="clientes-carousel">
             <div class="carousel-track" id="carouselTrack">
               <!-- ENGENHARIA E CONSULTORIA -->
-             
               <span class="cliente-nome">Jacobs</span>
               <span class="cliente-nome">Worley</span>
-              <span class="cliente-nome">CH2M Hill</span>
               <span class="cliente-nome">Egis</span>
-              <span class="cliente-nome">Orbea</span>
-              <span class="cliente-nome">Inerco</span>
-              <span class="cliente-nome">Allber</span>
               
               <!-- CONSULTORIAS AMBIENTAIS -->
               <span class="cliente-nome">Cema</span>
-              <span class="cliente-nome">Lacerta</span>
               <span class="cliente-nome">Mutabilis</span>
-             
               <span class="cliente-nome">EKOSEG</span>
-              <span class="cliente-nome">Adria Ambiente</span>
               
               <!-- ENERGIA E MINERAÇÃO -->
-              <span class="cliente-nome">SER Energia</span>
-          
               <span class="cliente-nome">Nassau Cimentos</span>
               <span class="cliente-nome">Petrobras</span>
               
               <!-- INFRAESTRUTURA -->
               <span class="cliente-nome">Rumo</span>
-        
               
               <!-- SANEAMENTO -->
               <span class="cliente-nome">Sabesp</span>
-              <span class="cliente-nome">Terra Saneamento</span>
-              <span class="cliente-nome">Saneatec</span>
-         
-              
-              <!-- EMPRESAS -->
-              <span class="cliente-nome">JHSF</span>
-              <span class="cliente-nome">Odebrecht</span>
-              <span class="cliente-nome">OR Realizações</span>
-          
-              <span class="cliente-nome">Casas Bahia</span>
               
               <!-- INSTITUIÇÕES -->
               <span class="cliente-nome">UFPE</span>
               <span class="cliente-nome">PNUD</span>
               <span class="cliente-nome">Instituto Ekko</span>
-              
             </div>
           </div>
         </div>
@@ -1639,23 +1665,23 @@
         <div class="processo-steps">
           <div class="step">
             <div class="step-num" aria-hidden="true">1</div>
-            <h3>Briefing</h3>
-            <p>Entendemos o escopo, área de estudo e exigências do órgão licenciador.</p>
+            <h3>Briefing Técnico</h3>
+            <p>Entendemos o escopo do projeto, área de estudo, exigências do órgão licenciador e os formatos de entrega necessários.</p>
           </div>
           <div class="step">
             <div class="step-num" aria-hidden="true">2</div>
-            <h3>Coleta de Dados</h3>
-            <p>Aquisição de imagens de satélite, dados LiDAR/drone e bases cartográficas.</p>
+            <h3>Aquisição e Tratamento</h3>
+            <p>Coleta de imagens de satélite (Landsat, Sentinel, Planet), dados LiDAR, bases cartográficas oficiais e levantamentos com drone quando necessário.</p>
           </div>
           <div class="step">
             <div class="step-num" aria-hidden="true">3</div>
-            <h3>Processamento</h3>
-            <p>Análises espaciais com QGIS/ArcGIS e modelagem temática.</p>
+            <h3>Processamento e Análise</h3>
+            <p>Classificação de uso do solo, modelagem espacial, análise de relevo, delimitação de APPs e geração de mapas temáticos com QGIS/ArcGIS.</p>
           </div>
           <div class="step">
             <div class="step-num" aria-hidden="true">4</div>
-            <h3>Entrega</h3>
-            <p>Bases de dados, mapas finalizados e documentação técnica.</p>
+            <h3>Validação e Entrega</h3>
+            <p>Revisão cartográfica, validação dos dados e entrega nos formatos acordados, prontos para integração nos estudos ambientais.</p>
           </div>
         </div>
       </div>
@@ -1674,21 +1700,21 @@
               <div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-file-lines"></i></div>
               <h3>Como o geoprocessamento ajuda no licenciamento?</h3>
             </div>
-            <p>É fundamental para diagnosticar a área de estudo, mapear restrições legais (APP, Reserva Legal) e produzir os mapas técnicos obrigatórios para órgãos ambientais.</p>
+            <p>É fundamental para diagnosticar a área de estudo, mapear restrições legais (APP, Reserva Legal) e produzir os mapas técnicos obrigatórios para órgãos ambientais. Nós fornecemos esses dados para consultorias e engenheiros que executam o licenciamento.</p>
           </div>
           <div class="faq-card">
             <div class="faq-card-header">
               <div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
               <h3>Quais formatos de dados vocês entregam?</h3>
             </div>
-            <p>Entregamos nos principais formatos: Geodatabase (GDB), Shapefile, GeoJSON, GeoTIFF, garantindo compatibilidade com qualquer projeto.</p>
+            <p>Entregamos nos principais formatos: Geodatabase (GDB), Shapefile, GeoJSON, GeoTIFF, KML/KMZ e PDF de alta resolução, garantindo compatibilidade com qualquer projeto.</p>
           </div>
           <div class="faq-card">
             <div class="faq-card-header">
               <div class="faq-card-icon" aria-hidden="true"><i class="fa-solid fa-helicopter"></i></div>
               <h3>Vocês fazem levantamentos com drone?</h3>
             </div>
-            <p>Sim. Realizamos levantamentos com drone para áreas específicas, gerando ortomosaicos e modelos 3D de alta resolução.</p>
+            <p>Sim. Realizamos levantamentos com drone para áreas específicas, gerando ortomosaicos e modelos 3D de alta resolução quando o projeto exige esse nível de detalhe.</p>
           </div>
           <div class="faq-card">
             <div class="faq-card-header">
@@ -1705,11 +1731,11 @@
     <section class="cta-section" aria-label="Chamada para ação">
       <div class="container">
         <span class="tag" style="background:rgba(184,132,58,0.2);color:var(--dourado2)">Pronto para começar?</span>
-        <h2>Vamos trabalhar no seu projeto?</h2>
-        <p>Solicite uma análise técnica e descubra como podemos ajudar no seu licenciamento ambiental.</p>
+        <h2>Precisa de dados geoespaciais para seu próximo projeto?</h2>
+        <p>Solicite uma proposta técnica e descubra como podemos fornecer a base cartográfica e as análises espaciais que você precisa.</p>
         <div class="cta-btns">
-          <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar Análise</a>
-          <a href="https://wa.me/5511926027440" class="btn btn-outline-white" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar Proposta Técnica</a>
+          <a href="https://wa.me/5511926027440?text=Ol%C3%A1%2C%20vim%20pelo%20site%20GeoSabbagh%20e%20gostaria%20de%20uma%20proposta%20t%C3%A9cnica%20para%20um%20projeto%20de%20geoprocessamento." class="btn btn-outline-white" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
     </section>
@@ -1721,7 +1747,7 @@
           <div class="contato-info">
             <span class="tag">Fale conosco</span>
             <h2 id="contato-heading">Entre em <span>Contato</span></h2>
-            <p>Precisa de uma consultoria em geoprocessamento para seu licenciamento? Estamos prontos para atender você em todo o Brasil.</p>
+            <p>Precisa de dados geoespaciais, análises SIG ou mapas técnicos para seu projeto de licenciamento? Estamos prontos para atender você em todo o Brasil.</p>
             <div style="margin-top:40px">
               <div class="info-item">
                 <div class="info-icon" aria-hidden="true"><i class="fa-solid fa-map-marker-alt"></i></div>
@@ -1803,7 +1829,7 @@
             </div>
             <span class="logo-text"><span class="geo-verde">Geo</span><span class="sabbagh-dourado">Sabbagh</span></span>
           </a>
-          <p>Consultoria especializada em Geotecnologias e Desenvolvimento de Sistemas de Informação Geográfica para o setor ambiental.</p>
+          <p>Especialistas em dados geoespaciais, análises SIG e mapas técnicos para consultorias ambientais, empresas de engenharia e órgãos públicos em todo o Brasil.</p>
         </div>
         <div class="footer-col">
           <h4>Serviços</h4>
@@ -1827,14 +1853,14 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p id="footer-year">© 2026 GeoSabbagh – Consultoria Ambiental</p>
+        <p id="footer-year">© 2026 GeoSabbagh – Dados Geoespaciais e Análises SIG</p>
         <p class="footer-dev">Desenvolvido por <span>Anwar Sabbagh</span></p>
       </div>
     </div>
   </footer>
   
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/5511926027440" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/5511926027440?text=Ol%C3%A1%2C%20vim%20pelo%20site%20GeoSabbagh%20e%20gostaria%20de%20uma%20proposta%20t%C3%A9cnica%20para%20um%20projeto%20de%20geoprocessamento." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
     <i class="fa-brands fa-whatsapp"></i>
     <span>Fale conosco</span>
   </a>
@@ -1944,7 +1970,7 @@
       // Ano no rodapé
       const footerYear = document.getElementById('footer-year');
       if (footerYear) {
-        footerYear.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Consultoria Ambiental';
+        footerYear.textContent = '© ' + new Date().getFullYear() + ' GeoSabbagh – Dados Geoespaciais e Análises SIG';
       }
       
       // Verificação de carregamento do GTM
