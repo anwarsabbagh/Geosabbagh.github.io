@@ -81,7 +81,6 @@
         "image": "https://geosabbagh.com.br/img/og-image.jpg",
         "description": "Especialistas em dados geoespaciais, análises SIG e mapas técnicos para consultorias ambientais, empresas de engenharia e órgãos públicos em todo o Brasil.",
         "email": "contato.geosabbagh@gmail.com",
-        "telephone": "+55-11-92602-7440",
         "foundingDate": "2015",
         "areaServed": {
           "@type": "Country",
@@ -358,6 +357,8 @@
       box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
       z-index: 999;
       transition: var(--transition);
+      cursor: pointer;
+      border: none;
     }
     
     .whatsapp-float i {
@@ -468,6 +469,7 @@
     .btn-outline-white {
       border: 2px solid rgba(255,255,255,0.7);
       color: #fff;
+      background: transparent;
     }
     
     .btn-outline-white:hover {
@@ -484,6 +486,18 @@
     
     .btn-verde:hover {
       background: var(--verde2);
+      transform: translateY(-2px);
+    }
+    
+    /* Botão WhatsApp personalizado */
+    .btn-whatsapp {
+      background: #25D366;
+      color: #fff;
+      border: none;
+    }
+    
+    .btn-whatsapp:hover {
+      background: #22c15e;
       transform: translateY(-2px);
     }
     
@@ -1037,6 +1051,14 @@
       text-decoration: underline;
     }
     
+
+    
+    .whatsapp-contact-btn:hover {
+      background: #22c15e;
+      transform: translateY(-2px);
+      color: #fff;
+    }
+    
     .form-card {
       background: #fff;
       padding: 45px;
@@ -1409,7 +1431,7 @@
         <a href="#clientes">Clientes</a>
         <a href="#processo">Processo</a>
         <a href="#faq">FAQ</a>
-        <a href="#contato" class="nav-cta">Solicitar Orçamento</a>
+        <a href="#contato" class="nav-cta">Solicitar Proposta</a>
       </nav>
     </div>
   </header>
@@ -1435,10 +1457,10 @@
               <i class="fa-solid fa-phone-alt" aria-hidden="true"></i>
               Solicitar Proposta Técnica
             </a>
-            <a href="#servicos" class="btn btn-outline-white">
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-              Conhecer Serviços
-            </a>
+            <button onclick="window.open('https://wa.me/5511926027440?text=Olá,%20vim%20pelo%20site%20GeoSabbagh')" class="btn btn-outline-white">
+              <i class="fa-brands fa-whatsapp"></i>
+              Solicitar proposta
+            </button>
           </div>
         </div>
       </div>
@@ -1626,27 +1648,16 @@
         <div class="clientes-carousel-wrapper" aria-label="Carrossel de clientes">
           <div class="clientes-carousel">
             <div class="carousel-track" id="carouselTrack">
-              <!-- ENGENHARIA E CONSULTORIA -->
               <span class="cliente-nome">Jacobs</span>
               <span class="cliente-nome">Worley</span>
               <span class="cliente-nome">Egis</span>
-              
-              <!-- CONSULTORIAS AMBIENTAIS -->
               <span class="cliente-nome">Cema</span>
               <span class="cliente-nome">Mutabilis</span>
               <span class="cliente-nome">EKOSEG</span>
-              
-              <!-- ENERGIA E MINERAÇÃO -->
               <span class="cliente-nome">Nassau Cimentos</span>
               <span class="cliente-nome">Petrobras</span>
-              
-              <!-- INFRAESTRUTURA -->
               <span class="cliente-nome">Rumo</span>
-              
-              <!-- SANEAMENTO -->
               <span class="cliente-nome">Sabesp</span>
-              
-              <!-- INSTITUIÇÕES -->
               <span class="cliente-nome">UFPE</span>
               <span class="cliente-nome">PNUD</span>
               <span class="cliente-nome">Instituto Ekko</span>
@@ -1735,7 +1746,9 @@
         <p>Solicite uma proposta técnica e descubra como podemos fornecer a base cartográfica e as análises espaciais que você precisa.</p>
         <div class="cta-btns">
           <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Solicitar Proposta Técnica</a>
-          <a href="https://wa.me/5511926027440?text=Ol%C3%A1%2C%20vim%20pelo%20site%20GeoSabbagh%20e%20gostaria%20de%20uma%20proposta%20t%C3%A9cnica%20para%20um%20projeto%20de%20geoprocessamento." class="btn btn-outline-white" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <button onclick="window.open('https://wa.me/5511926027440?text=Olá,%20vim%20pelo%20site%20GeoSabbagh')" class="btn btn-outline-white">
+            <i class="fa-brands fa-whatsapp"></i> Solicitar proposta
+          </button>
         </div>
       </div>
     </section>
@@ -1761,6 +1774,8 @@
                 <div>
                   <div class="info-label">E-mail</div>
                   <div class="info-value"><a href="mailto:contato.geosabbagh@gmail.com">contato.geosabbagh@gmail.com</a></div>
+                </div>
+
                 </div>
               </div>
               <div class="info-item">
@@ -1860,10 +1875,10 @@
   </footer>
   
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/5511926027440?text=Ol%C3%A1%2C%20vim%20pelo%20site%20GeoSabbagh%20e%20gostaria%20de%20uma%20proposta%20t%C3%A9cnica%20para%20um%20projeto%20de%20geoprocessamento." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+  <button onclick="window.open('https://wa.me/5511926027440?text=Olá,%20vim%20pelo%20site%20GeoSabbagh')" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
     <span>Fale conosco</span>
-  </a>
+  </button>
   
   <script>
     !function() {
